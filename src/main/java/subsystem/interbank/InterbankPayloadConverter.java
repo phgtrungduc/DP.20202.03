@@ -22,7 +22,7 @@ public class InterbankPayloadConverter {
      * @param contents
      * @return
      */
-    String convertToRequestPayload(CreditCard card, int amount, String contents) { // stamp coupling: truyền cả đối tượng credit card
+    String convertToRequestPayload(CreditCard card, int amount, String contents) {
         Map<String, Object> transaction = new MyMap();
 
         try {
@@ -67,7 +67,7 @@ public class InterbankPayloadConverter {
                 (String) transaction.get("transactionContent"),
                 Integer.parseInt((String) transaction.get("amount")),
                 (String) transaction.get("createdAt"));
-//control coupling: dùng switch case để điều khiển luồng chương trình
+
         switch (trans.getErrorCode()) {
             case "00":
                 break;

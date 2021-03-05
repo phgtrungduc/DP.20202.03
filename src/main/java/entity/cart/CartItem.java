@@ -12,6 +12,10 @@ public class CartItem {
 
     }
 
+    /**
+     * Stamp coulping
+     * nhưng có thể lỗi do lập trình
+     * */
     public CartItem(Media media, Cart cart, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;

@@ -25,6 +25,8 @@ public class Order {
     }
 
     public Order(Cart cart) {
+    	//Stamp Coupling
+    	//Passing complex data structure
         List<OrderItem> orderItems = new ArrayList<>();
         for (Object object : SessionInformation.cartInstance.getListMedia()) {
             CartItem cartItem = (CartItem) object;

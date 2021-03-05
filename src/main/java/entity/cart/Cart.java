@@ -61,6 +61,8 @@ public class Cart {
     }
 
     public CartItem checkMediaInCart(Media media){
+    	//Stamp Coupling
+    	//Passing complex data structure
         for (CartItem cartItem : lstCartItem) {
             if (cartItem.getMedia().getId() == media.getId()) return cartItem;
         }

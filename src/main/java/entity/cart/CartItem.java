@@ -13,6 +13,8 @@ public class CartItem {
     }
 
     public CartItem(Media media, Cart cart, int quantity, int price) {
+    	//Stamp Coupling
+    	//Passing complex data structure
         this.media = media;
         this.quantity = quantity;
         this.price = price;

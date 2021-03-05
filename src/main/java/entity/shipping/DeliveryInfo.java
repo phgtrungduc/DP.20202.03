@@ -22,6 +22,8 @@ public class DeliveryInfo {
     }
 
     public int calculateShippingFee(Order order) {
+    	//Stamp Coupling
+    	//Passing complex data structure
         int distance = distanceCalculator.calculateDistance(address, province);
         return (int) (distance * 1.2);
     }

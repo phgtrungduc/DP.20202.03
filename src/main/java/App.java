@@ -14,6 +14,7 @@ import views.screen.ViewsConfig;
 import views.screen.home.*;
 import views.screen.intro.IntroScreenHandler;
 
+
 public class App extends Application {
 
 	@FXML

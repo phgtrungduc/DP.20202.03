@@ -2,6 +2,7 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../Library/javafx-sdk-15.0.1/lib" />
+      <root url="jar://$PROJECT_DIR$/../../Library/distance-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

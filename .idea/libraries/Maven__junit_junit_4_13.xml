@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Maven: junit:junit:4.13">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Library/distance-api-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Library/sqlite-jdbc-3.7.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../../Library/sqlite-jdbc-3.7.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

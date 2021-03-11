@@ -72,6 +72,7 @@ public class ApplicationProgrammingInterface {
 		return conn;
 	}
 
+	//content coupling
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");

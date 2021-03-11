@@ -49,7 +49,7 @@ public class InterbankPayloadConverter {
      * @return
      */
     /**
-     * temporal cohesion
+     * temporal cohesion vi convertToRequestPayload va extractPaymentTransaction  thuc hien theo thu tu chu khong lien quan den nhau
      *
      *
      */
@@ -103,7 +103,7 @@ public class InterbankPayloadConverter {
      * @return
      */
     /**
-     * logical cohesion
+     * logical cohesion vi convertJSONResponse va convertToRequestPayload chi cung convert nhung khong cung chuc nang
      *
      *
      */

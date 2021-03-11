@@ -2,6 +2,10 @@ package entity.cart;
 
 import entity.media.Media;
 
+
+/**
+ * Functional Cohesion
+ * */
 public class CartItem {
     
     private Media media;
@@ -53,7 +57,6 @@ public class CartItem {
             + ", quantity='" + quantity + "'" 
             + "}";
     }
-
 }
 
     

@@ -7,6 +7,12 @@ import java.util.List;
 import common.exception.MediaNotAvailableException;
 import entity.media.Media;
 
+
+/**
+ * Fuctional Cohesion
+ * Cac phuong thuc deu su dung chung data la lstCartItem
+ * va deu lien quan den chuc nang lien quan den cart
+ * */
 public class Cart {
     
     private List<CartItem> lstCartItem;

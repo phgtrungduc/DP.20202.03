@@ -26,6 +26,11 @@ import java.util.regex.Pattern;
  * Logical Cohesion
  * Các hàm validate chỉ liên quan với nhau về mặt logic nhưng
  * không liên quan đến nhau về mặt chức năng
+ *
+ * Coincidental Cohesion
+ * Cac phuong thuc validate khong lien quan den nghiep vu
+ * cua lop, nen tach ra thanh mot lop rieng de xu ly
+ * ptduc
  * */
 public class PlaceOrderController extends BaseController {
 

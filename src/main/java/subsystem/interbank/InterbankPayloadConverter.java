@@ -48,6 +48,11 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    /**
+     * temporal cohesion
+     *
+     *
+     */
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
 
@@ -96,6 +101,11 @@ public class InterbankPayloadConverter {
      * Convert response from interbank server as JSON-formatted String into a proper Map
      * @param responseText
      * @return
+     */
+    /**
+     * logical cohesion
+     *
+     *
      */
     private MyMap convertJSONResponse(String responseText) {
         MyMap response = null;

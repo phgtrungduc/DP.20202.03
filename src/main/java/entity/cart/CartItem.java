@@ -2,10 +2,6 @@ package entity.cart;
 
 import entity.media.Media;
 
-
-/**
- * Functional Cohesion
- * */
 public class CartItem {
     
     private Media media;
@@ -16,10 +12,6 @@ public class CartItem {
 
     }
 
-    /**
-     * Stamp coulping
-     * nhưng có thể lỗi do lập trình
-     * */
     public CartItem(Media media, Cart cart, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;
@@ -57,6 +49,7 @@ public class CartItem {
             + ", quantity='" + quantity + "'" 
             + "}";
     }
+
 }
 
     

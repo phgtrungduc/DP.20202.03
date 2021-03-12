@@ -29,7 +29,7 @@ public class FXMLScreenHandler {
 	}
 	/**
 	 *
-	 * coincidental cohension vi function khong lien quan gi den chuc nang cua class
+	 * coincidental cohesion vi function khong lien quan gi den chuc nang cua class
 	 */
 	public void setImage(ImageView imv, String path){
 		File file = new File(path);

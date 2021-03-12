@@ -9,6 +9,7 @@ public class InterbankSubsystemController {
 	private static InterbankBoundary interbankBoundary = new InterbankBoundary();
 
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
+		// stamp coupling: truyền cả đối tượng credit card
 		return null;
 	}
 

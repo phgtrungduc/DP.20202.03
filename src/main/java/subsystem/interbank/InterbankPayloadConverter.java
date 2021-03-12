@@ -48,6 +48,9 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    
+    //Temporal Cohesion
+    
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
 
@@ -97,6 +100,7 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+   
     private MyMap convertJSONResponse(String responseText) {
         MyMap response = null;
         try {
@@ -114,6 +118,10 @@ public class InterbankPayloadConverter {
      * @author hieudm
      * @return the current time as {@link String String}.
      */
+    
+     // Coincidental Cohesion
+   
+     
     private String getToday() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();

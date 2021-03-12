@@ -14,11 +14,12 @@ import views.screen.ViewsConfig;
 import views.screen.home.*;
 import views.screen.intro.IntroScreenHandler;
 
+
 public class App extends Application {
 
 	@FXML
 	ImageView logo;
-
+	// Coincidental Cohesion: initialize, fade, load content khong lien quan den nhau
 	@Override
 	public void start(Stage primaryStage) {
 		try {

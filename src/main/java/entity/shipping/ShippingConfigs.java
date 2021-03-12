@@ -5,6 +5,11 @@ package entity.shipping;
  */
 public class ShippingConfigs {
 
+    /**
+     * Common coupling
+     * Việc để biến static không có final làm cho các
+     * module sử dụng chung có thể thay đổi biến chung này
+     * */
     public static String[] PROVINCES = {
             "Bắc Giang", 	"Bắc Kạn", 			"Cao Bằng", 	"Hà Giang", 	"Lạng Sơn", 	"Phú Thọ",
             "Quảng Ninh", 	"Thái Nguyên", 		"Tuyên Quang", 	"Yên Bái", 		"Điện Biên", 	"Hòa Bình",

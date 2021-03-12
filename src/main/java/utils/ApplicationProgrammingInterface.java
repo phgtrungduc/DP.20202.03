@@ -63,10 +63,7 @@ public class ApplicationProgrammingInterface {
 		LOGGER.info("Respone Info: " + response.toString());
 		return response.toString();
 	}
-	/**
-	 *
-	 * coincidental cohension vi function khong lien quan gi den chuc nang cua class
-	 */
+
 	private static HttpURLConnection setupConnection(String url) throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.setDoInput(true);
@@ -74,10 +71,8 @@ public class ApplicationProgrammingInterface {
 		conn.setRequestProperty("Content-Type", "application/json");
 		return conn;
 	}
-	/**
-	 *
-	 * coincidental cohension vi function khong lien quan gi den chuc nang cua class
-	 */
+
+	//ptduc
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");

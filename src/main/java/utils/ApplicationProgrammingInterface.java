@@ -65,7 +65,7 @@ public class ApplicationProgrammingInterface {
 	}
 	/**
 	 *
-	 * coincidental cohension vi function khong lien quan gi den chuc nang cua class
+	 * coincidental cohesion vi function khong lien quan gi den chuc nang cua class
 	 */
 	private static HttpURLConnection setupConnection(String url) throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
@@ -76,7 +76,7 @@ public class ApplicationProgrammingInterface {
 	}
 	/**
 	 *
-	 * coincidental cohension vi function khong lien quan gi den chuc nang cua class
+	 * coincidental cohesion vi function khong lien quan gi den chuc nang cua class
 	 */
 	private static void allowMethods(String... methods) {
 		try {

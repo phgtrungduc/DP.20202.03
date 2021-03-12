@@ -23,7 +23,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
     @FXML
     ImageView logo;
     
-    // Temporal Cohesion
+    // Temporal Cohesion: cac ham duoc goi khi catch duoc exception
 
     public IntroScreenHandler(Stage stage, String screenPath) throws IOException {
         super(stage, screenPath);

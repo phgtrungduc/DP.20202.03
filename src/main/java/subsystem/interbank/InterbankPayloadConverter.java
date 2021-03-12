@@ -49,7 +49,7 @@ public class InterbankPayloadConverter {
      * @return
      */
     
-    //Temporal Cohesion
+    //Temporal Cohesion: luong xu ly MyMap, CreditCard, PaymentTransaction cung duoc xu ly tai thoi diem 
     
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
@@ -119,7 +119,7 @@ public class InterbankPayloadConverter {
      * @return the current time as {@link String String}.
      */
     
-     // Coincidental Cohesion
+     // Coincidental Cohesion: GetToday khong lien quan den cac ham o tren
    
      
     private String getToday() {

@@ -48,6 +48,11 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    /**
+     * temporal cohesion
+     *
+     *
+     */
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
 
@@ -97,6 +102,11 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    /**
+     * logical cohesion
+     *
+     *
+     */
     private MyMap convertJSONResponse(String responseText) {
         MyMap response = null;
         try {
@@ -114,12 +124,10 @@ public class InterbankPayloadConverter {
      * @author hieudm
      * @return the current time as {@link String String}.
      */
-
-
     /**
-     * Coincidental Cohesion
-     * Hàm này đang thức hiện chức năng không liên quan đến tất cả các hàm còn lại
-     * */
+     *
+     * Coincidental cohesion boi vi ham getToday khong lien quan gi den class va cac function khac ca
+     */
     private String getToday() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();

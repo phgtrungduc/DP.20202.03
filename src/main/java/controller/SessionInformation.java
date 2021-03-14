@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 /**
  * @author
  */
+//Content Coupling
+//Variable o dang public khong co get set kho kiem soat duoc viec truy cap
 public class SessionInformation {
 
     public static User mainUser;

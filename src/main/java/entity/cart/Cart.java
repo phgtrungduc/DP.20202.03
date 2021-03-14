@@ -59,10 +59,9 @@ public class Cart {
         }
         if (!allAvailable) throw new MediaNotAvailableException("Some media not available");
     }
-
+    //Stamp Coupling
+    //Passing complex data structure
     public CartItem checkMediaInCart(Media media){
-    	//Stamp Coupling
-    	//Passing complex data structure
         for (CartItem cartItem : lstCartItem) {
             if (cartItem.getMedia().getId() == media.getId()) return cartItem;
         }

@@ -44,6 +44,8 @@ public class PaymentController extends BaseController {
 	 * @throws InvalidCardException - if the string does not represent a valid date
 	 *                              in the expected format
 	 */
+//	Coincidental Conhesion
+//	Method khong lien quan den chuc nang chung cua class
 	private String getExpirationDate(String date) throws InvalidCardException {
 		String[] strs = date.split("/");
 		if (strs.length != 2) {
@@ -103,7 +105,6 @@ public class PaymentController extends BaseController {
 		return result;
 	}
 
-	//Coincidental Cohension
 	public void emptyCart(){
         SessionInformation.cartInstance.emptyCart();
     }

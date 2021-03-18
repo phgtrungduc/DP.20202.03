@@ -20,7 +20,7 @@ public class DeliveryInfo {
         this.shippingInstructions = shippingInstructions;
         this.distanceCalculator = distanceCalculator;
     }
-
+//SOLID: 0 DistanceCal thay doi thi viec tinh phi ship cung thay doi theo
     public int calculateShippingFee(Order order) {
     	//Stamp Coupling
     	//Passing complex data structure

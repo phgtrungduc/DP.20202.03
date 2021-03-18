@@ -1,5 +1,6 @@
 package entity.payment;
 
+//SOLID: O neu mo rong phuong thuc thanh toan trong tuong lai phai modify code
 public class PaymentTransaction {
 	private String errorCode;
 	private CreditCard card;

@@ -74,7 +74,7 @@ public class PlaceOrderController extends BaseController {
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
-    
+    //SOLID: S vì class dam nhiem nhieu chuc nang vua processing giao dich vua validate giao dich
     /**
    * The method validates the info
    * @param info

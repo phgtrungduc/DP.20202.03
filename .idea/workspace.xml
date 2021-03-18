@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/order/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,7 @@
       <workItem from="1615557712688" duration="98000" />
       <workItem from="1615557834592" duration="29000" />
       <workItem from="1615783085501" duration="47000" />
-      <workItem from="1616059306953" duration="246000" />
+      <workItem from="1616059306953" duration="1906000" />
     </task>
     <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
       <created>1614954343349</created>
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616059361694</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SOLID OCP duonghx">
+      <created>1616059765906</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616059765906</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615459243086" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1616059361132">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1616059765335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616059361132" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616059765335" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -219,21 +227,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615558818427">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616059770210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615558818427" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616059770210" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616059311291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616059311291" />
-    <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1615558799043">
+    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1616062806876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1615558799043" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1615533739684">
+    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616062806876" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616062569866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615533739684" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616062569866" />
   </component>
 </project>

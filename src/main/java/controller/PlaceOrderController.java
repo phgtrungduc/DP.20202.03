@@ -32,6 +32,10 @@ import java.util.regex.Pattern;
  * cua lop, nen tach ra thanh mot lop rieng de xu ly
  * ptduc
  * */
+/**
+ * SOLID: Vi pham SRP vi trong lop chua cac phuong thua validate
+ * khi co them yeu cau validate, can thay doi truc tiep code cua class
+ * */
 public class PlaceOrderController extends BaseController {
 
     /**

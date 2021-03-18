@@ -21,11 +21,17 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+
+/**
+ * open close princile
+ * Phụ thuộc trực tiếp vào
+ * */
 public class PaymentController extends BaseController {
 
 	/**
 	 * Represent the card used for payment
 	 */
+
 	private CreditCard card;
 
 	/**

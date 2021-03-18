@@ -10,7 +10,12 @@ public class DeliveryInfo {
     protected String province;
     protected String address;
     protected String shippingInstructions;
-    protected DistanceCalculator distanceCalculator;
+
+    /**
+     * SOLID: Vi phạm open/close vi khi thay doi phuong thuc thanh toan
+     * can thay doi truc tiep class nay
+     * */
+        protected DistanceCalculator distanceCalculator;
 
     public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
         this.name = name;

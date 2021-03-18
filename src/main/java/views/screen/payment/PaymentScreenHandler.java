@@ -13,7 +13,6 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;

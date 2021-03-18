@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="cohension">
+    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/FXMLScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/FXMLScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/ViewsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/ViewsConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +90,7 @@
       <workItem from="1615532519911" duration="4487000" />
       <workItem from="1615557712688" duration="98000" />
       <workItem from="1615557834592" duration="29000" />
+      <workItem from="1615783085501" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
       <created>1614954343349</created>
@@ -142,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615558275705</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cohesion duonghx">
+      <created>1615558690856</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558690856</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cohesion duonghx 2">
+      <created>1615558813854</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558813854</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +169,9 @@
     <MESSAGE value="giải thích cohesion" />
     <MESSAGE value="cohension duonghx" />
     <MESSAGE value="cohension" />
-    <option name="LAST_COMMIT_MESSAGE" value="cohension" />
+    <MESSAGE value="cohesion duonghx" />
+    <MESSAGE value="cohesion duonghx 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="cohesion duonghx 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="83" key="#App" timestamp="1615452353107">
@@ -167,10 +182,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615459243086" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1615558690228">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1615558813274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1615558690228" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1615558813274" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -195,14 +210,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615558694674">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615558818427">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615558694674" />
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615455742941">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615558818427" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616059311291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1615455742941" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616059311291" />
     <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1615558799043">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

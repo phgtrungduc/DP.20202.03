@@ -21,11 +21,17 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+
+/**
+ * SOLID: Vi pham nguyen ly OCP : khi thay doi phuong thuc thanh toan phai thay doi code cua class nay
+ * Vi Pham nguyen ly: DIP : Phu thuoc truc tiep vao CreditCard khong qua mot module abstract
+ * */
 public class PaymentController extends BaseController {
 
 	/**
 	 * Represent the card used for payment
 	 */
+
 	private CreditCard card;
 
 	/**

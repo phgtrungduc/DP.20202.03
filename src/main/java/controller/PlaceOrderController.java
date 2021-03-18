@@ -21,6 +21,21 @@ import java.util.regex.Pattern;
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
+
+/**
+ * Logical Cohesion
+ * Các hàm validate chỉ liên quan với nhau về mặt logic nhưng
+ * không liên quan đến nhau về mặt chức năng
+ *
+ * Coincidental Cohesion
+ * Cac phuong thuc validate khong lien quan den nghiep vu
+ * cua lop, nen tach ra thanh mot lop rieng de xu ly
+ * ptduc
+ * */
+/**
+ * SOLID: Vi pham SRP vi trong lop chua cac phuong thua validate
+ * khi co them yeu cau validate, can thay doi truc tiep code cua class
+ * */
 public class PlaceOrderController extends BaseController {
 
     /**

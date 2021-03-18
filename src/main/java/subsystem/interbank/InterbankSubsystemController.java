@@ -3,6 +3,11 @@ package subsystem.interbank;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
+
+/**
+ * SOLID: Vi pham OCP va DIP: phu thuoc truc tiep vao CreditCard
+ * Thay doi phuong thuc thanh toan se phai thay doi code class nay
+ * */
 public class InterbankSubsystemController {
 
 	private static InterbankPayloadConverter interbankPayloadConverter = new InterbankPayloadConverter();

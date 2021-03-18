@@ -23,8 +23,8 @@ import subsystem.InterbankSubsystem;
  */
 
 /**
- * open close princile
- * Phụ thuộc trực tiếp vào
+ * SOLID: Vi pham nguyen ly OCP : khi thay doi phuong thuc thanh toan phai thay doi code cua class nay
+ * Vi Pham nguyen ly: DIP : Phu thuoc truc tiep vao CreditCard khong qua mot module abstract
  * */
 public class PaymentController extends BaseController {
 

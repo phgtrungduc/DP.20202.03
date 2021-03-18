@@ -30,6 +30,11 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * @see InterbankInterface#payOrder(CreditCard, int,
 	 *      String)
 	 */
+
+	/**
+	 * SOLID: Vi pham OCP va DIP: phu thuoc truc tiep vao CreditCard
+	 * Thay doi phuong thuc thanh toan se phai thay doi code class nay
+	 * */
 	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;

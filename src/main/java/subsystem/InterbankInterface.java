@@ -12,6 +12,10 @@ import entity.payment.PaymentTransaction;
  * @author hieud
  * 
  */
+/**
+ * SOLID: Vi pham OCP va DIP: phu thuoc truc tiep vao CreditCard
+ * Thay doi phuong thuc thanh toan se phai thay doi code class nay
+ * */
 public interface InterbankInterface {
 
 	/**

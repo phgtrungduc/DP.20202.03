@@ -2,7 +2,7 @@ package entity.payment;
 
 /**
  *
- * SOLID: Vi phạm nguyên lý OCP vì Khi them 1 loai the moi thi chua ke thua duoc the Credit Card
+ *
  * @author
  */
 public class CreditCard {

@@ -91,6 +91,7 @@
       <workItem from="1615557712688" duration="98000" />
       <workItem from="1615557834592" duration="29000" />
       <workItem from="1615783085501" duration="47000" />
+      <workItem from="1616059306953" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
       <created>1614954343349</created>
@@ -155,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615558813854</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="SOLID OCP duonghx">
+      <created>1616059361694</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616059361694</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +179,8 @@
     <MESSAGE value="cohension" />
     <MESSAGE value="cohesion duonghx" />
     <MESSAGE value="cohesion duonghx 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="cohesion duonghx 2" />
+    <MESSAGE value="SOLID OCP duonghx" />
+    <option name="LAST_COMMIT_MESSAGE" value="SOLID OCP duonghx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="83" key="#App" timestamp="1615452353107">
@@ -182,10 +191,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615459243086" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1615558813274">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1616059361132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1615558813274" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616059361132" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

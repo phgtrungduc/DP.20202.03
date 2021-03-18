@@ -16,7 +16,7 @@ public interface InterbankInterface {
 
 	/**
 	 * Pay order, and then return the payment transaction
-	 * 
+	 * SOLID: Vi phạm nguyên lý OCP vì Khi them 1 loai the moi thi can phai chinh sua
 	 * @param card     - the credit card used for payment
 	 * @param amount   - the amount to pay
 	 * @param contents - the transaction contents
@@ -31,7 +31,7 @@ public interface InterbankInterface {
 
 	/**
 	 * Refund, and then return the payment transaction
-	 * 
+	 * SOLID: Vi phạm nguyên lý OCP vì Khi them 1 loai the moi thi can phai chinh sua
 	 * @param card     - the credit card which would be refunded to
 	 * @param amount   - the amount to refund
 	 * @param contents - the transaction contents

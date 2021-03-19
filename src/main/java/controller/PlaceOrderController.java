@@ -75,6 +75,12 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+    /**
+     * Stamp coupling
+     * Truyền vào param info dạng Hash Map nhưng thực tế
+     * chỉ sử dụng các trường: name, phone, province, address, instructions
+     *ptduc
+     * */
     public DeliveryInfo processDeliveryInfo(HashMap info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
@@ -96,6 +102,11 @@ public class PlaceOrderController extends BaseController {
    * @throws InterruptedException
    * @throws IOException
    */
+    /**
+     * Stamp coupling
+     * Truyền vào param dạng hash map nhưng thực tế
+     * chỉ sử dụng đến các trường: phone, name, address
+     * */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
         || validateName(info.get("name"))

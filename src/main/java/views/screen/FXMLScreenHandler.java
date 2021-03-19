@@ -27,10 +27,7 @@ public class FXMLScreenHandler {
 	public FXMLLoader getLoader() {
 		return this.loader;
 	}
-	/**
-	 *
-	 * coincidental cohesion vi function khong lien quan gi den chuc nang cua class
-	 */
+
 	public void setImage(ImageView imv, String path){
 		File file = new File(path);
 		Image img = new Image(file.toURI().toString());

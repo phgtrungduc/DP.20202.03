@@ -51,9 +51,6 @@ public class Order {
         return deliveryInfo;
     }
 
-    /**
-     * SOLID: Vi phạm nguyên tắc Dependency vì Khi thay đổi tính phí ship thì phụ thuộc vào hàm calculateShippingFee
-     */
     public void setDeliveryInfo(DeliveryInfo deliveryInfo) {
         this.deliveryInfo = deliveryInfo;
         this.shippingFees = deliveryInfo.calculateShippingFee(this);

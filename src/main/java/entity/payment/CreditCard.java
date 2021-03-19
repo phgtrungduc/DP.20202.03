@@ -1,8 +1,6 @@
 package entity.payment;
 
 /**
- *
- *
  * @author
  */
 public class CreditCard {

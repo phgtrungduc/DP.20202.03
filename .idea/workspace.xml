@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +93,9 @@
       <workItem from="1615557712688" duration="98000" />
       <workItem from="1615557834592" duration="29000" />
       <workItem from="1615783085501" duration="47000" />
-      <workItem from="1616059306953" duration="1906000" />
+      <workItem from="1616059306953" duration="2973000" />
+      <workItem from="1616072607829" duration="3310000" />
+      <workItem from="1616131078298" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
       <created>1614954343349</created>
@@ -171,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616059765906</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="SOLID Dependency duonghx">
+      <created>1616063226208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616063226208</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +198,8 @@
     <MESSAGE value="cohesion duonghx" />
     <MESSAGE value="cohesion duonghx 2" />
     <MESSAGE value="SOLID OCP duonghx" />
-    <option name="LAST_COMMIT_MESSAGE" value="SOLID OCP duonghx" />
+    <MESSAGE value="SOLID Dependency duonghx" />
+    <option name="LAST_COMMIT_MESSAGE" value="SOLID Dependency duonghx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="83" key="#App" timestamp="1615452353107">
@@ -199,10 +210,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615459243086" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1616059765335">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1616063225629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616059765335" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616063225629" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -227,18 +238,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616059770210">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616063230060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616059770210" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616063230060" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616059311291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616059311291" />
-    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1616062806876">
+    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1616074957489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616062806876" />
+    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616074957489" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616062569866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

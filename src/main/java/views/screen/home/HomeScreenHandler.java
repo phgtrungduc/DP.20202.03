@@ -94,7 +94,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     protected void setupData(Object dto) throws Exception {
         setBController(new HomeController());
-        this.authenticationController = new AuthenticationController();
+        this.authenticationController = AuthenticationController.getInstance();
         try{
             List medium = getBController().getAllMedia();
             this.homeItems = new ArrayList<>();
@@ -144,7 +144,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             btnLogin.setOnMouseClicked(event -> {});
         }
 
-        numMediaInCart.setText(String.valueOf(SessionInformation.cartInstance.getListMedia().size()) + " media");
+        numMediaInCart.setText(String.valueOf(SessionInformation.getCartInstance().getListMedia().size()) + " media");
         super.show();
     }
 
@@ -219,7 +219,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
         try {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
-            Cart cart = SessionInformation.cartInstance;
+            Cart cart = SessionInformation.getCartInstance();
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
             CartItem mediaInCart = getBController().checkMediaInCart(media);
             if (mediaInCart != null) {

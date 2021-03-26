@@ -23,8 +23,18 @@ import java.util.Objects;
  * SOLID: Vi pham LSP
  * Hai phuong thuc o BaseController deu khong lien quan den nghiep vu Authen
  * */
-public class AuthenticationController extends BaseController {
 
+/**
+ * Thay doi lop thanh 1 singleton do:
+ * Nhiem vu cua lop la xac thuc nguoi dung vi vay chi can tao ra 1 the hien, khong can khoi tao lai
+ * */
+public class AuthenticationController extends BaseController {
+    private static AuthenticationController singleton=null;
+    private  AuthenticationController(){};
+    public static AuthenticationController getInstance(){
+        if (singleton==null) singleton = new AuthenticationController();
+        return singleton;
+    }
     public boolean isAnonymousSession() {
         try {
             getMainUser();

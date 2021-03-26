@@ -18,10 +18,20 @@ import java.time.LocalDateTime;
      * Gây ra cả content và common ở một số module
      * ptduc
     * */
+/**
+ * ap dung singleton
+ * cartInstance luu tru gio hang hien tai nen chi can khoi tao 1 lan
+ * */
+
 public class SessionInformation {
 
+
     public static User mainUser;
-    public static Cart cartInstance = new Cart();
+    private static Cart cartInstance = null;
     public static LocalDateTime expiredTime;
 
+    public static Cart getCartInstance() {
+        if (cartInstance==null) cartInstance = new Cart();
+        return cartInstance;
+    }
 }

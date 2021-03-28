@@ -9,10 +9,15 @@ import entity.media.Media;
 
 public class Cart {
     
-    private List<CartItem> lstCartItem;
-
-    public Cart() {
+    private static List<CartItem> lstCartItem;
+    /**
+     * Singleton cart vì theo nghiệp vụ chỉ 1 giỏ hàng được tạo ra
+     */
+    private static Cart cart;
+    public static Cart getInstance() {
+        if (cart != null) cart = new Cart();
         lstCartItem = new ArrayList<>();
+        return cart;
     }
 
     public void addCartMedia(CartItem cm){

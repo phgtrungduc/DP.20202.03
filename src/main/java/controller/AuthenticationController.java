@@ -20,6 +20,15 @@ import java.util.Objects;
  */
 public class AuthenticationController extends BaseController {
 
+    private static AuthenticationController authenticationController;
+
+    public static AuthenticationController getInstanceAuthenticationController() {
+        if (authenticationController != null)
+            return authenticationController;
+        authenticationController = new AuthenticationController();
+        return authenticationController;
+    }
+
     public boolean isAnonymousSession() {
         try {
             getMainUser();

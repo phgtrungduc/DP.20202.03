@@ -12,7 +12,7 @@ public class ValidatePhoneNumberTest {
 
     @BeforeEach
     void setup() throws Exception {
-        placeOrderController = new PlaceOrderController();
+        placeOrderController = PlaceOrderController.getInstancePlaceOrderController();
     }
 
     @ParameterizedTest

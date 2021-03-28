@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f6d225a8-245b-4013-81f7-e67554afe493" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/payment/PaymentTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/cart/CartScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/cart/CartScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/controller/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/controller/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/controller/ValidateAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/controller/ValidateAddressTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/controller/ValidateNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/controller/ValidateNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/controller/ValidatePhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/controller/ValidatePhoneNumberTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

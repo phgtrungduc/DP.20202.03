@@ -23,6 +23,15 @@ import java.util.regex.Pattern;
  */
 public class PlaceOrderController extends BaseController {
 
+    private static PlaceOrderController placeOrderController;
+
+    public static PlaceOrderController getInstancePlaceOrderController() {
+        if (placeOrderController != null)
+            return placeOrderController;
+        placeOrderController = new PlaceOrderController();
+        return placeOrderController;
+    }
+
     /**
      * Just for logging purpose
      */

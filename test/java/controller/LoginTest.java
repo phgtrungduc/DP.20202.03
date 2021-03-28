@@ -16,7 +16,7 @@ public class LoginTest {
 
     @BeforeEach
     void setup() throws Exception {
-        authenticationController = new AuthenticationController();
+        authenticationController = AuthenticationController.getInstanceAuthenticationController();
     }
 
     @ParameterizedTest

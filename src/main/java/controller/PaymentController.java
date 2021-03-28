@@ -23,6 +23,8 @@ import subsystem.InterbankSubsystem;
  */
 public class PaymentController extends BaseController {
 
+
+
 	/**
 	 * Represent the card used for payment
 	 */
@@ -83,6 +85,7 @@ public class PaymentController extends BaseController {
 	 * @return {@link Map Map} represent the payment result with a
 	 *         message.
 	 */
+	//SOLID: D phu thuoc cu the vao CreditCard
 	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
 			String expirationDate, String securityCode) {
 		Map<String, String> result = new Hashtable<String, String>();

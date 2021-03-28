@@ -13,19 +13,23 @@ import subsystem.interbank.InterbankSubsystemController;
  */
 public class InterbankSubsystem implements InterbankInterface {
 
+	private static InterbankSubsystem interbankSubsystem=null;
 	/**
 	 * Represent the controller of the subsystem
 	 */
-	private InterbankSubsystemController ctrl;
+	private static InterbankSubsystemController ctrl;
 
 	/**
 	 * Initializes a newly created {@code InterbankSubsystem} object so that it
 	 * represents an Interbank subsystem.
 	 */
-	public InterbankSubsystem() {
+	private InterbankSubsystem() {
 		this.ctrl = new InterbankSubsystemController();
 	}
-
+	public static InterbankSubsystem getInstance(){
+		if (interbankSubsystem==null) return interbankSubsystem;
+		return interbankSubsystem;
+	}
 	/**
 	 * @see InterbankInterface#payOrder(CreditCard, int,
 	 *      String)

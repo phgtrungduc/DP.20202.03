@@ -22,8 +22,9 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * Initializes a newly created {@code InterbankSubsystem} object so that it
 	 * represents an Interbank subsystem.
 	 */
+
 	public InterbankSubsystem() {
-		this.ctrl = new InterbankSubsystemController();
+		this.ctrl = InterbankSubsystemController.getInstance();
 	}
 
 	/**

@@ -31,7 +31,6 @@ public class MediaDAO {
         }
         return medium;
     }
-
     public Media getMediaById(int id) throws SQLException {
         String sql = "SELECT * FROM Media ;";
         Statement stm = AIMSDB.getConnection().createStatement();
@@ -49,6 +48,8 @@ public class MediaDAO {
         }
         return null;
     }
+
+
 
 
     public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {

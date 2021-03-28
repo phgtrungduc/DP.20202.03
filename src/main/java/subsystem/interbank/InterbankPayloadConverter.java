@@ -12,8 +12,22 @@ import java.util.Map;
 
 /**
  * @author
+ *
  */
+    // Ap dung Singleton vi Interbank chi can mot doi tuong duy nhat
+
 public class InterbankPayloadConverter {
+
+    private static InterbankPayloadConverter instance;
+
+        private InterbankPayloadConverter(){
+
+        }
+
+        public static InterbankPayloadConverter getInstance(){
+            if (instance == null) instance = new InterbankPayloadConverter();
+            return instance;
+        }
 
     /**
      * Convert from native entity into interbank required format

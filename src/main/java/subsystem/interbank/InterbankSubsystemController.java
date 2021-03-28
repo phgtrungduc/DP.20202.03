@@ -3,10 +3,23 @@ package subsystem.interbank;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
+// Ap dung Singleton
 public class InterbankSubsystemController {
 
-	private static InterbankPayloadConverter interbankPayloadConverter = new InterbankPayloadConverter();
-	private static InterbankBoundary interbankBoundary = new InterbankBoundary();
+	private static InterbankSubsystemController instance=null;
+
+	private InterbankSubsystemController() {
+
+	}
+
+	public static InterbankSubsystemController getInstance() {
+		if (instance==null) instance =new InterbankSubsystemController();
+		return instance;
+	};
+
+
+	private static InterbankPayloadConverter interbankPayloadConverter = InterbankPayloadConverter.getInstance();
+	private static InterbankBoundary interbankBoundary = InterbankBoundary.getInstance();
 
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		return null;

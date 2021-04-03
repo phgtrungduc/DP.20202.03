@@ -23,15 +23,6 @@ import java.util.regex.Pattern;
  */
 public class PlaceOrderController extends BaseController {
 
-    private static PlaceOrderController placeOrderController;
-
-    public static PlaceOrderController getInstancePlaceOrderController() {
-        if (placeOrderController != null)
-            return placeOrderController;
-        placeOrderController = new PlaceOrderController();
-        return placeOrderController;
-    }
-
     /**
      * Just for logging purpose
      */
@@ -83,23 +74,20 @@ public class PlaceOrderController extends BaseController {
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
-    //SOLID: S vì class dam nhiem nhieu chuc nang vua processing giao dich vua validate giao dich
+    
     /**
    * The method validates the info
    * @param info
    * @throws InterruptedException
    * @throws IOException
    */
-//    Stamp Coupling
-//    Khong su dung het thong tin cua bien info
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
         || validateName(info.get("name"))
         || validateAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
-//    Logical Cohension
-//    Method validate nen tach ra o class rieng,validate khong lien quan ro rang den nghiep vu chung cua class
+    
     public boolean validatePhoneNumber(String phoneNumber) {
         if (phoneNumber.length() != 10) return false;
         if (!phoneNumber.startsWith("0")) return false;
@@ -110,6 +98,7 @@ public class PlaceOrderController extends BaseController {
         }
         return true;
     }
+    
     public boolean validateName(String name) {
         if (Objects.isNull(name)) return false;
         String patternString = "^[a-zA-Z\\s]*$";
@@ -117,6 +106,7 @@ public class PlaceOrderController extends BaseController {
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
+    
     public boolean validateAddress(String address) {
         if (Objects.isNull(address)) return false;
         String patternString = "^[a-zA-Z\\s]*$";

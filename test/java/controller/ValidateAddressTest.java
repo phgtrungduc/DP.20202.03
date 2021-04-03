@@ -12,7 +12,7 @@ public class ValidateAddressTest {
 
     @BeforeEach
     void setup() throws Exception {
-        placeOrderController = new PlaceOrderController.getInstancePlaceOrderController();
+        placeOrderController = new PlaceOrderController();
     }
 
     @ParameterizedTest

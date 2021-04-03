@@ -106,7 +106,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	public void requestToPlaceOrder() throws SQLException, IOException {
 		try {
 			// create placeOrderController and process the order
-			PlaceOrderController placeOrderController = PlaceOrderController.getInstancePlaceOrderController();
+			PlaceOrderController placeOrderController = new PlaceOrderController();
 			if (placeOrderController.getListCartMedia().size() == 0){
 				PopupScreen.error("You don't have anything to place");
 				return;

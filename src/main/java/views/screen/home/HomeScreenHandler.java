@@ -94,7 +94,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     protected void setupData(Object dto) throws Exception {
         setBController(new HomeController());
-        this.authenticationController = AuthenticationController.getInstanceAuthenticationController();
+        this.authenticationController = new AuthenticationController();
         try{
             List medium = getBController().getAllMedia();
             this.homeItems = new ArrayList<>();

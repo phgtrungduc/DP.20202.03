@@ -20,15 +20,6 @@ import java.util.Objects;
  */
 public class AuthenticationController extends BaseController {
 
-    private static AuthenticationController authenticationController;
-
-    public static AuthenticationController getInstanceAuthenticationController() {
-        if (authenticationController != null)
-            return authenticationController;
-        authenticationController = new AuthenticationController();
-        return authenticationController;
-    }
-
     public boolean isAnonymousSession() {
         try {
             getMainUser();
@@ -49,8 +40,6 @@ public class AuthenticationController extends BaseController {
         try {
             User user = new UserDAO().authenticate(email, md5(password));
             if (Objects.isNull(user)) throw new FailLoginException();
-            //Content Coupling 
-            //Directly modifies another’s data
             SessionInformation.mainUser = user;
             SessionInformation.expiredTime = LocalDateTime.now().plusHours(24);
         } catch (SQLException ex) {

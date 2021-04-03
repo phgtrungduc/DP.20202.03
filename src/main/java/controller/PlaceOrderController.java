@@ -1,14 +1,13 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
-import entity.cart.Cart;
-import entity.cart.CartItem;
 import entity.invoice.Invoice;
 import entity.order.Order;
-import entity.order.OrderItem;
+import entity.shipping.DeliverInfoVersionOne;
+import entity.shipping.DeliverInfoVersionOneFactory;
 import entity.shipping.DeliveryInfo;
-import entity.shipping.ShippingConfigs;
-import org.example.DistanceCalculator;
+import entity.shipping.DeliveryInfoFactory;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -64,13 +63,14 @@ public class PlaceOrderController extends BaseController {
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
         validateDeliveryInfo(info);
-        DeliveryInfo deliveryInfo = new DeliveryInfo(
+        DeliveryInfoFactory deliveryInfoFactory = new DeliverInfoVersionOneFactory();
+        DeliveryInfo deliveryInfo = deliveryInfoFactory.getDeliverInfo(
                 String.valueOf(info.get("name")),
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-                String.valueOf(info.get("instructions")),
-                new DistanceCalculator());
+                String.valueOf(info.get("instructions"))
+        );
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }

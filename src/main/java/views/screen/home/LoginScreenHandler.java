@@ -47,8 +47,7 @@ public class LoginScreenHandler extends BaseScreenHandler{
     public LoginScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
         try {
-            setupData(null);
-            setupFunctionality();
+            this.setUp(null);
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
             PopupScreen.error("Error when loading resources.");
@@ -62,10 +61,10 @@ public class LoginScreenHandler extends BaseScreenHandler{
         return (AuthenticationController) super.getBController();
     }
 
-    protected void setupData(Object dto) throws Exception {
+    public void setupData(Object dto) throws Exception {
     }
 
-    protected void setupFunctionality() throws Exception {
+    public void setupFunctionality() throws Exception {
     }
 
     @FXML

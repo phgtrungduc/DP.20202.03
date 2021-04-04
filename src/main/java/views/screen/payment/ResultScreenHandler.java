@@ -26,8 +26,7 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	public ResultScreenHandler(Stage stage, String screenPath, Map<String, String> response) throws IOException {
 		super(stage, screenPath);
 		try {
-			setupData(response);
-			setupFunctionality();
+			this.setUp(response);
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.error("Error when loading resources.");
@@ -38,13 +37,13 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	}
 
 
-	protected void setupData(Object dto) throws Exception {
+	public void setupData(Object dto)  {
 		Map<String, String> response = (Map<String, String>) dto;
 		resultLabel.setText(response.get("RESULT"));
 		messageLabel.setText(response.get("MESSAGE"));
 	}
 
-	protected void setupFunctionality() throws Exception {
+	public void setupFunctionality() throws Exception {
 		return;
 	}
 

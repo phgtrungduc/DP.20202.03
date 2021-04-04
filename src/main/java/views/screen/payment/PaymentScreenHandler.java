@@ -48,8 +48,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		try {
-			setupData(invoice);
-			setupFunctionality();
+			this.setUp(null);
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.error("Error when loading resources.");
@@ -59,11 +58,11 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	protected void setupData(Object dto) throws Exception {
+	public void setupData(Object dto) throws Exception {
 		this.invoice = (Invoice) dto;
 	}
 
-	protected void setupFunctionality() throws Exception {
+	public void setupFunctionality() throws Exception {
 		btnConfirmPayment.setOnMouseClicked(e -> {
 			try {
 				confirmToPayOrder();

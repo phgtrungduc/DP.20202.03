@@ -30,7 +30,9 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		super(screenPath);
 		this.stage = stage;
 	}
-
+//	protected abstract void setupData(){
+//
+//	}
 	public void setPreviousScreen(BaseScreenHandler prev) {
 		this.prev = prev;
 	}

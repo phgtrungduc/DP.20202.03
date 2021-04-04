@@ -5,7 +5,7 @@ package entity.payment;
  *
  * @author
  */
-public class CreditCard {
+public class CreditCard extends Card{
 
     private String cardCode;
     private String owner;

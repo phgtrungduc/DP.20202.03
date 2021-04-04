@@ -15,7 +15,7 @@ public class Cart {
      */
     private static Cart cart;
     public static Cart getInstance() {
-        if (cart != null) cart = new Cart();
+        if (cart == null) cart = new Cart();
         lstCartItem = new ArrayList<>();
         return cart;
     }

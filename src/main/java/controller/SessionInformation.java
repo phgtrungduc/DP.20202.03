@@ -18,10 +18,17 @@ import java.time.LocalDateTime;
      * Gây ra cả content và common ở một số module
      * ptduc
     * */
+
+
 public class SessionInformation {
 
+
     public static User mainUser;
-    public static Cart cartInstance = new Cart();
+    private static Cart cartInstance = null;
     public static LocalDateTime expiredTime;
 
+    public static Cart getCartInstance() {
+        if (cartInstance==null) cartInstance = Cart.getCartInstance();
+        return cartInstance;
+    }
 }

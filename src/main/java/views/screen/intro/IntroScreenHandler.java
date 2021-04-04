@@ -27,8 +27,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
         super(stage, screenPath);
 
         try {
-            setupData(null);
-            setupFunctionality();
+            this.setUp(null);
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
             PopupScreen.error("Error when loading resources.");
@@ -39,11 +38,11 @@ public class IntroScreenHandler extends BaseScreenHandler {
     }
 
 
-    protected void setupData(Object dto) throws Exception {
+    public void setupData(Object dto) throws Exception {
         return;
     }
 
-    protected void setupFunctionality() throws Exception {
+    public void setupFunctionality() throws Exception {
         File file = new File("src/main/resources/assets/images/Logo.png");
         Image image = new Image(file.toURI().toString());
         logo.setImage(image);

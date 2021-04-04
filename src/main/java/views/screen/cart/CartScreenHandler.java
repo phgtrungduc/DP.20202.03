@@ -66,7 +66,12 @@ public class CartScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	protected void setupFunctionality() throws Exception {
+	@Override
+	public void setupData(Object dto) throws Exception {
+
+	}
+
+	public void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
 		File file = new File(ViewsConfig.IMAGE_PATH + "/Logo.png");
 		Image im = new Image(file.toURI().toString());

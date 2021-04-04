@@ -1,13 +1,10 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
-import entity.cart.Cart;
-import entity.cart.CartItem;
 import entity.invoice.Invoice;
 import entity.order.Order;
-import entity.order.OrderItem;
 import entity.shipping.DeliveryInfo;
-import entity.shipping.ShippingConfigs;
+import entity.shipping.DistanceCalculatorFactory;
 import org.example.DistanceCalculator;
 
 import java.io.IOException;
@@ -48,7 +45,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public void placeOrder() throws SQLException {
-        SessionInformation.cartInstance.checkAvailabilityOfProduct();
+        SessionInformation.getCartInstance().checkAvailabilityOfProduct();
     }
 
     /**
@@ -57,7 +54,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public Order createOrder() throws SQLException {
-        return new Order(SessionInformation.cartInstance);
+        return new Order(SessionInformation.getCartInstance());
     }
 
     /**
@@ -91,7 +88,7 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
                 String.valueOf(info.get("instructions")),
-                new DistanceCalculator());
+                new DistanceCalculatorFactory());
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }

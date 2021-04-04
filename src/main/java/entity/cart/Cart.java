@@ -13,13 +13,20 @@ import entity.media.Media;
  * Cac phuong thuc deu su dung chung data la lstCartItem
  * va deu lien quan den chuc nang lien quan den cart
  * */
+/**
+ * Ap dung singleton
+ * Luu tru gio hang hien tai nen chi can khoi tao 1 lan
+ * */
 public class Cart {
-    
-    private List<CartItem> lstCartItem;
-
-    public Cart() {
+    private static Cart cart;
+    private Cart(){
         lstCartItem = new ArrayList<>();
+    };
+    public static Cart getCartInstance(){
+        if (cart==null) cart = new Cart();
+        return cart;
     }
+    private List<CartItem> lstCartItem;
 
     public void addCartMedia(CartItem cm){
         lstCartItem.add(cm);

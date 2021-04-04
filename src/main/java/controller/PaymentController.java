@@ -8,6 +8,7 @@ import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
 import entity.cart.Cart;
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
@@ -32,7 +33,7 @@ public class PaymentController extends BaseController {
 	 * Represent the card used for payment
 	 */
 
-	private CreditCard card;
+	private Card card;
 
 	/**
 	 * Represent the Interbank subsystem
@@ -104,7 +105,7 @@ public class PaymentController extends BaseController {
 					getExpirationDate(expirationDate),
 					Integer.parseInt(securityCode));
 
-			this.interbank = new InterbankSubsystem();
+			this.interbank =  InterbankSubsystem.getInstance();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
@@ -116,6 +117,6 @@ public class PaymentController extends BaseController {
 	}
 
 	public void emptyCart(){
-        SessionInformation.cartInstance.emptyCart();
+        SessionInformation.getCartInstance().emptyCart();
     }
 }

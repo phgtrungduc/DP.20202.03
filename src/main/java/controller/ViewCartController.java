@@ -21,7 +21,7 @@ public class ViewCartController extends BaseController{
      * @throws SQLException
      */
     public void checkAvailabilityOfProduct() throws SQLException{
-        SessionInformation.cartInstance.checkAvailabilityOfProduct();
+        SessionInformation.getCartInstance().checkAvailabilityOfProduct();
     }
 
     /**
@@ -29,7 +29,7 @@ public class ViewCartController extends BaseController{
      * @return subtotal
      */
     public int getCartSubtotal(){
-        int subtotal = SessionInformation.cartInstance.calSubtotal();
+        int subtotal = SessionInformation.getCartInstance().calSubtotal();
         return subtotal;
     }
 

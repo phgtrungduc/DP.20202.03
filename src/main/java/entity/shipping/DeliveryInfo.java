@@ -11,20 +11,22 @@ public class DeliveryInfo {
     protected String address;
     protected String shippingInstructions;
 
+
+
+
     /**
      * SOLID: Vi phạm open/close vi khi thay doi phuong thuc thanh toan
      * can thay doi truc tiep class nay
      * Vi pham DIP: module muc cao phu thuoc module muc thap
      * */
-        protected DistanceCalculator distanceCalculator;
-
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+    protected DistanceCalculatorFactory distanceCalculatorFactory;
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculatorFactory distanceCalculatorFactory) {
         this.name = name;
         this.phone = phone;
         this.province = province;
         this.address = address;
         this.shippingInstructions = shippingInstructions;
-        this.distanceCalculator = distanceCalculator;
+        this.distanceCalculatorFactory = distanceCalculatorFactory;
     }
 
     /**
@@ -43,7 +45,7 @@ public class DeliveryInfo {
      * Phan tinh phi giao hang nen tach ra thanh class rieng
      * */
     public int calculateShippingFee(Order order) {
-        int distance = distanceCalculator.calculateDistance(address, province);
+        int distance = distanceCalculatorFactory.createDistanceCalculator().calculateDistance(address, province);
         return (int) (distance * 1.2);
     }
 

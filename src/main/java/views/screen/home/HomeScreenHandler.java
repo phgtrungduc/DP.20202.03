@@ -73,8 +73,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
         try {
-            setupData(null);
-            setupFunctionality();
+            this.setUp(null);
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
             PopupScreen.error("Error when loading resources.");
@@ -92,7 +91,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         return (HomeController) super.getBController();
     }
 
-    protected void setupData(Object dto) throws Exception {
+    public void setupData(Object dto) throws Exception {
         setBController(new HomeController());
         this.authenticationController = new AuthenticationController();
         try{
@@ -110,7 +109,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         }
     }
 
-    protected void setupFunctionality() throws Exception {
+    public void setupFunctionality() throws Exception {
 
         aimsImage.setOnMouseClicked(e -> {
             addMediaHome(this.homeItems);
@@ -144,7 +143,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             btnLogin.setOnMouseClicked(event -> {});
         }
 
-        numMediaInCart.setText(String.valueOf(SessionInformation.cartInstance.getListMedia().size()) + " media");
+        numMediaInCart.setText(String.valueOf(SessionInformation.getCartInstance().getListMedia().size()) + " media");
         super.show();
     }
 
@@ -219,7 +218,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
         try {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
-            Cart cart = SessionInformation.cartInstance;
+            Cart cart = SessionInformation.getCartInstance();
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
             CartItem mediaInCart = getBController().checkMediaInCart(media);
             if (mediaInCart != null) {

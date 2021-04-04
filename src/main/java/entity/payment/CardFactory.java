@@ -1,7 +1,5 @@
 package entity.payment;
 
-public class CardFactory {
-    public Card createCard(){
-        return new Card();
-    }
+public interface CardFactory {
+    public Card createCard();
 }

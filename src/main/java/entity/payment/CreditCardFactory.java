@@ -1,8 +1,8 @@
 package entity.payment;
 
-public class CreditCardFactory extends CardFactory{
-//    @Override
-//    public Card createCard() {
-//        return new CreditCard();
-//    }
+public class CreditCardFactory implements CardFactory{
+    @Override
+    public Card createCard() {
+        return null;
+    }
 }

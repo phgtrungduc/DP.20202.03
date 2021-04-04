@@ -2,9 +2,9 @@ package entity.shipping;
 
 import org.example.DistanceCalculator;
 
-public class AltDistanceAPIFactory extends DistanceFactory {
+public class AltDistanceAPIFactory implements DistanceFactory {
     @Override
     public DistanceCalculator createDistanceCalculator() {
-        return super.createDistanceCalculator();//cho nay thay bang return new AltDistanceAPI();
+        return null;//cho nay thay bang return new AltDistanceAPI();
     }
 }

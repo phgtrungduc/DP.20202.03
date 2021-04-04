@@ -1,8 +1,8 @@
 package entity.payment;
 
-public class DomesticCardFactory extends CardFactory{
+public class DomesticCardFactory implements CardFactory{
     @Override
     public Card createCard() {
-        return super.createCard(); // return new
+        return null; // return new
     }
 }

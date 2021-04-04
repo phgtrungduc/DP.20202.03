@@ -66,13 +66,13 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	protected void setupData(Object dto) throws Exception {
+	public void setupData(Object dto) throws Exception {
 		this.order = (Order) dto;
 		this.province.getItems().addAll(ShippingConfigs.PROVINCES);
 		this.province.getSelectionModel().select(ShippingConfigs.RUSH_SUPPORT_PROVINCES_INDEX[0]);
 	}
 
-	protected void setupFunctionality() throws Exception {
+	public void setupFunctionality() throws Exception {
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 		name.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
 			if(newValue && firstTime.get()){

@@ -7,11 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import common.exception.MediaNotAvailableException;
 import common.interfaces.Observable;
 import common.interfaces.Observer;
-import entity.cart.Cart;
-import entity.cart.CartItem;
 import entity.media.Media;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,9 +20,9 @@ import javafx.scene.image.ImageView;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
-import views.screen.popup.PopupScreen;
+//Doi ten tu MediaHandler thanh HomeMediaHandler de ro nghia class dung trong package home
 
-public class MediaHandler extends FXMLScreenHandler implements Observable {
+public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
 
     @FXML
     protected ImageView mediaImage;
@@ -45,11 +42,11 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
     @FXML
     protected Button addToCartBtn;
 
-    private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
+    private static Logger LOGGER = Utils.getLogger(HomeMediaHandler.class.getName());
     private Media media;
     private List<Observer> observerList;
 
-    public MediaHandler(String screenPath, Media media) throws SQLException, IOException{
+    public HomeMediaHandler(String screenPath, Media media) throws SQLException, IOException{
         super(screenPath);
         this.media = media;
         this.observerList = new ArrayList<>();

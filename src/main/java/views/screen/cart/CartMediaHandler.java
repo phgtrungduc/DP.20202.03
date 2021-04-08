@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 import common.exception.MediaUpdateException;
 import common.exception.ViewCartException;
 import controller.SessionInformation;
-import entity.cart.Cart;
 import entity.cart.CartItem;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -24,10 +23,10 @@ import javafx.scene.layout.VBox;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
+//Doi ten tu MediaHandler thanh CartMediaHandler de ro nghia class dung trong package cart
+public class CartMediaHandler extends FXMLScreenHandler {
 
-public class MediaHandler extends FXMLScreenHandler {
-
-	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
+	private static Logger LOGGER = Utils.getLogger(CartMediaHandler.class.getName());
 
 	@FXML
 	protected HBox hboxMedia;
@@ -60,7 +59,7 @@ public class MediaHandler extends FXMLScreenHandler {
 	private Spinner<Integer> spinner;
 	private CartScreenHandler cartScreen;
 
-	public MediaHandler(String screenPath, CartScreenHandler cartScreen) throws IOException {
+	public CartMediaHandler(String screenPath, CartScreenHandler cartScreen) throws IOException {
 		super(screenPath);
 		this.cartScreen = cartScreen;
 		hboxMedia.setAlignment(Pos.CENTER);

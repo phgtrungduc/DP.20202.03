@@ -2,13 +2,10 @@ package views.screen.home;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
@@ -20,7 +17,6 @@ import entity.cart.Cart;
 import entity.cart.CartItem;
 import entity.media.Media;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -76,10 +72,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             this.setUp(null);
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
-            PopupScreen.error("Error when loading resources.");
+            PopupScreen.showErrorPopup("Error when loading resources.");
         } catch (Exception ex) {
             LOGGER.info(ex.getMessage());
-            PopupScreen.error(ex.getMessage());
+            PopupScreen.showErrorPopup(ex.getMessage());
         }
     }
 
@@ -99,7 +95,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             this.homeItems = new ArrayList<>();
             for (Object object : medium) {
                 Media media = (Media)object;
-                MediaHandler m = new MediaHandler(ViewsConfig.HOME_MEDIA_PATH, media);
+                HomeMediaHandler m = new HomeMediaHandler(ViewsConfig.HOME_MEDIA_PATH, media);
                 m.attach(this);
                 this.homeItems.add(m);
             }
@@ -169,7 +165,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
                 int vid = hboxMedia.getChildren().indexOf(node);
                 VBox vBox = (VBox) node;
                 while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
-                    MediaHandler media = (MediaHandler) mediaItems.get(0);
+                    HomeMediaHandler media = (HomeMediaHandler) mediaItems.get(0);
                     vBox.getChildren().add(media.getContent());
                     mediaItems.remove(media);
                 }
@@ -195,7 +191,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             // filter only media with the choosen category
             List filteredItems = new ArrayList<>();
             homeItems.forEach(me -> {
-                MediaHandler media = (MediaHandler) me;
+                HomeMediaHandler media = (HomeMediaHandler) me;
                 if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){
                     filteredItems.add(media);
                 }
@@ -209,10 +205,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     @Override
     public void update(Observable observable) {
-        if (observable instanceof MediaHandler) update((MediaHandler) observable);
+        if (observable instanceof HomeMediaHandler) update((HomeMediaHandler) observable);
     }
 
-    private void update(MediaHandler mediaHandler) {
+    private void update(HomeMediaHandler mediaHandler) {
         int requestQuantity = mediaHandler.getRequestQuantity();
         Media media = mediaHandler.getMedia();
 
@@ -232,12 +228,12 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             // subtract the quantity and redisplay
             media.setQuantity(media.getQuantity() - requestQuantity);
             numMediaInCart.setText(cart.getTotalMedia() + " media");
-            PopupScreen.success("The media " + media.getTitle() + " added to Cart");
+            PopupScreen.showSuccessPopup("The media " + media.getTitle() + " added to Cart");
         } catch (MediaNotAvailableException exp) {
             try {
                 String message = "Not enough media:\nRequired: " + requestQuantity + "\nAvail: " + media.getQuantity();
                 LOGGER.severe(message);
-                PopupScreen.error(message);
+                PopupScreen.showErrorPopup(message);
             } catch (Exception e) {
                 LOGGER.severe("Cannot add media to cart: ");
             }
@@ -257,7 +253,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             loginScreen.show();
         } catch (Exception ex) {
             try {
-                PopupScreen.error("Cant trigger Login");
+                PopupScreen.showErrorPopup("Cant trigger Login");
             } catch (Exception ex1) {
                 LOGGER.severe("Cannot login");
                 ex.printStackTrace();

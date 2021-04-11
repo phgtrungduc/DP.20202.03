@@ -51,6 +51,8 @@ public class PopupScreen extends BaseScreenHandler {
         super.setImage(icon, path);
     }
 
+    // Khong ro gia tri hang so 0.8
+
     public void show(Boolean autoClose) {
         super.show();
         if (autoClose) close(0.8);

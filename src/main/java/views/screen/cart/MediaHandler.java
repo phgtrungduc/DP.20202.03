@@ -70,13 +70,13 @@ public class MediaHandler extends FXMLScreenHandler {
 		this.cartItem = cartItem;
 		setMediaInfo();
 	}
-
+	// Sua ten bien la img lien quan den hinh anh thong nhat tren he thong
 	private void setMediaInfo() {
 		title.setText(cartItem.getMedia().getTitle());
 		price.setText(ViewsConfig.getCurrencyFormat(cartItem.getPrice()));
 		File file = new File(cartItem.getMedia().getImageURL());
-		Image im = new Image(file.toURI().toString());
-		image.setImage(im);
+		Image img = new Image(file.toURI().toString());
+		image.setImage(img);
 		image.setPreserveRatio(false);
 		image.setFitHeight(110);
 		image.setFitWidth(92);

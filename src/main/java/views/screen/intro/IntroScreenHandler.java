@@ -40,7 +40,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
         }
     }
 
-
+    // Su dung ten dto chua ro y nghia
     protected void setupData(Object dto) throws Exception {
         return;
     }

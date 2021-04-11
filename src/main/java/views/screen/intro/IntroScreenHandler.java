@@ -22,7 +22,6 @@ public class IntroScreenHandler extends BaseScreenHandler {
 
     public IntroScreenHandler(Stage stage, String screenPath) throws IOException {
         super(stage, screenPath);
-
         try {
             this.setUp(null);
         } catch (IOException ex) {

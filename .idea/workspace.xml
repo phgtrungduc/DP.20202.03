@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/media/AudioBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/payment/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/payment/DomesticCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/AltDistanceCalculate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/AltDistanceCalculateFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfoWithDimension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DistanceCalculatorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/payment/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/payment/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/InterbankInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/InterbankInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankPayloadConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankPayloadConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankSubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankSubsystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/BaseScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/BaseScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/cart/CartScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/cart/CartScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/home/LoginScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/home/LoginScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/intro/IntroScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/intro/IntroScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/invoice/InvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/invoice/InvoiceScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/ResultScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/popup/PopupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/popup/PopupScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +51,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/JavaFx/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -108,11 +79,12 @@
       <option name="presentableId" value="Default" />
       <updated>1614845566093</updated>
       <workItem from="1614845569374" duration="48000" />
+      <workItem from="1618124541533" duration="569000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

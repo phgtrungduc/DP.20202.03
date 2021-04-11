@@ -95,7 +95,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		InvoiceScreenHandler.setPreviousScreen(this);
 		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
 		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-		InvoiceScreenHandler.setBController(getBaseController());
+		InvoiceScreenHandler.setBaseController(getBaseController());
 		InvoiceScreenHandler.show();
 	}
 

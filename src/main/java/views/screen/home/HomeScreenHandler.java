@@ -92,7 +92,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     }
 
     public void setupData(Object dto) throws Exception {
-        setBController(new HomeController());
+        setBaseController(new HomeController());
         this.authenticationController = new AuthenticationController();
         try{
             List medium = getBaseontroller().getAllMedia();
@@ -121,7 +121,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
                 LOGGER.info("User clicked to view cart");
                 cartScreen = new CartScreenHandler(this.stage, ViewsConfig.CART_SCREEN_PATH);
                 cartScreen.setHomeScreenHandler(this);
-                cartScreen.setBController(new ViewCartController());
+                cartScreen.setBaseController(new ViewCartController());
                 cartScreen.requestToViewCart(this);
             } catch (IOException | SQLException e1) {
                 throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
@@ -253,7 +253,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         try {
             BaseScreenHandler loginScreen = new LoginScreenHandler(this.stage, ViewsConfig.LOGIN_SCREEN_PATH);
             loginScreen.setHomeScreenHandler(this);
-            loginScreen.setBController(this.authenticationController);
+            loginScreen.setBaseController(this.authenticationController);
             loginScreen.show();
         } catch (Exception ex) {
             try {

@@ -46,7 +46,8 @@ public class AuthenticationController extends BaseController {
             User user = new UserDAO().authenticate(email, md5(password));
             if (Objects.isNull(user)) throw new FailLoginException();
             SessionInformation.mainUser = user;
-            SessionInformation.expiredTime = LocalDateTime.now().plusHours(24);
+            long timeExpire = 24;
+            SessionInformation.expiredTime = LocalDateTime.now().plusHours(timeExpire);
         } catch (SQLException ex) {
             throw new FailLoginException();
         }
@@ -67,8 +68,8 @@ public class AuthenticationController extends BaseController {
     private String md5(String message) {
         String digest = null;
         try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] hash = md.digest(message.getBytes(StandardCharsets.UTF_8));
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            byte[] hash = md5.digest(message.getBytes(StandardCharsets.UTF_8));
             // converting byte array to Hexadecimal String
             StringBuilder sb = new StringBuilder(2 * hash.length);
             for (byte b : hash) {

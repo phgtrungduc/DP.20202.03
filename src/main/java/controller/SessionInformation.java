@@ -24,7 +24,7 @@ public class SessionInformation {
 
 
     public static User mainUser;
-    private static Cart cartInstance = null;
+    public static Cart cartInstance = Cart.getInstance();
     public static LocalDateTime expiredTime;
 
     public static Cart getCartInstance() {

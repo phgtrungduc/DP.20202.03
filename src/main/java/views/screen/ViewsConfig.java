@@ -26,11 +26,15 @@ public class ViewsConfig {
     public static final String HOME_PATH  = "/views/fxml/home.fxml";
     public static final String HOME_MEDIA_PATH = "/views/fxml/media_home.fxml";
     public static final String POPUP_PATH = "/views/fxml/popup.fxml";
+    public static final long serialVersionUID = 1091337136123906298L;
 
     public static float PERCENT_VAT = 10;
-
-    public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, 24);
-
+    private static float FONT_SIZE = 24;
+    public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, FONT_SIZE);
+    /**
+     *
+     * coincidental cohesion vi function khong lien quan gi den chuc nang cua class
+     */
     public static String getCurrencyFormat(int num) {
         Locale vietnam = new Locale("vi", "VN");
         NumberFormat defaultFormat = NumberFormat.getCurrencyInstance(vietnam);

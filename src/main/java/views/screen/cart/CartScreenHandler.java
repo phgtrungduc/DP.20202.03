@@ -166,7 +166,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		List lstMedia = getBaseController().getListCartMedia();
 
 		try {
-			for (Object cm : lstMedia) {
+			for (Object cartMedia : listCartMedia) {
 
 				// display the attribute of vboxCart media
 				CartItem cartItem = (CartItem) cm;

@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 /**
- * The {@link MyMap JSON} class represents JSON objects.
+ * The {@link MapData JSON} class represents JSON objects.
  * To create a new JSON object,
  * JSON jsonObject = new JSON();
  * jsonObject.put("key", value);
@@ -12,7 +12,7 @@ import java.util.*;
  * @author hieud
  *
  */
-public class MyMap extends LinkedHashMap<String, Object> {
+public class MapData extends LinkedHashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -22,7 +22,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	 *         https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/Hashtable.java
 	 * @return a {@link String String}.
 	 */
-	public String toJSON() {
+	public String convertMapDataToJSONObject() {
 		int max = size() - 1;
 		if (max == -1)
 			return "{}";
@@ -37,10 +37,10 @@ public class MyMap extends LinkedHashMap<String, Object> {
 			Object value = e.getValue();
 			sb.append('"' + key.toString() + '"');
 			sb.append(':');
-			sb.append(value instanceof MyMap ? ((MyMap) value).toJSON() : ('"' + value.toString() + '"'));
+			sb.append(value instanceof MapData ? ((MapData) value).toJSON() : ('"' + value.toString() + '"'));
 
-//			if (value instanceof MyMap) {
-//				sb.append(((MyMap) value).toJSON());
+//			if (value instanceof MapData) {
+//				sb.append(((MapData) value).toJSON());
 //			} else {
 //				sb.append('"' + value.toString() + '"');
 //			}
@@ -62,8 +62,8 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	 * @throws IllegalAccessException
 	 * @throws IllegalArgumentException
 	 */
-	public static Map<String, Object> toMyMap(Object obj) throws IllegalArgumentException, IllegalAccessException {
-		Map<String, Object> map = new MyMap();
+	public static Map<String, Object> convertObjectToMapData(Object obj) throws IllegalArgumentException, IllegalAccessException {
+		Map<String, Object> map = new MapData();
 		List<Field> fields = new ArrayList<>();
 		fields.addAll(Arrays.asList(obj.getClass().getDeclaredFields()));
 		fields.addAll(Arrays.asList(obj.getClass().getSuperclass().getDeclaredFields()));
@@ -73,7 +73,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 			Object value = field.get(obj);
 			try {
 				if (!value.getClass().getPackage().getName().startsWith("java")) {
-					value = MyMap.toMyMap(value).toString();
+					value = MapData.convertObjectToMapData(value).toString();
 				}
 			} catch (Exception ex) {
 				;
@@ -121,23 +121,23 @@ public class MyMap extends LinkedHashMap<String, Object> {
 		return sb.toString();
 	}
 	/**
-	 * Return a {@link MyMap MyMap} that represents the interested substring in a {@link String String}.
+	 * Return a {@link MapData MapData} that represents the interested substring in a {@link String String}.
 	 * 
 	 * @author hieudm
 	 * @param 
 	 * str - {@link String String}
 	 * idx - the index of the first character in the interested substring in the {@link String String}
-	 * @return the term as {@link MyMap MyMap}
+	 * @return the term as {@link MapData MapData}
 	 * @throws IllegalArgumentException
 	 */
-	public static MyMap toMyMap(String str, int idx) throws IllegalArgumentException {
+	public static MapData convertObjectToMapDataStartedAtIndex(String str, int idx) throws IllegalArgumentException {
 		if (str == null || str.length() < 2 || str.charAt(idx) != '{') {
 			throw new IllegalArgumentException("Cannot resolve the input.");
 		} else if (idx >= str.length()) {
 			return null;
 		}
 
-		MyMap root = new MyMap();
+		MapData root = new MapData();
 		StringBuilder sb = new StringBuilder();
 		int i = idx;
 		sb.append(str.charAt(i));
@@ -174,7 +174,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 				// get value
 				Object value;
 				if (str.charAt(i) == '{') {
-					value = toMyMap(str, i);
+					value = convertObjectToMapDataStartedAtIndex(str, i);
 					sb.append(str.subSequence(i, i + offset));
 					i += offset;
 					offset = 0;

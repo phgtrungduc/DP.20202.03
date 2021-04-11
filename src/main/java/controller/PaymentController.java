@@ -57,6 +57,7 @@ public class PaymentController extends BaseController {
 	 * ham nay khong lien quan den chuc nang cua cac ham khac
 	 * va klq den chuc nang cua class nay
 	 * */
+//	strs
 	private String getExpirationDate(String date) throws InvalidCardException {
 		String[] strs = date.split("/");
 		if (strs.length != 2) {

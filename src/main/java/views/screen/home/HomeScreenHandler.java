@@ -87,15 +87,15 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         return this.numMediaInCart;
     }
 
-    public HomeController getBController() {
-        return (HomeController) super.getBController();
+    public HomeController getBaseController() {
+        return (HomeController) super.getBaseController();
     }
 
     public void setupData(Object dto) throws Exception {
         setBController(new HomeController());
         this.authenticationController = new AuthenticationController();
         try{
-            List medium = getBController().getAllMedia();
+            List medium = getBaseontroller().getAllMedia();
             this.homeItems = new ArrayList<>();
             for (Object object : medium) {
                 Media media = (Media)object;
@@ -220,7 +220,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
             Cart cart = SessionInformation.getCartInstance();
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
-            CartItem mediaInCart = getBController().checkMediaInCart(media);
+            CartItem mediaInCart = getBaseController().checkMediaInCart(media);
             if (mediaInCart != null) {
                 mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);
             } else {

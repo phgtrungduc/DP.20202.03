@@ -96,14 +96,14 @@ public class CartScreenHandler extends BaseScreenHandler {
 		});
 	}
 
-	public ViewCartController getBController(){
-		return (ViewCartController) super.getBController();
+	public ViewCartController getBaseController(){
+		return (ViewCartController) super.getBaseController();
 	}
 
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
-		getBController().checkAvailabilityOfProduct();
+		getBaseController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 		show();
 	}
@@ -141,13 +141,13 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	public void updateCart() throws SQLException{
-		getBController().checkAvailabilityOfProduct();
+		getBaseController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
 
 	void updateCartAmount(){
 		// calculate subtotal and amount
-		int subtotal = getBController().getCartSubtotal();
+		int subtotal = getBaseController().getCartSubtotal();
 		int vat = (int)((ViewsConfig.PERCENT_VAT/100)*subtotal);
 		int amount = subtotal + vat;
 		LOGGER.info("amount" + amount);
@@ -163,7 +163,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		vboxCart.getChildren().clear();
 
 		// get list media of cart after check availability
-		List lstMedia = getBController().getListCartMedia();
+		List lstMedia = getBaseController().getListCartMedia();
 
 		try {
 			for (Object cm : lstMedia) {

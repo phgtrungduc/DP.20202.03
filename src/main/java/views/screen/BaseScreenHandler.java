@@ -23,7 +23,7 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	protected final Stage stage;
 	protected HomeScreenHandler homeScreenHandler;
 	protected Hashtable<String, String> messages;
-	private BaseController bController;
+	private BaseController baseController;
 
 	/**
 	 * Template Method
@@ -61,12 +61,12 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.stage.setTitle(string);
 	}
 
-	public void setBController(BaseController bController){
-		this.bController = bController;
+	public void setBaseController(BaseController baseController){
+		this.baseController = baseController;
 	}
 
-	public BaseController getBController(){
-		return this.bController;
+	public BaseController getBaseController(){
+		return this.baseController;
 	}
 
 	public void forward(Hashtable messages) {

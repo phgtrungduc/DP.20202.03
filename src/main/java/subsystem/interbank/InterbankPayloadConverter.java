@@ -4,7 +4,7 @@ import common.exception.*;
 import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
-import utils.MyMap;
+import utils.MapData;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,10 +24,10 @@ public class InterbankPayloadConverter {
      * @return
      */
     String convertToRequestPayload(Card card, int amount, String contents) {
-        Map<String, Object> transaction = new MyMap();
+        Map<String, Object> transaction = new MapData();
 
         try {
-            transaction.putAll(MyMap.toMyMap(card));
+            transaction.putAll(MapData.convertObjectToMapData(card));
         } catch (IllegalArgumentException | IllegalAccessException e) {
             // TODO Auto-generated catch block
             throw new InvalidCardException();
@@ -37,11 +37,11 @@ public class InterbankPayloadConverter {
         transaction.put("amount", amount);
         transaction.put("createdAt", getToday());
 
-        Map<String, Object> requestMap = new MyMap();
+        Map<String, Object> requestMap = new MapData();
         requestMap.put("version", InterbankConfigs.VERSION);
         requestMap.put("transaction", transaction);
 
-        return ((MyMap) requestMap).toJSON();
+        return ((MapData) requestMap).toJSON();
     }
 
     /**
@@ -50,11 +50,11 @@ public class InterbankPayloadConverter {
      * @return
      */
     PaymentTransaction extractPaymentTransaction(String responseText) {
-        MyMap response = convertJSONResponse(responseText);
+        MapData response = convertJSONResponse(responseText);
 
         if (response == null)
             return null;
-        MyMap transaction = (MyMap) response.get("transaction");
+            MapData transaction = (MapData) response.get("transaction");
         CreditCard card = new CreditCard(
                 (String) transaction.get("cardCode"),
                 (String) transaction.get("owner"),
@@ -98,10 +98,10 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
-    private MyMap convertJSONResponse(String responseText) {
-        MyMap response = null;
+    private MapData convertJSONResponse(String responseText) {
+        MapData response = null;
         try {
-            response = MyMap.toMyMap(responseText, 0);
+            response = MapData.convertObjectToMapDataStartedAtIndex(responseText, 0);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             throw new UnrecognizedException();

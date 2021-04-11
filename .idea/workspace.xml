@@ -59,7 +59,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/distance-api-1.0-SNAPSHOT.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.3812424" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RunManager">
@@ -84,11 +84,12 @@
       <option name="presentableId" value="Default" />
       <updated>1614845566093</updated>
       <workItem from="1614845569374" duration="48000" />
+      <workItem from="1618124541533" duration="3334000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

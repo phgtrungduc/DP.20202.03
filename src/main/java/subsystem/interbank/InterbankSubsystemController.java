@@ -1,7 +1,10 @@
 package subsystem.interbank;
 
 import entity.payment.Card;
+<<<<<<< HEAD
 import entity.payment.CreditCard;
+=======
+>>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 import entity.payment.PaymentTransaction;
 
 

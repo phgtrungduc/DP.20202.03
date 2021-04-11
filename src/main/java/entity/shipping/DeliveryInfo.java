@@ -1,6 +1,8 @@
 package entity.shipping;
 
+
 import entity.order.Order;
+<<<<<<< HEAD
 import org.example.DistanceCalculator;
 
 public class DeliveryInfo {
@@ -68,4 +70,19 @@ public class DeliveryInfo {
     public String getShippingInstructions() {
         return shippingInstructions;
     }
+=======
+
+public abstract class DeliveryInfo {
+    public abstract String getName();
+
+    public abstract String getPhone();
+
+    public abstract String getProvince();
+
+    public abstract String getAddress();
+
+    public abstract String getShippingInstructions();
+
+    public abstract  int calculateShippingFee(Order order);
+>>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 }

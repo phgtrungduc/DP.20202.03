@@ -7,7 +7,10 @@ import java.util.Map;
 import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
+<<<<<<< HEAD
 import entity.cart.Cart;
+=======
+>>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
@@ -32,7 +35,10 @@ public class PaymentController extends BaseController {
 	/**
 	 * Represent the card used for payment
 	 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 	private Card card;
 
 	/**

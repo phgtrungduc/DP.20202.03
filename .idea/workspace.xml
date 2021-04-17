@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5465a18-eec6-4dc0-a46e-87268bf7ca3a" name="Default Changelist" comment="" />
+    <list default="true" id="a5465a18-eec6-4dc0-a46e-87268bf7ca3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ApplicationProgrammingInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ApplicationProgrammingInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MyMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qe5CFhzHyrXABCglJPiFovs0cd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DP.20202.03" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4045977" />
@@ -49,5 +62,8 @@
       <updated>1617427086429</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

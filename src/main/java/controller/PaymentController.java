@@ -37,35 +37,43 @@ public class PaymentController extends BaseController {
 	 * Validate the input date which should be in the format "mm/yy", and then
 	 * return a {@link String String} representing the date in the
 	 * required format "mmyy" .
-	 * 
-	 * @param date - the {@link String String} represents the input date
+	 *
 	 * @return {@link String String} - date representation of the required
 	 *         format
 	 * @throws InvalidCardException - if the string does not represent a valid date
 	 *                              in the expected format
 	 */
+	private boolean isMonth(int month) {
+		if (month < 1 || month > 12)
+			return false;
+		return true;
+	}
+
+	private boolean isYear(int year) {
+		int currentYear = Calendar.getInstance().get(Calendar.YEAR) % 100;
+		int maxYear = 100;
+		if (year < currentYear || year > maxYear) {
+			return false;
+		}
+		return true;
+	}
+
+	//sua doi bieu thuc dieu kien thanh cac method lam ro y nghia cua dieu kien
 	private String getExpirationDate(String date) throws InvalidCardException {
-		String[] strs = date.split("/");
-		if (strs.length != 2) {
+		String[] stringDate = date.split("/");
+
+		if (stringDate.length != 2) {
 			throw new InvalidCardException();
 		}
 
 		String expirationDate = null;
-		int month = -1;
-		int year = -1;
+		int month = Integer.parseInt(stringDate[0]);
+		int year = Integer.parseInt(stringDate[1]);
 
-		try {
-			month = Integer.parseInt(strs[0]);
-			year = Integer.parseInt(strs[1]);
-			if (month < 1 || month > 12 || year < Calendar.getInstance().get(Calendar.YEAR) % 100 || year > 100) {
-				throw new InvalidCardException();
-			}
-			expirationDate = strs[0] + strs[1];
-
-		} catch (Exception ex) {
+		if (!isMonth(month) || !isYear(year)) {
 			throw new InvalidCardException();
 		}
-
+		expirationDate = stringDate[0] + stringDate[1];
 		return expirationDate;
 	}
 
@@ -74,23 +82,15 @@ public class PaymentController extends BaseController {
 	 * 
 	 * @param amount         - the amount to pay
 	 * @param contents       - the transaction contents
-	 * @param cardNumber     - the card number
-	 * @param cardHolderName - the card holder name
-	 * @param expirationDate - the expiration date in the format "mm/yy"
-	 * @param securityCode   - the cvv/cvc code of the credit card
 	 * @return {@link Map Map} represent the payment result with a
 	 *         message.
 	 */
-	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
-			String expirationDate, String securityCode) {
+	//qua nhieu tham so truyen vao cho payOrder, dong goi lai va truyen vao 1 object
+	public Map<String, String> payOrder(int amount, String contents, CreditCard creditCard) {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
-			this.card = new CreditCard(
-					cardNumber,
-					cardHolderName,
-					getExpirationDate(expirationDate),
-					Integer.parseInt(securityCode));
+			this.card = creditCard;
 
 			this.interbank = new InterbankSubsystem();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);

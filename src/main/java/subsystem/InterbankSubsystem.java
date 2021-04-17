@@ -11,7 +11,7 @@ import subsystem.interbank.InterbankSubsystemController;
  * @author hieud
  *
  */
-public class git InterbankSubsystem implements InterbankInterface {
+public class InterbankSubsystem implements InterbankInterface {
 
 	/**
 	 * Represent the controller of the subsystem

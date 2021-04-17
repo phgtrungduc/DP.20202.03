@@ -87,10 +87,15 @@ public class PlaceOrderController extends BaseController {
         || validateAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
+
+    //thay cac bien so, string bang mot hang mang thong tin y nghia
+    private static final int PHONE_LENGTH  = 10;
+    private static final String PATTERN_STRING =  "^[a-zA-Z\\s]*$";
+    private static final String START_NUMBER_PHONE = "0";
     
     public boolean validatePhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() != 10) return false;
-        if (!phoneNumber.startsWith("0")) return false;
+        if (phoneNumber.length() != PHONE_LENGTH) return false;
+        if (!phoneNumber.startsWith(START_NUMBER_PHONE)) return false;
         try {
             Integer.parseInt(phoneNumber);
         } catch (NumberFormatException e) {
@@ -101,16 +106,14 @@ public class PlaceOrderController extends BaseController {
     
     public boolean validateName(String name) {
         if (Objects.isNull(name)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
+        Pattern pattern = Pattern.compile(PATTERN_STRING);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
     
     public boolean validateAddress(String address) {
         if (Objects.isNull(address)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
+        Pattern pattern = Pattern.compile(PATTERN_STRING);
         Matcher matcher = pattern.matcher(address);
         return matcher.matches();
     }

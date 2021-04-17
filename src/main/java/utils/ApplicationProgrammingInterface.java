@@ -25,7 +25,6 @@ public class ApplicationProgrammingInterface {
 	public static String get(String url, String token) throws Exception {
 		LOGGER.info("Request URL: " + url + "\n");
 		HttpURLConnection conn = setupConnection(url);
-
 		conn.setRequestMethod("GET");
 		conn.setRequestProperty("Authorization", "Bearer " + token);
 		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));

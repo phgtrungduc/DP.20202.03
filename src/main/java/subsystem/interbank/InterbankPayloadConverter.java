@@ -1,10 +1,9 @@
 package subsystem.interbank;
 
 import common.exception.*;
-import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
-import utils.MapData;
+import utils.MyMap;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,11 +22,11 @@ public class InterbankPayloadConverter {
      * @param contents
      * @return
      */
-    String convertToRequestPayload(Card card, int amount, String contents) {
-        Map<String, Object> transaction = new MapData();
+    String convertToRequestPayload(CreditCard card, int amount, String contents) {
+        Map<String, Object> transaction = new MyMap();
 
         try {
-            transaction.putAll(MapData.convertObjectToMapData(card));
+            transaction.putAll(MyMap.toMyMap(card));
         } catch (IllegalArgumentException | IllegalAccessException e) {
             // TODO Auto-generated catch block
             throw new InvalidCardException();
@@ -37,11 +36,11 @@ public class InterbankPayloadConverter {
         transaction.put("amount", amount);
         transaction.put("createdAt", getToday());
 
-        Map<String, Object> requestMap = new MapData();
+        Map<String, Object> requestMap = new MyMap();
         requestMap.put("version", InterbankConfigs.VERSION);
         requestMap.put("transaction", transaction);
 
-        return ((MapData) requestMap).toJSON();
+        return ((MyMap) requestMap).toJSON();
     }
 
     /**
@@ -50,11 +49,11 @@ public class InterbankPayloadConverter {
      * @return
      */
     PaymentTransaction extractPaymentTransaction(String responseText) {
-        MapData response = convertJSONResponse(responseText);
+        MyMap response = convertJSONResponse(responseText);
 
         if (response == null)
             return null;
-            MapData transaction = (MapData) response.get("transaction");
+        MyMap transaction = (MyMap) response.get("transaction");
         CreditCard card = new CreditCard(
                 (String) transaction.get("cardCode"),
                 (String) transaction.get("owner"),
@@ -98,10 +97,10 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
-    private MapData convertJSONResponse(String responseText) {
-        MapData response = null;
+    private MyMap convertJSONResponse(String responseText) {
+        MyMap response = null;
         try {
-            response = MapData.convertObjectToMapDataStartedAtIndex(responseText, 0);
+            response = MyMap.toMyMap(responseText, 0);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             throw new UnrecognizedException();
@@ -115,12 +114,6 @@ public class InterbankPayloadConverter {
      * @author hieudm
      * @return the current time as {@link String String}.
      */
-
-
-    /**
-     * Coincidental Cohesion
-     * Hàm này đang thức hiện chức năng không liên quan đến tất cả các hàm còn lại
-     * */
     private String getToday() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();

@@ -2,31 +2,19 @@
   <library name="Maven: junit:junit:4.13">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.media.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.fxml.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.controls.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.base.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx-swt.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/win/javafx-sdk-15/lib" />
       <root url="jar://$PROJECT_DIR$/lib/distance-api-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-sources.jar!/" />
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/lib/win/javafx-sdk-15/lib" />
       <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
     </SOURCES>
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" />
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" />
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/win/javafx-sdk-15/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/win/javafx-sdk-15/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

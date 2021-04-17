@@ -7,11 +7,7 @@ import java.util.Map;
 import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
-<<<<<<< HEAD
 import entity.cart.Cart;
-=======
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
-import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
@@ -25,21 +21,12 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
-
-/**
- * SOLID: Vi pham nguyen ly OCP : khi thay doi phuong thuc thanh toan phai thay doi code cua class nay
- * Vi Pham nguyen ly: DIP : Phu thuoc truc tiep vao CreditCard khong qua mot module abstract
- * */
 public class PaymentController extends BaseController {
 
 	/**
 	 * Represent the card used for payment
 	 */
-<<<<<<< HEAD
-
-=======
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
-	private Card card;
+	private CreditCard card;
 
 	/**
 	 * Represent the Interbank subsystem
@@ -57,13 +44,6 @@ public class PaymentController extends BaseController {
 	 * @throws InvalidCardException - if the string does not represent a valid date
 	 *                              in the expected format
 	 */
-
-	/**
-	 * Coincidental Conhesion
-	 * ham nay khong lien quan den chuc nang cua cac ham khac
-	 * va klq den chuc nang cua class nay
-	 * */
-//	strs
 	private String getExpirationDate(String date) throws InvalidCardException {
 		String[] strs = date.split("/");
 		if (strs.length != 2) {
@@ -112,7 +92,7 @@ public class PaymentController extends BaseController {
 					getExpirationDate(expirationDate),
 					Integer.parseInt(securityCode));
 
-			this.interbank =  InterbankSubsystem.getInstance();
+			this.interbank = new InterbankSubsystem();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
@@ -124,6 +104,6 @@ public class PaymentController extends BaseController {
 	}
 
 	public void emptyCart(){
-        SessionInformation.getCartInstance().emptyCart();
+        SessionInformation.cartInstance.emptyCart();
     }
 }

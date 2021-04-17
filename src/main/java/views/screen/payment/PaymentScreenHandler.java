@@ -13,7 +13,6 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -48,7 +47,8 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		try {
-			this.setUp(null);
+			setupData(invoice);
+			setupFunctionality();
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.error("Error when loading resources.");
@@ -58,15 +58,15 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	public void setupData(Object dto) throws Exception {
+	protected void setupData(Object dto) throws Exception {
 		this.invoice = (Invoice) dto;
 	}
 
-	public void setupFunctionality() throws Exception {
+	protected void setupFunctionality() throws Exception {
 		btnConfirmPayment.setOnMouseClicked(e -> {
 			try {
 				confirmToPayOrder();
-				((PaymentController) getBaseController()).emptyCart();
+				((PaymentController) getBController()).emptyCart();
 			} catch (Exception exp) {
 				System.out.println(exp.getStackTrace());
 			}
@@ -75,7 +75,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
-		PaymentController ctrl = (PaymentController) getBaseController();
+		PaymentController ctrl = (PaymentController) getBController();
 		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents, cardNumber.getText(), holderName.getText(),
 				expirationDate.getText(), securityCode.getText());
 

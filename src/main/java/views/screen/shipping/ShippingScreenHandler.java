@@ -63,13 +63,13 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	public void setupData(Object dto) throws Exception {
+	protected void setupData(Object dto) throws Exception {
 		this.order = (Order) dto;
 		this.province.getItems().addAll(ShippingConfigs.PROVINCES);
 		this.province.getSelectionModel().select(ShippingConfigs.RUSH_SUPPORT_PROVINCES_INDEX[0]);
 	}
 
-	public void setupFunctionality() throws Exception {
+	protected void setupFunctionality() throws Exception {
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 		name.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
 			if(newValue && firstTime.get()){
@@ -87,12 +87,12 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		preprocessDeliveryInfo();
 		
 		// create invoice screen
-		Invoice invoice = getBaseController().createInvoice(order);
+		Invoice invoice = getBController().createInvoice(order);
 		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, ViewsConfig.INVOICE_SCREEN_PATH, invoice);
 		InvoiceScreenHandler.setPreviousScreen(this);
 		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
 		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-		InvoiceScreenHandler.setBaseController(getBaseController());
+		InvoiceScreenHandler.setBController(getBController());
 		InvoiceScreenHandler.show();
 	}
 
@@ -107,7 +107,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		DeliveryInfo deliveryInfo;
 		try {
 			// process and validate delivery info
-			deliveryInfo = getBaseController().processDeliveryInfo(messages);
+			deliveryInfo = getBController().processDeliveryInfo(messages);
 		} catch (InvalidDeliveryInfoException e) {
 			// TODO: implement pop up screen
 			throw new InvalidDeliveryInfoException(e.getMessage());
@@ -116,8 +116,8 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		order.setDeliveryInfo(deliveryInfo);
 	}
 
-	public PlaceOrderController getBaseController(){
-		return (PlaceOrderController) super.getBaseController();
+	public PlaceOrderController getBController(){
+		return (PlaceOrderController) super.getBController();
 	}
 
 	public void notifyError(){

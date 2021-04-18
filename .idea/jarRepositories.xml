@@ -9,7 +9,7 @@
     <remote-repository>
       <option name="id" value="local-maven-repo" />
       <option name="name" value="local-maven-repo" />
-      <option name="url" value="file:///D:\DP.20202.03/lib" />
+      <option name="url" value="file:///D:\DP-20202\DP.20202.03/lib" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -24,7 +24,7 @@
     <remote-repository>
       <option name="id" value="local-maven-repo" />
       <option name="name" value="local-maven-repo" />
-      <option name="url" value="file:////Users/thanhld/Documents/20202-TA Mẫu thiết kế phần mềm/dp-case-study/lib" />
+      <option name="url" value="file:///D:\DP-20202\Code\dp.20202.case-study/lib" />
     </remote-repository>
   </component>
 </project>

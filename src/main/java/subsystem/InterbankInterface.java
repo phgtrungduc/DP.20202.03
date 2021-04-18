@@ -2,11 +2,7 @@ package subsystem;
 
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
-import entity.payment.Card;
-<<<<<<< HEAD
 import entity.payment.CreditCard;
-=======
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 import entity.payment.PaymentTransaction;
 
 /**
@@ -16,10 +12,6 @@ import entity.payment.PaymentTransaction;
  * @author hieud
  * 
  */
-/**
- * SOLID: Vi pham OCP va DIP: phu thuoc truc tiep vao CreditCard
- * Thay doi phuong thuc thanh toan se phai thay doi code class nay
- * */
 public interface InterbankInterface {
 
 	/**
@@ -34,7 +26,7 @@ public interface InterbankInterface {
 	 * @throws UnrecognizedException if responded with an unknown error code or
 	 *                               something goes wrong
 	 */
-	public abstract PaymentTransaction payOrder(Card card, int amount, String contents)
+	public abstract PaymentTransaction payOrder(CreditCard card, int amount, String contents)
 			throws PaymentException, UnrecognizedException;
 
 	/**
@@ -49,7 +41,7 @@ public interface InterbankInterface {
 	 * @throws UnrecognizedException if responded with an unknown error code or
 	 *                               something goes wrong
 	 */
-	public abstract PaymentTransaction refund(Card card, int amount, String contents)
+	public abstract PaymentTransaction refund(CreditCard card, int amount, String contents)
 			throws PaymentException, UnrecognizedException;
 
 }

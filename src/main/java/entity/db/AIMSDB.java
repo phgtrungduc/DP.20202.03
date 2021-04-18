@@ -8,13 +8,8 @@ import java.util.logging.Logger;
 import java.sql.Connection;
 import utils.*;
 
-
-/**
- * Ap dung singleton
- * VI AIMDB nhiem vu la ket noi toi DB, connection chi nen khoi tao 1 lan
- * vi vay su dung o day la gi
- * */
 public class AIMSDB {
+
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());
 	private static Connection connect;
 	// TODO: refactor Utils -> limit connections

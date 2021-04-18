@@ -7,7 +7,6 @@ import java.util.logging.Logger;
 
 import controller.AuthenticationController;
 import controller.BaseController;
-import entity.invoice.Invoice;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,24 +17,15 @@ import views.screen.popup.PopupScreen;
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
+
+
 	private Scene scene;
 	private BaseScreenHandler prev;
 	protected final Stage stage;
 	protected HomeScreenHandler homeScreenHandler;
 	protected Hashtable<String, String> messages;
-	private BaseController baseController;
+	private BaseController bController;
 
-	/**
-	 * Template Method
-	 * Hau het cac sub class deu su dung hai ham setupData va setupFunctionality
-	 * nhung voi cac subclass khac nhau lai su dung chung 1 cach khac nhau
-	 * */
-	public final void setUp(Object dto) throws Exception{
-		this.setupData(dto);
-		this.setupFunctionality();
-	}
-	public abstract void setupData  (Object dto) throws Exception;
-	public  abstract  void setupFunctionality () throws Exception;
 	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(screenPath);
 		this.stage = stage;
@@ -63,12 +53,12 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.stage.setTitle(string);
 	}
 
-	public void setBaseController(BaseController baseController){
-		this.baseController = baseController;
+	public void setBController(BaseController bController){
+		this.bController = bController;
 	}
 
-	public BaseController getBaseController(){
-		return this.baseController;
+	public BaseController getBController(){
+		return this.bController;
 	}
 
 	public void forward(Hashtable messages) {

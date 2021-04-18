@@ -18,11 +18,6 @@ import java.util.Objects;
 /**
  * @author
  */
-
-/**
- * SOLID: Vi pham LSP
- * Hai phuong thuc o BaseController deu khong lien quan den nghiep vu Authen
- * */
 public class AuthenticationController extends BaseController {
 
     public boolean isAnonymousSession() {
@@ -34,11 +29,20 @@ public class AuthenticationController extends BaseController {
         }
     }
 
-    public User getMainUser() throws ExpiredSessionException {
+    private boolean isSessionAvailable() {
         if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
+            return false;
+        }
+        return true;
+    }
+
+    //chuyen bieu thuc dieu kien trong if thanh method de tai su dung va lam ro y nghia cua dieu kien if
+    public User getMainUser() throws ExpiredSessionException {
+        if (!isSessionAvailable()) {
             logout();
             throw new ExpiredSessionException();
-        } else return SessionInformation.mainUser.cloneInformation();
+        }
+        else return SessionInformation.mainUser.cloneInformation();
     }
 
     public void login(String email, String password) throws Exception {

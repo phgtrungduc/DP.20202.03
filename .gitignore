@@ -30,6 +30,7 @@ build/
 !**/src/test/**/build/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Package Files #
 *.jar
 *.war
@@ -54,3 +55,7 @@ hs_err_pid*
 #idea
 .idea/
 >>>>>>> cleancode/subteam2
+=======
+### VS Code ###
+.vscode/
+>>>>>>> cleancode/subteam1

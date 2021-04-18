@@ -1,6 +1,10 @@
 package subsystem;
 
+<<<<<<< HEAD
 import entity.payment.Card;
+=======
+import entity.payment.CreditCard;
+>>>>>>> cleancode/subteam1
 import entity.payment.PaymentTransaction;
 import subsystem.interbank.InterbankSubsystemController;
 
@@ -13,7 +17,6 @@ import subsystem.interbank.InterbankSubsystemController;
  */
 public class InterbankSubsystem implements InterbankInterface {
 
-	private static InterbankSubsystem interbankSubsystem=null;
 	/**
 	 * Represent the controller of the subsystem
 	 * Singleton: Lop interbanksubsystem chi nen tao 1 lan vi nghiep vu
@@ -32,19 +35,24 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * Initializes a newly created {@code InterbankSubsystem} object so that it
 	 * represents an Interbank subsystem.
 	 */
-	private InterbankSubsystem() {
+	public InterbankSubsystem() {
 		this.ctrl = new InterbankSubsystemController();
 	}
-	public PaymentTransaction payOrder(Card card, int amount, String contents) {
+
+	/**
+	 * @see InterbankInterface#payOrder(CreditCard, int,
+	 *      String)
+	 */
+	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;
 	}
 
 	/**
-	 * @see InterbankInterface#refund(Card, int,
+	 * @see InterbankInterface#refund(CreditCard, int,
 	 *      String)
 	 */
-	public PaymentTransaction refund(Card card, int amount, String contents) {
+	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
 	}

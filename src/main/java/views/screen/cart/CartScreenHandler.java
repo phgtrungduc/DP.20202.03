@@ -66,12 +66,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	@Override
-	public void setupData(Object dto) throws Exception {
-
-	}
-
-	public void setupFunctionality() throws Exception {
+	protected void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
 		File file = new File(ViewsConfig.IMAGE_PATH + "/Logo.png");
 		Image im = new Image(file.toURI().toString());
@@ -96,14 +91,14 @@ public class CartScreenHandler extends BaseScreenHandler {
 		});
 	}
 
-	public ViewCartController getBaseController(){
-		return (ViewCartController) super.getBaseController();
+	public ViewCartController getBController(){
+		return (ViewCartController) super.getBController();
 	}
 
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
-		getBaseController().checkAvailabilityOfProduct();
+		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 		show();
 	}
@@ -131,7 +126,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			shippingScreenHandler.setPreviousScreen(this);
 			shippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
 			shippingScreenHandler.setScreenTitle("Shipping Screen");
-			shippingScreenHandler.setBaseController(placeOrderController);
+			shippingScreenHandler.setBController(placeOrderController);
 			shippingScreenHandler.show();
 
 		} catch (MediaNotAvailableException e) {
@@ -141,13 +136,13 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	public void updateCart() throws SQLException{
-		getBaseController().checkAvailabilityOfProduct();
+		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
 
 	void updateCartAmount(){
 		// calculate subtotal and amount
-		int subtotal = getBaseController().getCartSubtotal();
+		int subtotal = getBController().getCartSubtotal();
 		int vat = (int)((ViewsConfig.PERCENT_VAT/100)*subtotal);
 		int amount = subtotal + vat;
 		LOGGER.info("amount" + amount);
@@ -163,7 +158,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		vboxCart.getChildren().clear();
 
 		// get list media of cart after check availability
-		List lstMedia = getBaseController().getListCartMedia();
+		List lstMedia = getBController().getListCartMedia();
 
 		try {
 			for (Object cm : lstMedia) {

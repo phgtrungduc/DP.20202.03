@@ -2,6 +2,7 @@ package views.screen.payment;
 
 import controller.PaymentController;
 import entity.invoice.Invoice;
+import entity.payment.CreditCard;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -47,7 +48,8 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		try {
-			this.setUp(null);
+			setupData(invoice);
+			setupFunctionality();
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.showErrorPopup("Error when loading resources.");
@@ -57,15 +59,15 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 		}
 	}
 
-	public void setupData(Object dto) throws Exception {
+	protected void setupData(Object dto) throws Exception {
 		this.invoice = (Invoice) dto;
 	}
 
-	public void setupFunctionality() throws Exception {
+	protected void setupFunctionality() throws Exception {
 		btnConfirmPayment.setOnMouseClicked(e -> {
 			try {
 				confirmToPayOrder();
-				((PaymentController) getBaseController()).emptyCart();
+				((PaymentController) getBController()).emptyCart();
 			} catch (Exception exp) {
 				System.out.println(exp.getStackTrace());
 			}
@@ -74,10 +76,9 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
-		PaymentController ctrl = (PaymentController) getBaseController();
-		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents, cardNumber.getText(), holderName.getText(),
-				expirationDate.getText(), securityCode.getText());
-
+		PaymentController ctrl = (PaymentController) getBController();
+		CreditCard creditCard = new CreditCard(cardNumber.getText(), holderName.getText(), expirationDate.getText(), Integer.parseInt(securityCode.getText()));
+		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents, creditCard);
 		BaseScreenHandler resultScreen = new ResultScreenHandler(this.stage, ViewsConfig.RESULT_SCREEN_PATH, response);
 		resultScreen.setPreviousScreen(this);
 		resultScreen.setHomeScreenHandler(homeScreenHandler);

@@ -1,19 +1,14 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
+import entity.cart.Cart;
+import entity.cart.CartItem;
 import entity.invoice.Invoice;
 import entity.order.Order;
-<<<<<<< HEAD
+import entity.order.OrderItem;
 import entity.shipping.DeliveryInfo;
-import entity.shipping.DistanceCalculatorFactory;
+import entity.shipping.ShippingConfigs;
 import org.example.DistanceCalculator;
-=======
-import entity.shipping.DeliverInfoVersionOne;
-import entity.shipping.DeliverInfoVersionOneFactory;
-import entity.shipping.DeliveryInfo;
-import entity.shipping.DeliveryInfoFactory;
-
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,21 +21,6 @@ import java.util.regex.Pattern;
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
-
-/**
- * Logical Cohesion
- * Các hàm validate chỉ liên quan với nhau về mặt logic nhưng
- * không liên quan đến nhau về mặt chức năng
- *
- * Coincidental Cohesion
- * Cac phuong thuc validate khong lien quan den nghiep vu
- * cua lop, nen tach ra thanh mot lop rieng de xu ly
- * ptduc
- * */
-/**
- * SOLID: Vi pham SRP vi trong lop chua cac phuong thua validate
- * khi co them yeu cau validate, can thay doi truc tiep code cua class
- * */
 public class PlaceOrderController extends BaseController {
 
     /**
@@ -53,7 +33,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public void placeOrder() throws SQLException {
-        SessionInformation.getCartInstance().checkAvailabilityOfProduct();
+        SessionInformation.cartInstance.checkAvailabilityOfProduct();
     }
 
     /**
@@ -62,7 +42,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public Order createOrder() throws SQLException {
-        return new Order(SessionInformation.getCartInstance());
+        return new Order(SessionInformation.cartInstance);
     }
 
     /**
@@ -80,29 +60,17 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
-    /**
-     * Stamp coupling
-     * Truyền vào param info dạng Hash Map nhưng thực tế
-     * chỉ sử dụng các trường: name, phone, province, address, instructions
-     *ptduc
-     * */
     public DeliveryInfo processDeliveryInfo(HashMap info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
         validateDeliveryInfo(info);
-        DeliveryInfoFactory deliveryInfoFactory = new DeliverInfoVersionOneFactory();
-        DeliveryInfo deliveryInfo = deliveryInfoFactory.getDeliverInfo(
+        DeliveryInfo deliveryInfo = new DeliveryInfo(
                 String.valueOf(info.get("name")),
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-<<<<<<< HEAD
                 String.valueOf(info.get("instructions")),
-                new DistanceCalculatorFactory());
-=======
-                String.valueOf(info.get("instructions"))
-        );
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
+                new DistanceCalculator());
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
@@ -113,21 +81,21 @@ public class PlaceOrderController extends BaseController {
    * @throws InterruptedException
    * @throws IOException
    */
-    /**
-     * Stamp coupling
-     * Truyền vào param dạng hash map nhưng thực tế
-     * chỉ sử dụng đến các trường: phone, name, address
-     * */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
         || validateName(info.get("name"))
         || validateAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
+
+    //thay cac bien so, string bang mot hang mang thong tin y nghia
+    private static final int PHONE_LENGTH  = 10;
+    private static final String PATTERN_STRING =  "^[a-zA-Z\\s]*$";
+    private static final String START_NUMBER_PHONE = "0";
     
     public boolean validatePhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() != 10) return false;
-        if (!phoneNumber.startsWith("0")) return false;
+        if (phoneNumber.length() != PHONE_LENGTH) return false;
+        if (!phoneNumber.startsWith(START_NUMBER_PHONE)) return false;
         try {
             Integer.parseInt(phoneNumber);
         } catch (NumberFormatException e) {
@@ -138,16 +106,14 @@ public class PlaceOrderController extends BaseController {
     
     public boolean validateName(String name) {
         if (Objects.isNull(name)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
+        Pattern pattern = Pattern.compile(PATTERN_STRING);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
     
     public boolean validateAddress(String address) {
         if (Objects.isNull(address)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
+        Pattern pattern = Pattern.compile(PATTERN_STRING);
         Matcher matcher = pattern.matcher(address);
         return matcher.matches();
     }

@@ -2,6 +2,8 @@ package entity.cart;
 
 import entity.media.Media;
 
+import java.sql.SQLException;
+
 public class CartItem {
     
     private Media media;
@@ -42,6 +44,14 @@ public class CartItem {
         this.price = price;
     }
 
+    // Clean code: Them phuong thuc tinh total
+    public int getTotal(){
+        return this.getPrice() * this.getQuantity();
+    }
+    // Clean code: Them phuong thuc xac dinh AvailableQuantity
+    public boolean availableQuantity() throws SQLException{
+        return this.getMedia().getQuantity() > this.getQuantity();
+    }
     @Override
     public String toString() {
         return "{" 

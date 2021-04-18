@@ -48,15 +48,19 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
         this.orderItem = orderItem;
         setMediaInfo();
     }
+    //Clean code: Tach thanh setCoverImage
+    void setCoverImage(){
+        setImage(image, orderItem.getMedia().getImageURL());
+        image.setPreserveRatio(false);
+        image.setFitHeight(90);
+        image.setFitWidth(83);
 
+    }
     public void setMediaInfo() throws SQLException{
         title.setText(orderItem.getMedia().getTitle());
         price.setText(ViewsConfig.getCurrencyFormat(orderItem.getPrice()));
         numOfProd.setText(String.valueOf(orderItem.getQuantity()));
-        setImage(image, orderItem.getMedia().getImageURL());
-		image.setPreserveRatio(false);
-		image.setFitHeight(90);
-		image.setFitWidth(83);
+        setCoverImage();
     }
 
 }

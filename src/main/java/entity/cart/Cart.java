@@ -8,6 +8,7 @@ import common.exception.MediaNotAvailableException;
 import entity.media.Media;
 
 public class Cart {
+
     
     private List<CartItem> lstCartItem;
 
@@ -33,29 +34,32 @@ public class Cart {
 
     public int getTotalMedia(){
         int total = 0;
-        for (Object obj : lstCartItem) {
-            CartItem cm = (CartItem) obj;
-            total += cm.getQuantity();
+        // Clean code: Sua ten bien
+
+        for (CartItem cartItem: lstCartItem) {
+            total += cartItem.getQuantity();
         }
         return total;
     }
 
     public int calSubtotal(){
+        // Clean code: Tao phuong thuc tinh total
         int total = 0;
-        for (Object obj : lstCartItem) {
-            CartItem cm = (CartItem) obj;
-            total += cm.getPrice()*cm.getQuantity();
+        for (CartItem cartItem : lstCartItem) {
+            total += cartItem.getTotal();
         }
         return total;
     }
-
+    // Clean code: tao phuong thuc availableQuantity
     public void checkAvailabilityOfProduct() throws SQLException{
         boolean allAvailable = true;
-        for (Object object : lstCartItem) {
-            CartItem cartItem = (CartItem) object;
-            int requiredQuantity = cartItem.getQuantity();
+        for (CartItem cartItem : lstCartItem) {
+            allAvailable = cartItem.availableQuantity();
+            /* int requiredQuantity = cartItem.getQuantity();
             int availQuantity = cartItem.getMedia().getQuantity();
             if (requiredQuantity > availQuantity) allAvailable = false;
+            */
+
         }
         if (!allAvailable) throw new MediaNotAvailableException("Some media not available");
     }

@@ -14,9 +14,19 @@ import java.util.Map;
  * @author
  *
  */
-    // Ap dung Singleton vi Interbank chi can mot doi tuong duy nhat
+
 
 public class InterbankPayloadConverter {
+    // Clean code: Doi cac hang so thanh ten co y nghia
+
+    private static final String Success = "00";
+    private static final String InvalidCard = "01";
+    private static final String NotEnoughBalance = "02";
+    private static final String InternalServerError = "03";
+    private static final String SuspiciousTransaction = "04";
+    private static final String NotEnoughTransactionInfo = "05";
+    private static final String InvalidVersion = "06";
+    private static final String InvalidTransactionAmount = "07";
 
     private static InterbankPayloadConverter instance;
 
@@ -86,21 +96,21 @@ public class InterbankPayloadConverter {
                 (String) transaction.get("createdAt"));
 
         switch (trans.getErrorCode()) {
-            case "00":
+            case Success:
                 break;
-            case "01":
+            case InvalidCard:
                 throw new InvalidCardException();
-            case "02":
+            case NotEnoughBalance:
                 throw new NotEnoughBalanceException();
-            case "03":
+            case InternalServerError:
                 throw new InternalServerErrorException();
-            case "04":
+            case SuspiciousTransaction:
                 throw new SuspiciousTransactionException();
-            case "05":
+            case NotEnoughTransactionInfo:
                 throw new NotEnoughTransactionInfoException();
-            case "06":
+            case InvalidVersion:
                 throw new InvalidVersionException();
-            case "07":
+            case InvalidTransactionAmount:
                 throw new InvalidTransactionAmountException();
             default:
                 throw new UnrecognizedException();

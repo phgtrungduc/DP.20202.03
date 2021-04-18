@@ -20,10 +20,11 @@ public class DeliveryInfo {
         this.shippingInstructions = shippingInstructions;
         this.distanceCalculator = distanceCalculator;
     }
+    // Clean code:Thay the hang so
 
     public int calculateShippingFee(Order order) {
         int distance = distanceCalculator.calculateDistance(address, province);
-        return (int) (distance * 1.2);
+        return (int) (distance * 1.2 );
     }
 
     public String getName() {

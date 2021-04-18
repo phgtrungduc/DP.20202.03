@@ -1,5 +1,6 @@
 package views.screen.home;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -39,6 +40,10 @@ import views.screen.popup.PopupScreen;
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
+
+    public static final int bookPosition = 0;
+    public static final int dvdPosition = 1;
+    public static final int cdPosition = 2;
 
     @FXML
     private Label numMediaInCart;
@@ -128,10 +133,12 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
                 throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
             }
         });
+
+        // Clean code: thay hang so bang ten
         addMediaHome(this.homeItems);
-        addMenuItem(0, "Book", splitMenuBtnSearch);
-        addMenuItem(1, "DVD", splitMenuBtnSearch);
-        addMenuItem(2, "CD", splitMenuBtnSearch);
+        addMenuItem(bookPosition, "Book", splitMenuBtnSearch);
+        addMenuItem(dvdPosition, "DVD", splitMenuBtnSearch);
+        addMenuItem(cdPosition, "CD", splitMenuBtnSearch);
     }
 
     @Override
@@ -178,13 +185,18 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             return;
         }
     }
-
-    private void addMenuItem(int position, String text, MenuButton menuButton){
-        MenuItem menuItem = new MenuItem();
+    //Clean code: tach ra ham nho setLabelMenuItem
+    Label setLabelMenuItem(String text, MenuButton menuButton){
         Label label = new Label();
         label.prefWidthProperty().bind(menuButton.widthProperty().subtract(31));
         label.setText(text);
         label.setTextAlignment(TextAlignment.RIGHT);
+        return label;
+    }
+    private void addMenuItem(int position, String text, MenuButton menuButton){
+        MenuItem menuItem = new MenuItem();
+
+        Label label = setLabelMenuItem(text, menuButton);
         menuItem.setGraphic(label);
         menuItem.setOnAction(e -> {
             // empty home media

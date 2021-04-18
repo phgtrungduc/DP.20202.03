@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="clean code duonghx">
+    <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ViewCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ViewCartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankPayloadConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/interbank/InterbankPayloadConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ApplicationProgrammingInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ApplicationProgrammingInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeScreenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" afterDir="false" />
     </list>
@@ -142,7 +136,8 @@
       <workItem from="1618630773551" duration="4097000" />
       <workItem from="1618666596557" duration="3036000" />
       <workItem from="1618713526651" duration="602000" />
-      <workItem from="1618735703512" duration="4418000" />
+      <workItem from="1618735703512" duration="4550000" />
+      <workItem from="1618752768706" duration="2126000" />
     </task>
     <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
       <created>1614954343349</created>
@@ -291,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618480396661</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="clean code các hàm duonghx">
+      <created>1618743443651</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1618743443651</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +316,8 @@
     <MESSAGE value="template pattern + doc duonghx" />
     <MESSAGE value="clean code 2 duonghx" />
     <MESSAGE value="clean code duonghx" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean code duonghx" />
+    <MESSAGE value="clean code các hàm duonghx" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean code các hàm duonghx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="83" key="#App" timestamp="1615452353107">
@@ -329,10 +332,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1618479438840" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1618743345385">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1618743442833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1618743345385" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1618743442833" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -357,21 +360,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1618480405166">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1618743448214">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618480405166" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618743448214" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618743324477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1618743324477" />
-    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1618738687520">
+    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1618754687609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1618738687520" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1618479349540">
+    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1618754687609" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1618754775569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1618479349540" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1618754775569" />
   </component>
 </project>

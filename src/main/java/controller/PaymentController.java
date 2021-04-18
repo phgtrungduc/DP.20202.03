@@ -51,17 +51,12 @@ public class PaymentController extends BaseController {
 		}
 
 
-//		String expirationDate = null;
 		int month = -1;
 		int year = -1;
 
 		try {
 			month = Integer.parseInt(strs[0]);
 			year = Integer.parseInt(strs[1]);
-//			if (month < 1 || month > 12 || year < Calendar.getInstance().get(Calendar.YEAR) % 100 || year > 100) {
-//				throw new InvalidCardException();
-//			}
-//			expirationDate = strs[0] + strs[1];
 			DateFormat dateFormat = new DateFormat(month, year);
 			if (dateFormat.isInvalidDate()){
 				throw new InvalidCardException();
@@ -71,8 +66,6 @@ public class PaymentController extends BaseController {
 		} catch (Exception ex) {
 			throw new InvalidCardException();
 		}
-//		return null;
-//		return expirationDate;
 	}
 
 	/**

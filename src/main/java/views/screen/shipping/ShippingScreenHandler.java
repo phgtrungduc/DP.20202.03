@@ -9,6 +9,7 @@ import entity.shipping.ShippingConfigs;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -21,8 +22,10 @@ import views.screen.invoice.InvoiceScreenHandler;
 import views.screen.popup.PopupScreen;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 public class ShippingScreenHandler extends BaseScreenHandler {
@@ -85,12 +88,8 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 
 		// validate delivery info and prepare order info
 		preprocessDeliveryInfo();
-		
-		// create invoice screen
-		createInvoiceScreen();
-	}
 
-	private void createInvoiceScreen() throws IOException {
+		// create invoice screen
 		Invoice invoice = getBController().createInvoice(order);
 		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, ViewsConfig.INVOICE_SCREEN_PATH, invoice);
 		InvoiceScreenHandler.setPreviousScreen(this);
@@ -100,31 +99,23 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		InvoiceScreenHandler.show();
 	}
 
-	private HashMap<String, String> addInfoToMessage(){
+	public void preprocessDeliveryInfo() throws IOException, InterruptedException {
+		// add info to messages
 		HashMap<String, String> messages = new HashMap<>();
 		messages.put("name", name.getText());
 		messages.put("phone", phone.getText());
 		messages.put("address", address.getText());
 		messages.put("instructions", instructions.getText());
 		messages.put("province", province.getValue());
-		return messages;
-	}
-
-	private DeliveryInfo processAndValidateDeliveryInfo(HashMap<String, String> messages){
 		DeliveryInfo deliveryInfo;
 		try {
 			// process and validate delivery info
 			deliveryInfo = getBController().processDeliveryInfo(messages);
-		} catch (InvalidDeliveryInfoException | InterruptedException | IOException e) {
+		} catch (InvalidDeliveryInfoException e) {
 			// TODO: implement pop up screen
 			throw new InvalidDeliveryInfoException(e.getMessage());
 		}
-		return deliveryInfo;
-	}
 
-	public void preprocessDeliveryInfo() throws IOException, InterruptedException {
-		HashMap<String, String> messages = addInfoToMessage();
-		DeliveryInfo deliveryInfo = processAndValidateDeliveryInfo(messages);
 		order.setDeliveryInfo(deliveryInfo);
 	}
 

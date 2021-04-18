@@ -73,13 +73,7 @@ public class InterbankPayloadConverter {
                 Integer.parseInt((String) transaction.get("amount")),
                 (String) transaction.get("createdAt"));
 
-        throwExceptions(trans.getErrorCode());
-
-        return trans;
-    }
-
-    private void throwExceptions(String errorCode){
-        switch (errorCode) {
+        switch (trans.getErrorCode()) {
             case "00":
                 break;
             case "01":
@@ -99,6 +93,7 @@ public class InterbankPayloadConverter {
             default:
                 throw new UnrecognizedException();
         }
+        return trans;
     }
 
     /**

@@ -85,7 +85,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 
 		// validate delivery info and prepare order info
 		preprocessDeliveryInfo();
-		
+
 		// create invoice screen
 		Invoice invoice = getBController().createInvoice(order);
 		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, ViewsConfig.INVOICE_SCREEN_PATH, invoice);

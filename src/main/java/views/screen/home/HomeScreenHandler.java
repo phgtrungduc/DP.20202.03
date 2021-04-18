@@ -209,27 +209,32 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         if (observable instanceof HomeMediaHandler) update((HomeMediaHandler) observable);
     }
 
-    private void update(HomeMediaHandler mediaHandler) {
+    private void addMediaToCart(Media media, int requestQuantity, Cart cart) throws SQLException {
+        if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
+
+        // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
+        CartItem mediaInCart = getBController().checkMediaInCart(media);
+        if (mediaInCart != null) {
+            mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);
+        } else {
+            CartItem cartItem = new CartItem(media, cart, requestQuantity, media.getPrice());
+            cart.addCartMedia(cartItem);
+            LOGGER.info("Added " + cartItem.getQuantity() + " " + media.getTitle() + " to cart");
+        }
+    }
+
+    private void subtractQuantityAndRedisplay(Media media, int requestQuantity, Cart cart) throws SQLException, IOException {
+        media.setQuantity(media.getQuantity() - requestQuantity);
+        numMediaInCart.setText(cart.getTotalMedia() + " media");
+        PopupScreen.success("The media " + media.getTitle() + " added to Cart");
+    }
+    private void update(MediaHandler mediaHandler) {
         int requestQuantity = mediaHandler.getRequestQuantity();
         Media media = mediaHandler.getMedia();
-
+        Cart cart = SessionInformation.cartInstance;
         try {
-            if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
-            Cart cart = SessionInformation.cartInstance;
-            // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
-            CartItem mediaInCart = getBController().checkMediaInCart(media);
-            if (mediaInCart != null) {
-                mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);
-            } else {
-                CartItem cartItem = new CartItem(media, cart, requestQuantity, media.getPrice());
-                cart.addCartMedia(cartItem);
-                LOGGER.info("Added " + cartItem.getQuantity() + " " + media.getTitle() + " to cart");
-            }
-
-            // subtract the quantity and redisplay
-            media.setQuantity(media.getQuantity() - requestQuantity);
-            numMediaInCart.setText(cart.getTotalMedia() + " media");
-            PopupScreen.showSuccessPopup("The media " + media.getTitle() + " added to Cart");
+            addMediaToCart(media, requestQuantity, cart);
+            subtractQuantityAndRedisplay(media, requestQuantity, cart);
         } catch (MediaNotAvailableException exp) {
             try {
                 String message = "Not enough media:\nRequired: " + requestQuantity + "\nAvail: " + media.getQuantity();

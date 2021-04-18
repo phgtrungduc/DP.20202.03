@@ -7,11 +7,7 @@ import java.util.Map;
 import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
-<<<<<<< HEAD
-import entity.payment.Card;
-=======
 import entity.cart.Cart;
->>>>>>> cleancode/subteam1
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
@@ -30,11 +26,7 @@ public class PaymentController extends BaseController {
 	/**
 	 * Represent the card used for payment
 	 */
-<<<<<<< HEAD
-	private Card card;
-=======
 	private CreditCard card;
->>>>>>> cleancode/subteam1
 
 	/**
 	 * Represent the Interbank subsystem
@@ -75,15 +67,21 @@ public class PaymentController extends BaseController {
 		}
 
 
-		String expirationDate = null;
-		int month = Integer.parseInt(stringDate[0]);
-		int year = Integer.parseInt(stringDate[1]);
+		int month = -1;
+		int year = -1;
 
-		if (!isMonth(month) || !isYear(year)) {
+		try {
+			month = Integer.parseInt(strs[0]);
+			year = Integer.parseInt(strs[1]);
+			DateFormat dateFormat = new DateFormat(month, year);
+			if (dateFormat.isInvalidDate()){
+				throw new InvalidCardException();
+			}
+			return dateFormat.getExpirationDate();
+
+		} catch (Exception ex) {
 			throw new InvalidCardException();
 		}
-		expirationDate = stringDate[0] + stringDate[1];
-		return expirationDate;
 	}
 
 	/**
@@ -99,9 +97,14 @@ public class PaymentController extends BaseController {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
-			this.card = creditCard;
-			this.interbank = new InterbankSubsystem();
-			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
+			this.card = new CreditCard(
+					cardNumber,
+					cardHolderName,
+					getExpirationDate(expirationDate),
+					Integer.parseInt(securityCode));
+
+			this.interbank = InterbankSubsystem.getInstance();
+			interbank.payOrder(card, amount, contents);
 
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
 			result.put("MESSAGE", "You have successfully paid the order!");

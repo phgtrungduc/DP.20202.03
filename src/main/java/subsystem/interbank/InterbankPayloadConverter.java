@@ -88,7 +88,6 @@ public class InterbankPayloadConverter {
             default:
                 throw new UnrecognizedException();
         }
-
         return trans;
     }
 

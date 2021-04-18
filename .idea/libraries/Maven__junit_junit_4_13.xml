@@ -14,6 +14,7 @@
       <root url="jar://$PROJECT_DIR$/lib/distance-api-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
       <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
+      <root url="jar://$PROJECT_DIR$/../Download/distance-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-javadoc.jar!/" />

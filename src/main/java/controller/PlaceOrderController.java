@@ -66,7 +66,7 @@ public class PlaceOrderController extends BaseController {
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
         validateDeliveryInfo(info);
-        DeliveryInfo deliveryInfo = new DeliveryInfo(
+        return new DeliveryInfo(
                 String.valueOf(info.get("name")),
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
@@ -74,8 +74,6 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("instructions")),
 //                new DistanceCalculator());//SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
                 new DistanceAPIFactory().createDistanceCalculator());
-                System.out.println(deliveryInfo.getProvince());
-        return deliveryInfo;
     }
     
     /**
@@ -87,7 +85,8 @@ public class PlaceOrderController extends BaseController {
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
         || validateName(info.get("name"))
-        || validateAddress(info.get("address"))) return;
+        || validateAddress(info.get("address"))) {
+        }
         else throw new InvalidDeliveryInfoException();
     }
     

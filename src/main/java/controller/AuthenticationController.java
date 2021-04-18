@@ -39,13 +39,21 @@ public class AuthenticationController extends BaseController {
     public void login(String email, String password) throws Exception {
         try {
             User user = new UserDAO().authenticate(email, md5(password));
-            if (Objects.isNull(user)) throw new FailLoginException();
-            SessionInformation.mainUser = user;
-            long timeExpire = 24;
-            SessionInformation.expiredTime = LocalDateTime.now().plusHours(timeExpire);
+            checkNullUser(user);
+            setMainUserAndExpiredTimeSessionInformation(user);
         } catch (SQLException ex) {
             throw new FailLoginException();
         }
+    }
+
+    private void checkNullUser(User user){
+        if (Objects.isNull(user)) throw new FailLoginException();
+    }
+
+    private void setMainUserAndExpiredTimeSessionInformation(User user){
+        SessionInformation.mainUser = user;
+        long timeExpire = 24;
+        SessionInformation.expiredTime = LocalDateTime.now().plusHours(timeExpire);
     }
 
     public void logout() {

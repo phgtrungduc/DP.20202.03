@@ -43,11 +43,10 @@ public class ApplicationProgrammingInterface {
 		allowMethods("PATCH");
 		HttpURLConnection conn = setupConnection(url);
 		conn.setRequestMethod("PATCH");
-		String payload = data;
-		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + payload + "\n");
+		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + data + "\n");
 
 		Writer writer = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
-		writer.write(payload);
+		writer.write(data);
 		writer.close();
 		BufferedReader in;
 		String inputLine;

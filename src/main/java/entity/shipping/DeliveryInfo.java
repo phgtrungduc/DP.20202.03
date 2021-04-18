@@ -21,11 +21,10 @@ public class DeliveryInfo {
         this.distanceCalculator = distanceCalculator;
     }
 
-    private static final double RATE_FEE = 1.2;
     //thay so bang bien hang mang thong tin y nghia
     public int calculateShippingFee(Order order) {
         int distance = distanceCalculator.calculateDistance(address, province);
-        return (int) (distance * RATE_FEE);
+        return (int) (distance * 1.2);
     }
 
     public String getName() {

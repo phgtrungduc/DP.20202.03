@@ -91,7 +91,6 @@ public class PaymentController extends BaseController {
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
 			this.card = creditCard;
-
 			this.interbank = new InterbankSubsystem();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 

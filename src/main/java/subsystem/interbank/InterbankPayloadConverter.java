@@ -34,7 +34,8 @@ public class InterbankPayloadConverter {
         transaction.put("command", InterbankConfigs.PAY_COMMAND);
         transaction.put("transactionContent", contents);
         transaction.put("amount", amount);
-        transaction.put("createdAt", getToday());
+        MfDate mfDate = new MfDate();
+        transaction.put("createdAt", mfDate.getToday());
 
         Map<String, Object> requestMap = new MyMap();
         requestMap.put("version", InterbankConfigs.VERSION);
@@ -128,9 +129,9 @@ public class InterbankPayloadConverter {
      *
      * Coincidental cohesion boi vi ham getToday khong lien quan gi den class va cac function khac ca
      */
-    private String getToday() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
+//    private String getToday() {
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date date = new Date();
+//        return dateFormat.format(date);
+//    }
 }

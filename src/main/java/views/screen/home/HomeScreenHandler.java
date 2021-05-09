@@ -71,17 +71,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     private AuthenticationController authenticationController;
 
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
-        super(stage, screenPath);
-        try {
-            setupData(null);
-            setupFunctionality();
-        } catch (IOException ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.error("Error when loading resources.");
-        } catch (Exception ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.error(ex.getMessage());
-        }
+        super(stage, screenPath, null);
     }
 
     public Label getNumMediaCartLabel(){
@@ -92,6 +82,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         return (HomeController) super.getBController();
     }
 
+    @Override
     protected void setupData(Object dto) throws Exception {
         setBController(new HomeController());
         this.authenticationController = new AuthenticationController();
@@ -110,6 +101,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         }
     }
 
+    @Override
     protected void setupFunctionality() throws Exception {
 
         aimsImage.setOnMouseClicked(e -> {

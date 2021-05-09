@@ -29,20 +29,11 @@ public class AuthenticationController extends BaseController {
         }
     }
 
-    private boolean isSessionAvailable() {
-        if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
-            return false;
-        }
-        return true;
-    }
-
-    //chuyen bieu thuc dieu kien trong if thanh method de tai su dung va lam ro y nghia cua dieu kien if
     public User getMainUser() throws ExpiredSessionException {
-        if (!isSessionAvailable()) {
+        if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
             logout();
             throw new ExpiredSessionException();
-        }
-        else return SessionInformation.mainUser.cloneInformation();
+        } else return SessionInformation.mainUser.cloneInformation();
     }
 
     public void login(String email, String password) throws Exception {

@@ -27,6 +27,11 @@ import subsystem.InterbankSubsystem;
  * SOLID: Vi pham nguyen ly OCP : khi thay doi phuong thuc thanh toan phai thay doi code cua class nay
  * Vi Pham nguyen ly: DIP : Phu thuoc truc tiep vao CreditCard khong qua mot module abstract
  * */
+/**
+ * Large class
+ * ngoài method liên quan đến payment thì còn có
+ * isValidMonthandYea
+ * */
 public class PaymentController extends BaseController {
 
 	/**

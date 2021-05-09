@@ -24,6 +24,9 @@ import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
 //Doi ten tu MediaHandler thanh CartMediaHandler de ro nghia class dung trong package cart
+/**
+ * Duplication of code
+ * */
 public class CartMediaHandler extends FXMLScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(CartMediaHandler.class.getName());

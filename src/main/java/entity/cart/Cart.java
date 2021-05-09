@@ -17,6 +17,9 @@ import entity.media.Media;
  * Ap dung singleton
  * Luu tru gio hang hien tai nen chi can khoi tao 1 lan
  * */
+/**
+ * Large class
+ */
 public class Cart {
     private static Cart cart;
     private Cart(){

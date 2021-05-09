@@ -33,7 +33,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/distance-api-1.0-SNAPSHOT.jar" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc" />
+>>>>>>> cleanclass/subteam2
     <property name="project.structure.last.edited" value="Libraries" />
 =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -42,6 +46,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4045977" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DP\DP.20202.03\doc" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -62,11 +71,271 @@
       <created>1617427086429</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1617427086429</updated>
     </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
+=======
+      <updated>1614845566093</updated>
+      <workItem from="1614845569374" duration="48000" />
+      <workItem from="1614953939250" duration="2619000" />
+      <workItem from="1615452082334" duration="5670000" />
+      <workItem from="1615476598589" duration="2772000" />
+      <workItem from="1615521191084" duration="600000" />
+      <workItem from="1615532033211" duration="29000" />
+      <workItem from="1615532519911" duration="4487000" />
+      <workItem from="1615557712688" duration="98000" />
+      <workItem from="1615557834592" duration="29000" />
+      <workItem from="1615783085501" duration="47000" />
+      <workItem from="1616059306953" duration="2973000" />
+      <workItem from="1616072607829" duration="3310000" />
+      <workItem from="1616131078298" duration="1913000" />
+      <workItem from="1616136971424" duration="36000" />
+      <workItem from="1616644459135" duration="1178000" />
+      <workItem from="1616659211496" duration="993000" />
+      <workItem from="1616667800160" duration="278000" />
+      <workItem from="1616852433090" duration="5303000" />
+      <workItem from="1616897177505" duration="3190000" />
+      <workItem from="1616911420492" duration="2203000" />
+      <workItem from="1616935838527" duration="4460000" />
+      <workItem from="1617358566528" duration="15000" />
+      <workItem from="1617382120131" duration="600000" />
+      <workItem from="1617501945759" duration="1214000" />
+      <workItem from="1617507973490" duration="2359000" />
+      <workItem from="1617519339716" duration="4424000" />
+      <workItem from="1617540421100" duration="3972000" />
+      <workItem from="1617764807230" duration="9000" />
+      <workItem from="1617876111747" duration="1343000" />
+      <workItem from="1617931964768" duration="7379000" />
+      <workItem from="1617950671261" duration="97000" />
+      <workItem from="1617981353339" duration="3731000" />
+      <workItem from="1618148313325" duration="1400000" />
+      <workItem from="1620352948244" duration="121000" />
+      <workItem from="1620559726394" duration="136000" />
+      <workItem from="1620565401069" duration="3121000" />
+    </task>
+    <task id="LOCAL-00001" summary="Stamp and control coupling hxduong">
+      <created>1614954343349</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614954343349</updated>
+    </task>
+    <task id="LOCAL-00002" summary="sửa sau khi review">
+      <created>1614955966493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614955966493</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Coincidental cohesion">
+      <created>1615455790799</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615455790799</updated>
+    </task>
+    <task id="LOCAL-00004" summary="logic and temporal cohension">
+      <created>1615456192387</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615456192387</updated>
+    </task>
+    <task id="LOCAL-00005" summary="giải thích cohesion">
+      <created>1615456973135</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615456973135</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cohension duonghx">
+      <created>1615540278604</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615540278604</updated>
+    </task>
+    <task id="LOCAL-00007" summary="cohension">
+      <created>1615558275705</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558275705</updated>
+    </task>
+    <task id="LOCAL-00008" summary="cohesion duonghx">
+      <created>1615558690856</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558690856</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cohesion duonghx 2">
+      <created>1615558813854</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558813854</updated>
+    </task>
+    <task id="LOCAL-00010" summary="SOLID OCP duonghx">
+      <created>1616059361694</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616059361694</updated>
+    </task>
+    <task id="LOCAL-00011" summary="SOLID OCP duonghx">
+      <created>1616059765906</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616059765906</updated>
+    </task>
+    <task id="LOCAL-00012" summary="SOLID Dependency duonghx">
+      <created>1616063226208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616063226208</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SOLID OCP duonghx">
+      <created>1616134268100</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616134268100</updated>
+    </task>
+    <task id="LOCAL-00014" summary="gitignore duonghx">
+      <created>1616645170474</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616645170474</updated>
+    </task>
+    <task id="LOCAL-00015" summary="gitignore duonghx">
+      <created>1616645188417</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616645188417</updated>
+    </task>
+    <task id="LOCAL-00016" summary="template pattern duonghx">
+      <created>1617546918623</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1617546918625</updated>
+    </task>
+    <task id="LOCAL-00017" summary="template pattern + doc duonghx">
+      <created>1617548405368</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1617548405368</updated>
+    </task>
+    <task id="LOCAL-00018" summary="clean code duonghx">
+      <created>1617982266178</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1617982266178</updated>
+    </task>
+    <task id="LOCAL-00019" summary="local extension duonghx">
+      <created>1620296349818</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620296349818</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Stamp and control coupling hxduong" />
+    <MESSAGE value="sửa sau khi review" />
+    <MESSAGE value="Coincidental cohesion" />
+    <MESSAGE value="logic and temporal cohension" />
+    <MESSAGE value="giải thích cohesion" />
+    <MESSAGE value="cohension duonghx" />
+    <MESSAGE value="cohension" />
+    <MESSAGE value="cohesion duonghx" />
+    <MESSAGE value="cohesion duonghx 2" />
+    <MESSAGE value="SOLID Dependency duonghx" />
+    <MESSAGE value="SOLID OCP duonghx" />
+    <MESSAGE value="gitignore duonghx" />
+    <MESSAGE value="template pattern duonghx" />
+    <MESSAGE value="template pattern + doc duonghx" />
+    <MESSAGE value="clean code duonghx" />
+    <MESSAGE value="local extension duonghx" />
+    <option name="LAST_COMMIT_MESSAGE" value="local extension duonghx" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="485" y="83" key="#App" timestamp="1615452353107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="485" y="83" key="#App/0.0.1536.824@0.0.1536.824" timestamp="1615452353107" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1620565732887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1620565732887" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615459243086">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615459243086" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1617940317970">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617940317970" />
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1620296349009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620296349009" />
+    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615557861820" />
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom" timestamp="1617532432340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617532432340" />
+    <state width="1493" height="29" key="GridCell.Tab.0.center" timestamp="1617532432340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617532432340" />
+    <state width="1493" height="29" key="GridCell.Tab.0.left" timestamp="1617532432340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617532432340" />
+    <state width="1493" height="29" key="GridCell.Tab.0.right" timestamp="1617532432340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617532432340" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1615459234564">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1620296356263">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620296356263" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620296310811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1620296310811" />
+    <state x="463" y="144" width="611" height="536" key="find.popup" timestamp="1620566637378">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1620566637378" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1620569199987">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1620569199987" />
+>>>>>>> cleanclass/subteam2
   </component>
 </project>

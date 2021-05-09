@@ -52,7 +52,9 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 			PopupScreen.showErrorPopup(ex.getMessage());
 		}
 	}
-
+//	protected abstract void setupData(){
+//
+//	}
 	public void setPreviousScreen(BaseScreenHandler prev) {
 		this.prev = prev;
 	}

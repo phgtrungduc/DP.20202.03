@@ -7,7 +7,7 @@ import subsystem.interbank.InterbankSubsystemController;
 /***
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
- * 
+ *
  * @author hieud
  *
  */
@@ -15,14 +15,23 @@ public class InterbankSubsystem implements InterbankInterface {
 
 	/**
 	 * Represent the controller of the subsystem
+	 * Singleton: Lop interbanksubsystem chi nen tao 1 lan vi nghiep vu
 	 */
 	private InterbankSubsystemController ctrl;
+	private static InterbankSubsystem interbankSubsystem;
+
+	public static InterbankSubsystem getInstance() {
+		if (interbankSubsystem == null) {
+			interbankSubsystem = new InterbankSubsystem();
+		}
+		return interbankSubsystem;
+	}
 
 	/**
 	 * Initializes a newly created {@code InterbankSubsystem} object so that it
 	 * represents an Interbank subsystem.
 	 */
-	public InterbankSubsystem() {
+	private InterbankSubsystem() {
 		this.ctrl = new InterbankSubsystemController();
 	}
 

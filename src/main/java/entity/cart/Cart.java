@@ -21,15 +21,12 @@ import entity.media.Media;
  * Large class
  */
 public class Cart {
-    private static Cart cart;
-    private Cart(){
-        lstCartItem = new ArrayList<>();
-    };
-    public static Cart getCartInstance(){
-        if (cart==null) cart = new Cart();
-        return cart;
-    }
+    
     private List<CartItem> lstCartItem;
+
+    public Cart() {
+        lstCartItem = new ArrayList<>();
+    }
 
     public void addCartMedia(CartItem cm){
         lstCartItem.add(cm);
@@ -76,10 +73,6 @@ public class Cart {
         if (!allAvailable) throw new MediaNotAvailableException("Some media not available");
     }
 
-    /**
-     * Stamp coulping
-     * Chỉ sử dụng mỗi Id
-     * */
     public CartItem checkMediaInCart(Media media){
         for (CartItem cartItem : lstCartItem) {
             if (cartItem.getMedia().getId() == media.getId()) return cartItem;

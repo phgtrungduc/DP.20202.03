@@ -25,13 +25,13 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	}
 
 
-	public void setupData(Object dto)  {
+	protected void setupData(Object dto) throws Exception {
 		Map<String, String> response = (Map<String, String>) dto;
 		resultLabel.setText(response.get("RESULT"));
 		messageLabel.setText(response.get("MESSAGE"));
 	}
 
-	public void setupFunctionality() throws Exception {
+	protected void setupFunctionality() throws Exception {
 		return;
 	}
 

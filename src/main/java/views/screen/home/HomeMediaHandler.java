@@ -54,10 +54,6 @@ public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
             notifyObservers();
         });
         setMediaInfo();
-//        detailItemBtn.setOnMouseClicked(event -> {
-//            notifyObservers();
-//        });
-//        setMediaInfo();
     }
 
     Media getMedia(){

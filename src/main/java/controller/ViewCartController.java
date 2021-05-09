@@ -8,12 +8,6 @@ import entity.cart.Cart;
  * This class controls the flow of events when users view the Cart
  * @author nguyenlm
  */
-
-/***
- * Functional Cohesion
- * CUng lien quan den viec xem gio hang
- */
-
 public class ViewCartController extends BaseController{
     
     /**
@@ -21,7 +15,7 @@ public class ViewCartController extends BaseController{
      * @throws SQLException
      */
     public void checkAvailabilityOfProduct() throws SQLException{
-        SessionInformation.getCartInstance().checkAvailabilityOfProduct();
+        SessionInformation.cartInstance.checkAvailabilityOfProduct();
     }
 
     /**
@@ -29,7 +23,7 @@ public class ViewCartController extends BaseController{
      * @return subtotal
      */
     public int getCartSubtotal(){
-        int subtotal = SessionInformation.getCartInstance().calSubtotal();
+        int subtotal = SessionInformation.cartInstance.calSubtotal();
         return subtotal;
     }
 

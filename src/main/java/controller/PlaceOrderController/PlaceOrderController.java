@@ -76,13 +76,13 @@ public class PlaceOrderController extends BaseController {
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
-    
+
     /**
-   * The method validates the info
-   * @param info
-   * @throws InterruptedException
-   * @throws IOException
-   */
+     * The method validates the info
+     * @param info
+     * @throws InterruptedException
+     * @throws IOException
+     */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         boolean validatePhoneNumber = PlaceOrderValidation.validatePhoneNumber(info.get("phone");
         boolean validateName = PlaceOrderValidation.validateString(info.get("name"));

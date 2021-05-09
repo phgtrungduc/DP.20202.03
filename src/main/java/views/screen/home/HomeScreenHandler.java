@@ -66,8 +66,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     private List homeItems;
     private AuthenticationController authenticationController;
 
-    public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
-        super(stage, screenPath);
+    public HomeScreenHandler(Stage stage, String screenPath,Object dto) throws IOException{
+        super(stage, screenPath,dto);
         try {
             this.setUp(null);
         } catch (IOException ex) {
@@ -115,7 +115,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             CartScreenHandler cartScreen;
             try {
                 LOGGER.info("User clicked to view cart");
-                cartScreen = new CartScreenHandler(this.stage, ViewsConfig.CART_SCREEN_PATH);
+                cartScreen = new CartScreenHandler(this.stage, ViewsConfig.CART_SCREEN_PATH,null);
                 cartScreen.setHomeScreenHandler(this);
                 cartScreen.setBController(new ViewCartController());
                 cartScreen.requestToViewCart(this);
@@ -247,7 +247,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     @FXML
     void redirectLoginScreen(MouseEvent event) {
         try {
-            BaseScreenHandler loginScreen = new LoginScreenHandler(this.stage, ViewsConfig.LOGIN_SCREEN_PATH);
+            BaseScreenHandler loginScreen = new LoginScreenHandler(this.stage, ViewsConfig.LOGIN_SCREEN_PATH,null);
             loginScreen.setHomeScreenHandler(this);
             loginScreen.setBController(this.authenticationController);
             loginScreen.show();

@@ -45,16 +45,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private TextField securityCode;
 
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
-		try {
-			this.setUp(null);
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
+		super(stage, screenPath,null);
 	}
 
 	public void setupData(Object dto) throws Exception {

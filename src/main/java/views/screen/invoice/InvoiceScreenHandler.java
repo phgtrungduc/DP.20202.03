@@ -58,7 +58,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	private Invoice invoice;
 
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
+		super(stage, screenPath,null);
 		try {
 			this.setUp(null);
 		} catch (IOException ex) {

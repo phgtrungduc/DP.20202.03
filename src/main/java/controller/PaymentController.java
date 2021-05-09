@@ -30,6 +30,11 @@ import subsystem.InterbankSubsystem;
  * SOLID: Vi pham nguyen ly OCP : khi thay doi phuong thuc thanh toan phai thay doi code cua class nay
  * Vi Pham nguyen ly: DIP : Phu thuoc truc tiep vao CreditCard khong qua mot module abstract
  * */
+/**
+ * Large class
+ * ngoài method liên quan đến payment thì còn có
+ * isValidMonthandYea
+ * */
 public class PaymentController extends BaseController {
 
 	/**
@@ -101,8 +106,11 @@ public class PaymentController extends BaseController {
 	 * @return {@link Map Map} represent the payment result with a
 	 *         message.
 	 */
+	/**
+	 * bỏ biến thừa transaction không dùng đến nhưng vẫn giữ nguyên thực hiện hàm payOrder
+	 * */
 	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
-			String expirationDate, String securityCode) {
+										String expirationDate, String securityCode) {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
@@ -113,8 +121,7 @@ public class PaymentController extends BaseController {
 					Integer.parseInt(securityCode));
 
 			this.interbank =  InterbankSubsystem.getInstance();
-			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
-
+			interbank.payOrder(card, amount, contents);
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
 			result.put("MESSAGE", "You have successfully paid the order!");
 		} catch (PaymentException | UnrecognizedException ex) {

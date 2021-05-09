@@ -25,7 +25,9 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
-
+/**
+ * Duplication of code
+ * */
 public class CartScreenHandler extends BaseScreenHandler {
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
@@ -53,17 +55,8 @@ public class CartScreenHandler extends BaseScreenHandler {
 	@FXML
 	private Button btnPlaceOrder;
 
-	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
-		super(stage, screenPath);
-		try {
-			setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
+	public CartScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {
+		super(stage, screenPath,dto);
 	}
 
 	@Override

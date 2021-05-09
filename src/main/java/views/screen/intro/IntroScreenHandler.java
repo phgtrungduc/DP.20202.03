@@ -21,16 +21,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
     ImageView logo;
 
     public IntroScreenHandler(Stage stage, String screenPath) throws IOException {
-        super(stage, screenPath);
-        try {
-            this.setUp(null);
-        } catch (IOException ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.showErrorPopup("Error when loading resources.");
-        } catch (Exception ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.showErrorPopup(ex.getMessage());
-        }
+        super(stage, screenPath,null);
     }
 
 

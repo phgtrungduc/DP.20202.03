@@ -35,7 +35,6 @@ public class DeliveryInfo {
      * (có thể lỗi lập trình chưa sửa )
      * ptduc
      * */
-
     /**
      * SOLID: Vi phạm OCP
      * Sử dùng trực tiếp cách tính phí của module distanceCalculator

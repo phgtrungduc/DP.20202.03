@@ -253,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617982266178</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="stategy duonghx">
+      <created>1620900283107</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620900283107</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +282,8 @@
     <MESSAGE value="template pattern duonghx" />
     <MESSAGE value="template pattern + doc duonghx" />
     <MESSAGE value="clean code duonghx" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean code duonghx" />
+    <MESSAGE value="stategy duonghx" />
+    <option name="LAST_COMMIT_MESSAGE" value="stategy duonghx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="83" key="#App" timestamp="1615452353107">
@@ -290,10 +298,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617940317970" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1620900211249">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1620900282371">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620900211249" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620900282371" />
     <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1615557861820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -318,10 +326,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615459234564" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1617982273105">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1620900288320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1617982273105" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620900288320" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620296310811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

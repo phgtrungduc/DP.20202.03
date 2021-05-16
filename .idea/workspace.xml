@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfoWithDemension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/calculateshippingfee/CalculateDistanceFee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/calculateshippingfee/CalculateDistanceFeeWithDemension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/calculateshippingfee/ICalculateDistanceFee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v2/DeliveryInfoV2WithDimension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v2/DeliveryInfo_v2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/AltDistanceCalculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v2/AltDistanceCalculate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/AltDistanceCalculateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v2/AltDistanceCalculateFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfoWithDimension.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DistanceCalculatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v2/DistanceCalculatorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/shipping/ShippingScreenHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

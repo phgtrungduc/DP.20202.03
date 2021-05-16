@@ -23,8 +23,8 @@ public class DeliveryInfo {
 
     public int calculateShippingFee(Order order) {
         this.setCalculateDistance(new CalculateDistanceFee());
-        int shippingFee = iCalculateDistanceFee.calculateDistance(this.address,this.province);
-        return (int)(1.2*shippingFee);
+        int distance = iCalculateDistanceFee.calculateDistance(this.address,this.province);
+        return (int)(1.2*distance);
     }
     public void setCalculateDistance(ICalculateDistanceFee iCalculateDistanceFee){
         this.iCalculateDistanceFee = iCalculateDistanceFee;

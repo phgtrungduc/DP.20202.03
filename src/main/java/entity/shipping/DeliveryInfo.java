@@ -1,6 +1,8 @@
 package entity.shipping;
 
 import entity.order.Order;
+import entity.shipping.calculateshippingfee.CalculateDistanceFee;
+import entity.shipping.calculateshippingfee.ICalculateDistanceFee;
 import org.example.DistanceCalculator;
 
 public class DeliveryInfo {
@@ -10,22 +12,22 @@ public class DeliveryInfo {
     protected String province;
     protected String address;
     protected String shippingInstructions;
-    protected DistanceCalculator distanceCalculator;
-
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+    protected ICalculateDistanceFee iCalculateDistanceFee;
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions) {
         this.name = name;
         this.phone = phone;
         this.province = province;
         this.address = address;
         this.shippingInstructions = shippingInstructions;
-        this.distanceCalculator = distanceCalculator;
     }
-    //SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
     public int calculateShippingFee(Order order) {
-        int distance = distanceCalculator.calculateDistance(address, province);
-        return (int) (distance * 1.2);
+        this.setCalculateDistance(new CalculateDistanceFee());
+        int distance = iCalculateDistanceFee.calculateDistance(this.address,this.province);
+        return (int)(1.2*distance);
     }
-
+    public void setCalculateDistance(ICalculateDistanceFee iCalculateDistanceFee){
+        this.iCalculateDistanceFee = iCalculateDistanceFee;
+    }
     public String getName() {
         return name;
     }

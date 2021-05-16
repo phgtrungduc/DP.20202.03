@@ -58,20 +58,19 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	private Invoice invoice;
 
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
+		super(stage, screenPath,null);
 		try {
-			setupData(invoice);
-			setupFunctionality();
+			this.setUp(null);
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
-			PopupScreen.error("Error when loading resources.");
+			PopupScreen.showErrorPopup("Error when loading resources.");
 		} catch (Exception ex) {
 			LOGGER.info(ex.getMessage());
-			PopupScreen.error(ex.getMessage());
+			PopupScreen.showErrorPopup(ex.getMessage());
 		}
 	}
 
-	protected void setupData(Object dto) throws Exception {
+	public void setupData(Object dto) throws Exception {
 		this.invoice = (Invoice) dto;
 		Order order = invoice.getOrder();
 		DeliveryInfo deliveryInfo = order.getDeliveryInfo();
@@ -98,7 +97,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 		});
 	}
 
-	protected void setupFunctionality() throws Exception {
+	public void setupFunctionality() throws Exception {
 		return;
 	}
 

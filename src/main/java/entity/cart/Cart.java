@@ -7,18 +7,29 @@ import java.util.List;
 import common.exception.MediaNotAvailableException;
 import entity.media.Media;
 
+
+/**
+ * Fuctional Cohesion
+ * Cac phuong thuc deu su dung chung data la lstCartItem
+ * va deu lien quan den chuc nang lien quan den cart
+ * */
+/**
+ * Ap dung singleton
+ * Luu tru gio hang hien tai nen chi can khoi tao 1 lan
+ * */
+/**
+ * Large class
+ */
 public class Cart {
-    
-    private static List<CartItem> lstCartItem;
-    /**
-     * Singleton cart vì theo nghiệp vụ chỉ 1 giỏ hàng được tạo ra
-     */
     private static Cart cart;
-    public static Cart getInstance() {
-        if (cart == null) cart = new Cart();
+    private Cart(){
         lstCartItem = new ArrayList<>();
+    };
+    public static Cart getCartInstance(){
+        if (cart==null) cart = new Cart();
         return cart;
     }
+    private List<CartItem> lstCartItem;
 
     public void addCartMedia(CartItem cm){
         lstCartItem.add(cm);

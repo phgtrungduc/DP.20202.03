@@ -1,5 +1,6 @@
 package subsystem;
 
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.interbank.InterbankSubsystemController;
@@ -13,19 +14,12 @@ import subsystem.interbank.InterbankSubsystemController;
  */
 public class InterbankSubsystem implements InterbankInterface {
 
+	private static InterbankSubsystem interbankSubsystem=null;
 	/**
 	 * Represent the controller of the subsystem
 	 * Singleton: Lop interbanksubsystem chi nen tao 1 lan vi nghiep vu
 	 */
-	private InterbankSubsystemController ctrl;
-	private static InterbankSubsystem interbankSubsystem;
-
-	public static InterbankSubsystem getInstance() {
-		if (interbankSubsystem == null) {
-			interbankSubsystem = new InterbankSubsystem();
-		}
-		return interbankSubsystem;
-	}
+	private static InterbankSubsystemController ctrl;
 
 	/**
 	 * Initializes a newly created {@code InterbankSubsystem} object so that it
@@ -34,21 +28,29 @@ public class InterbankSubsystem implements InterbankInterface {
 	private InterbankSubsystem() {
 		this.ctrl = new InterbankSubsystemController();
 	}
-
+	public static InterbankSubsystem getInstance(){
+		if (interbankSubsystem==null) return interbankSubsystem;
+		return interbankSubsystem;
+	}
 	/**
 	 * @see InterbankInterface#payOrder(CreditCard, int,
 	 *      String)
 	 */
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
+
+	/**
+	 * SOLID: Vi pham OCP va DIP: phu thuoc truc tiep vao CreditCard
+	 * Thay doi phuong thuc thanh toan se phai thay doi code class nay
+	 * */
+	public PaymentTransaction payOrder(Card card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;
 	}
 
 	/**
-	 * @see InterbankInterface#refund(CreditCard, int,
+	 * @see InterbankInterface#refund(Card, int,
 	 *      String)
 	 */
-	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
+	public PaymentTransaction refund(Card card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
 	}

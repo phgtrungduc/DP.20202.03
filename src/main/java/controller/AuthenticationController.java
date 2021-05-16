@@ -18,6 +18,11 @@ import java.util.Objects;
 /**
  * @author
  */
+
+/**
+ * SOLID: Vi pham LSP
+ * Hai phuong thuc o BaseController deu khong lien quan den nghiep vu Authen
+ * */
 public class AuthenticationController extends BaseController {
 
     public boolean isAnonymousSession() {

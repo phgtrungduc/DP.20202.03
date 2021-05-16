@@ -25,7 +25,9 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
-
+/**
+ * Duplication of code
+ * */
 public class CartScreenHandler extends BaseScreenHandler {
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
@@ -53,20 +55,16 @@ public class CartScreenHandler extends BaseScreenHandler {
 	@FXML
 	private Button btnPlaceOrder;
 
-	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
-		super(stage, screenPath);
-		try {
-			setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.error("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.error(ex.getMessage());
-		}
+	public CartScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {
+		super(stage, screenPath,dto);
 	}
 
-	protected void setupFunctionality() throws Exception {
+	@Override
+	public void setupData(Object dto) throws Exception {
+
+	}
+
+	public void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
 		File file = new File(ViewsConfig.IMAGE_PATH + "/Logo.png");
 		Image im = new Image(file.toURI().toString());
@@ -108,7 +106,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			// create placeOrderController and process the order
 			PlaceOrderController placeOrderController = new PlaceOrderController();
 			if (placeOrderController.getListCartMedia().size() == 0){
-				PopupScreen.error("You don't have anything to place");
+				PopupScreen.showErrorPopup("You don't have anything to place");
 				return;
 			}
 
@@ -164,8 +162,8 @@ public class CartScreenHandler extends BaseScreenHandler {
 			for (Object cartMedia : listCartMedia) {
 
 				// display the attribute of vboxCart media
-				CartItem cartItem = (CartItem) cartMedia;
-				MediaHandler mediaCartScreen = new MediaHandler(ViewsConfig.CART_MEDIA_PATH, this);
+				CartItem cartItem = (CartItem) cm;
+				CartMediaHandler mediaCartScreen = new CartMediaHandler(ViewsConfig.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartItem(cartItem);
 
 				// add spinner

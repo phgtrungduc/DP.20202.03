@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import controller.AuthenticationController;
 import controller.BaseController;
+import entity.invoice.Invoice;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,8 +18,6 @@ import views.screen.popup.PopupScreen;
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
-
-
 	private Scene scene;
 	private BaseScreenHandler prev;
 	protected final Stage stage;
@@ -26,9 +25,31 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	protected Hashtable<String, String> messages;
 	private BaseController bController;
 
-	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
+	/**
+	 * Duplication of code : giải quyết bằng template method
+	 * Template Method
+	 * Hau het cac sub class deu su dung hai ham setupData va setupFunctionality
+	 * nhung voi cac subclass khac nhau lai su dung chung 1 cach khac nhau
+	 * */
+	public final void setUp(Object dto) throws Exception{
+		this.setupData(dto);
+		this.setupFunctionality();
+	}
+	public abstract void setupData  (Object dto) throws Exception;
+	public  abstract  void setupFunctionality () throws Exception;
+	protected BaseScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {
 		super(screenPath);
 		this.stage = stage;
+		try {
+			setupData(dto);
+			setupFunctionality();
+		} catch (IOException ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.showErrorPopup("Error when loading resources.");
+		} catch (Exception ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.showErrorPopup(ex.getMessage());
+		}
 	}
 //	protected abstract void setupData(){
 //

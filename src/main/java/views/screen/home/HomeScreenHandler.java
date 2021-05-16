@@ -2,13 +2,10 @@ package views.screen.home;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
@@ -20,7 +17,6 @@ import entity.cart.Cart;
 import entity.cart.CartItem;
 import entity.media.Media;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -70,17 +66,16 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     private List homeItems;
     private AuthenticationController authenticationController;
 
-    public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
-        super(stage, screenPath);
+    public HomeScreenHandler(Stage stage, String screenPath,Object dto) throws IOException{
+        super(stage, screenPath,dto);
         try {
-            setupData(null);
-            setupFunctionality();
+            this.setUp(null);
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
-            PopupScreen.error("Error when loading resources.");
+            PopupScreen.showErrorPopup("Error when loading resources.");
         } catch (Exception ex) {
             LOGGER.info(ex.getMessage());
-            PopupScreen.error(ex.getMessage());
+            PopupScreen.showErrorPopup(ex.getMessage());
         }
     }
 
@@ -92,7 +87,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         return (HomeController) super.getBController();
     }
 
-    protected void setupData(Object dto) throws Exception {
+    public void setupData(Object dto) throws Exception {
         setBController(new HomeController());
         this.authenticationController = new AuthenticationController();
         try{
@@ -100,7 +95,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             this.homeItems = new ArrayList<>();
             for (Object object : medium) {
                 Media media = (Media)object;
-                MediaHandler m = new MediaHandler(ViewsConfig.HOME_MEDIA_PATH, media);
+                HomeMediaHandler m = new HomeMediaHandler(ViewsConfig.HOME_MEDIA_PATH, media);
                 m.attach(this);
                 this.homeItems.add(m);
             }
@@ -110,7 +105,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         }
     }
 
-    protected void setupFunctionality() throws Exception {
+    public void setupFunctionality() throws Exception {
 
         aimsImage.setOnMouseClicked(e -> {
             addMediaHome(this.homeItems);
@@ -120,7 +115,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             CartScreenHandler cartScreen;
             try {
                 LOGGER.info("User clicked to view cart");
-                cartScreen = new CartScreenHandler(this.stage, ViewsConfig.CART_SCREEN_PATH);
+                cartScreen = new CartScreenHandler(this.stage, ViewsConfig.CART_SCREEN_PATH,null);
                 cartScreen.setHomeScreenHandler(this);
                 cartScreen.setBController(new ViewCartController());
                 cartScreen.requestToViewCart(this);
@@ -144,7 +139,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             btnLogin.setOnMouseClicked(event -> {});
         }
 
-        numMediaInCart.setText(String.valueOf(SessionInformation.cartInstance.getListMedia().size()) + " media");
+        numMediaInCart.setText(String.valueOf(SessionInformation.getCartInstance().getListMedia().size()) + " media");
         super.show();
     }
 
@@ -170,7 +165,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
                 int vid = hboxMedia.getChildren().indexOf(node);
                 VBox vBox = (VBox) node;
                 while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
-                    MediaHandler media = (MediaHandler) mediaItems.get(0);
+                    HomeMediaHandler media = (HomeMediaHandler) mediaItems.get(0);
                     vBox.getChildren().add(media.getContent());
                     mediaItems.remove(media);
                 }
@@ -196,7 +191,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             // filter only media with the choosen category
             List filteredItems = new ArrayList<>();
             homeItems.forEach(me -> {
-                MediaHandler media = (MediaHandler) me;
+                HomeMediaHandler media = (HomeMediaHandler) me;
                 if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){
                     filteredItems.add(media);
                 }
@@ -210,16 +205,16 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     @Override
     public void update(Observable observable) {
-        if (observable instanceof MediaHandler) update((MediaHandler) observable);
+        if (observable instanceof HomeMediaHandler) update((HomeMediaHandler) observable);
     }
 
-    private void update(MediaHandler mediaHandler) {
+    private void update(HomeMediaHandler mediaHandler) {
         int requestQuantity = mediaHandler.getRequestQuantity();
         Media media = mediaHandler.getMedia();
 
         try {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
-            Cart cart = SessionInformation.cartInstance;
+            Cart cart = SessionInformation.getCartInstance();
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
             CartItem mediaInCart = getBController().checkMediaInCart(media);
             if (mediaInCart != null) {
@@ -233,12 +228,12 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             // subtract the quantity and redisplay
             media.setQuantity(media.getQuantity() - requestQuantity);
             numMediaInCart.setText(cart.getTotalMedia() + " media");
-            PopupScreen.success("The media " + media.getTitle() + " added to Cart");
+            PopupScreen.showSuccessPopup("The media " + media.getTitle() + " added to Cart");
         } catch (MediaNotAvailableException exp) {
             try {
                 String message = "Not enough media:\nRequired: " + requestQuantity + "\nAvail: " + media.getQuantity();
                 LOGGER.severe(message);
-                PopupScreen.error(message);
+                PopupScreen.showErrorPopup(message);
             } catch (Exception e) {
                 LOGGER.severe("Cannot add media to cart: ");
             }
@@ -252,13 +247,13 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     @FXML
     void redirectLoginScreen(MouseEvent event) {
         try {
-            BaseScreenHandler loginScreen = new LoginScreenHandler(this.stage, ViewsConfig.LOGIN_SCREEN_PATH);
+            BaseScreenHandler loginScreen = new LoginScreenHandler(this.stage, ViewsConfig.LOGIN_SCREEN_PATH,null);
             loginScreen.setHomeScreenHandler(this);
             loginScreen.setBController(this.authenticationController);
             loginScreen.show();
         } catch (Exception ex) {
             try {
-                PopupScreen.error("Cant trigger Login");
+                PopupScreen.showErrorPopup("Cant trigger Login");
             } catch (Exception ex1) {
                 LOGGER.severe("Cannot login");
                 ex.printStackTrace();

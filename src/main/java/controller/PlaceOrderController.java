@@ -1,15 +1,9 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
-import entity.cart.Cart;
-import entity.cart.CartItem;
 import entity.invoice.Invoice;
 import entity.order.Order;
-import entity.order.OrderItem;
 import entity.shipping.DeliveryInfo;
-import entity.shipping.DistanceAPIFactory;
-import entity.shipping.DistanceFactory;
-import entity.shipping.ShippingConfigs;
 import org.example.DistanceCalculator;
 
 import java.io.IOException;
@@ -23,6 +17,27 @@ import java.util.regex.Pattern;
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
+
+/**
+ * Logical Cohesion
+ * Các hàm validate chỉ liên quan với nhau về mặt logic nhưng
+ * không liên quan đến nhau về mặt chức năng
+ *
+ * Coincidental Cohesion
+ * Cac phuong thuc validate khong lien quan den nghiep vu
+ * cua lop, nen tach ra thanh mot lop rieng de xu ly
+ * ptduc
+ * */
+/**
+ * SOLID: Vi pham SRP vi trong lop chua cac phuong thua validate
+ * khi co them yeu cau validate, can thay doi truc tiep code cua class
+ * */
+
+/**
+ * Duplication of code
+ * Hàm validateName và validateAddress giống nhau về chức năng và code nhưng lại tách thành 2 hàm
+ * Solution : Kết hợp lại thành 1 hàm duy nhất: validateNameAndAddress
+ */
 public class PlaceOrderController extends BaseController {
 
     /**
@@ -35,7 +50,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public void placeOrder() throws SQLException {
-        SessionInformation.cartInstance.checkAvailabilityOfProduct();
+        SessionInformation.getCartInstance().checkAvailabilityOfProduct();
     }
 
     /**
@@ -44,7 +59,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public Order createOrder() throws SQLException {
-        return new Order(SessionInformation.cartInstance);
+        return new Order(SessionInformation.getCartInstance());
     }
 
     /**
@@ -71,10 +86,8 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-                String.valueOf(info.get("instructions")),
-//                new DistanceCalculator());//SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
-                new DistanceAPIFactory().createDistanceCalculator());
-                System.out.println(deliveryInfo.getProvince());
+                String.valueOf(info.get("instructions")));
+        System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
     
@@ -86,8 +99,8 @@ public class PlaceOrderController extends BaseController {
    */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
-        || validateName(info.get("name"))
-        || validateAddress(info.get("address"))) return;
+        || validateNameAndAddress(info.get("name"))
+        || validateNameAndAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
     
@@ -102,19 +115,19 @@ public class PlaceOrderController extends BaseController {
         return true;
     }
     
-    public boolean validateName(String name) {
-        if (Objects.isNull(name)) return false;
+    public boolean validateNameAndAddress(String srcString) {
+        if (Objects.isNull(srcString)) return false;
         String patternString = "^[a-zA-Z\\s]*$";
         Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(srcString);
         return matcher.matches();
     }
     
-    public boolean validateAddress(String address) {
-        if (Objects.isNull(address)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(address);
-        return matcher.matches();
-    }
+//    public boolean validateAddress(String address) {
+//        if (Objects.isNull(address)) return false;
+//        String patternString = "^[a-zA-Z\\s]*$";
+//        Pattern pattern = Pattern.compile(patternString);
+//        Matcher matcher = pattern.matcher(address);
+//        return matcher.matches();
+//    }
 }

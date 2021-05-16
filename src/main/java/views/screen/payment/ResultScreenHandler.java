@@ -1,13 +1,10 @@
 package views.screen.payment;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -24,27 +21,17 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	private String message;
 
 	public ResultScreenHandler(Stage stage, String screenPath, Map<String, String> response) throws IOException {
-		super(stage, screenPath);
-		try {
-			setupData(response);
-			setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.error("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.error(ex.getMessage());
-		}
+		super(stage, screenPath,null);
 	}
 
 
-	protected void setupData(Object dto) throws Exception {
+	public void setupData(Object dto)  {
 		Map<String, String> response = (Map<String, String>) dto;
 		resultLabel.setText(response.get("RESULT"));
 		messageLabel.setText(response.get("MESSAGE"));
 	}
 
-	protected void setupFunctionality() throws Exception {
+	public void setupFunctionality() throws Exception {
 		return;
 	}
 

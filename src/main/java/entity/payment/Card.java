@@ -1,4 +1,4 @@
 package entity.payment;
 
-public class Card {
+public interface Card {
 }

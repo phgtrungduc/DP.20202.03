@@ -6,10 +6,7 @@ import entity.cart.CartItem;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderItem;
-import entity.shipping.DeliveryInfo;
-import entity.shipping.DistanceAPIFactory;
-import entity.shipping.DistanceFactory;
-import entity.shipping.ShippingConfigs;
+import entity.shipping.*;
 import org.example.DistanceCalculator;
 
 import java.io.IOException;
@@ -73,7 +70,7 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("address")),
                 String.valueOf(info.get("instructions")),
 //                new DistanceCalculator());//SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
-                new DistanceAPIFactory().createDistanceCalculator());
+                (DistanceBehavior) new DistanceAPIFactory().createDistanceCalculator());
                 System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }

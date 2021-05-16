@@ -12,6 +12,7 @@
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
       <root url="file://$USER_HOME$/Desktop" />
       <root url="jar://$PROJECT_DIR$/../Download/distance-api-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/win/alt-distance-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

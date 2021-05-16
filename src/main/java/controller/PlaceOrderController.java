@@ -4,7 +4,6 @@ import common.exception.InvalidDeliveryInfoException;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.shipping.DeliveryInfo;
-import entity.shipping.DistanceCalculatorFactory;
 import org.example.DistanceCalculator;
 
 import java.io.IOException;
@@ -93,8 +92,7 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-                String.valueOf(info.get("instructions")),
-                new DistanceCalculatorFactory());
+                String.valueOf(info.get("instructions")));
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }

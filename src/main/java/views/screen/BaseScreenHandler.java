@@ -17,6 +17,8 @@ import views.screen.popup.PopupScreen;
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
+
+
 	private Scene scene;
 	private BaseScreenHandler prev;
 	protected final Stage stage;
@@ -24,22 +26,9 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	protected Hashtable<String, String> messages;
 	private BaseController bController;
 
-	public abstract void setupData(Object dto) throws Exception;
-	public abstract void setupFunctionality() throws Exception;
-
-	protected BaseScreenHandler(Stage stage, String screenPath, Object dto) throws IOException {
+	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(screenPath);
 		this.stage = stage;
-		try {
-			this.setupData(dto);
-			this.setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
 	}
 
 	public void setPreviousScreen(BaseScreenHandler prev) {

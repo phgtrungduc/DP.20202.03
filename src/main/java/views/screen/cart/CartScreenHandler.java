@@ -54,13 +54,18 @@ public class CartScreenHandler extends BaseScreenHandler {
 	private Button btnPlaceOrder;
 
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
-		super(stage, screenPath, null);
+		super(stage, screenPath);
+		try {
+			setupFunctionality();
+		} catch (IOException ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.error("Error when loading resources.");
+		} catch (Exception ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.error(ex.getMessage());
+		}
 	}
 
-	@Override
-	protected  void setupData() throws Exception { };
-
-	@Override
 	protected void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
 		File file = new File(ViewsConfig.IMAGE_PATH + "/Logo.png");

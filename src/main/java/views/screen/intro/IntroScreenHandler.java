@@ -24,15 +24,25 @@ public class IntroScreenHandler extends BaseScreenHandler {
     ImageView logo;
 
     public IntroScreenHandler(Stage stage, String screenPath) throws IOException {
-        super(stage, screenPath, null);
+        super(stage, screenPath);
+
+        try {
+            setupData(null);
+            setupFunctionality();
+        } catch (IOException ex) {
+            LOGGER.info(ex.getMessage());
+            PopupScreen.error("Error when loading resources.");
+        } catch (Exception ex) {
+            LOGGER.info(ex.getMessage());
+            PopupScreen.error(ex.getMessage());
+        }
     }
 
-    @Override
+
     protected void setupData(Object dto) throws Exception {
         return;
     }
 
-    @Override
     protected void setupFunctionality() throws Exception {
         File file = new File("src/main/resources/assets/images/Logo.png");
         Image image = new Image(file.toURI().toString());

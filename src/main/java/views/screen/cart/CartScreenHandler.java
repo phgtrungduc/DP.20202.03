@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
+import common.interfaces.Observable;
+import common.interfaces.Observer;
 import controller.PlaceOrderController;
 import controller.ViewCartController;
 import entity.cart.CartItem;
@@ -28,7 +30,7 @@ import views.screen.shipping.ShippingScreenHandler;
 /**
  * Duplication of code
  * */
-public class CartScreenHandler extends BaseScreenHandler {
+public class CartScreenHandler extends BaseScreenHandler implements Observer {
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
 	@FXML
@@ -165,7 +167,6 @@ public class CartScreenHandler extends BaseScreenHandler {
 				CartItem cartItem = (CartItem) cm;
 				CartMediaHandler mediaCartScreen = new CartMediaHandler(ViewsConfig.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartItem(cartItem);
-
 				// add spinner
 				vboxCart.getChildren().add(mediaCartScreen.getContent());
 			}
@@ -174,5 +175,19 @@ public class CartScreenHandler extends BaseScreenHandler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void update(Observable observable) {
+		CartItem cartItem;
+		if (observable instanceof CartMediaHandler) {
+			cartItem = ((CartMediaHandler)observable).getCartItem();
+			try {
+				PopupScreen.showSuccessPopup("Đã xóa khỏi giỏ hàng mặt hàng: " + cartItem.getMedia().getTitle());
+			} catch (IOException e) {
+				System.out.println("Đã có lỗi xảy ra: "+e.getMessage());
+			}
+		}
+
 	}
 }

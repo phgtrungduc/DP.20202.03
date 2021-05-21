@@ -31,10 +31,6 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	 * Hau het cac sub class deu su dung hai ham setupData va setupFunctionality
 	 * nhung voi cac subclass khac nhau lai su dung chung 1 cach khac nhau
 	 * */
-	public final void setUp(Object dto) throws Exception{
-		this.setupData(dto);
-		this.setupFunctionality();
-	}
 	public abstract void setupData  (Object dto) throws Exception;
 	public  abstract  void setupFunctionality () throws Exception;
 	protected BaseScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {

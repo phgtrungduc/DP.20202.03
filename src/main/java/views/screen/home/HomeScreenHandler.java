@@ -69,7 +69,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     public HomeScreenHandler(Stage stage, String screenPath,Object dto) throws IOException{
         super(stage, screenPath,dto);
         try {
-            this.setUp(null);
+            setupData(dto);
+            setupFunctionality();
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
             PopupScreen.showErrorPopup("Error when loading resources.");

@@ -3,11 +3,15 @@ package views.screen.cart;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 import common.exception.MediaUpdateException;
 import common.exception.ViewCartException;
+import common.interfaces.Observable;
+import common.interfaces.Observer;
 import controller.SessionInformation;
 import entity.cart.CartItem;
 import javafx.fxml.FXML;
@@ -27,7 +31,7 @@ import views.screen.ViewsConfig;
 /**
  * Duplication of code
  * */
-public class CartMediaHandler extends FXMLScreenHandler {
+public class CartMediaHandler extends FXMLScreenHandler implements Observable {
 
 	private static Logger LOGGER = Utils.getLogger(CartMediaHandler.class.getName());
 
@@ -61,11 +65,13 @@ public class CartMediaHandler extends FXMLScreenHandler {
 	private CartItem cartItem;
 	private Spinner<Integer> spinner;
 	private CartScreenHandler cartScreen;
-
+	private List<Observer> observerList;
 	public CartMediaHandler(String screenPath, CartScreenHandler cartScreen) throws IOException {
 		super(screenPath);
 		this.cartScreen = cartScreen;
 		hboxMedia.setAlignment(Pos.CENTER);
+		observerList = new ArrayList<>();
+		observerList.add(cartScreen);
 	}
 	
 	public void setCartItem(CartItem cartItem) {
@@ -90,6 +96,7 @@ public class CartMediaHandler extends FXMLScreenHandler {
 				SessionInformation.getCartInstance().removeCartMedia(cartItem); // update user cart
 				cartScreen.updateCart(); // re-display user cart
 				LOGGER.info("Deleted " + cartItem.getMedia().getTitle() + " from the cart");
+				notifyObservers();
 			} catch (SQLException exp) {
 				exp.printStackTrace();
 				throw new ViewCartException();
@@ -131,5 +138,24 @@ public class CartMediaHandler extends FXMLScreenHandler {
 		});
 		spinnerFX.setAlignment(Pos.CENTER);
 		spinnerFX.getChildren().add(this.spinner);
+	}
+
+	public CartItem getCartItem() {
+		return cartItem;
+	}
+
+	@Override
+	public void attach(Observer observer) {
+		observerList.remove(observer);
+	}
+
+	@Override
+	public void remove(Observer observer) {
+		observerList.add(observer);
+	}
+
+	@Override
+	public void notifyObservers() {
+		observerList.forEach(observer -> observer.update(this));
 	}
 }

@@ -2,19 +2,10 @@
   <library name="Maven: junit:junit:4.13">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.fxml.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.media.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.base.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx-swt.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.controls.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
-      <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
-      <root url="file://$USER_HOME$/Desktop" />
-      <root url="jar://$PROJECT_DIR$/../Download/distance-api-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/win/alt-distance-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
       <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
@@ -27,6 +18,7 @@
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.media" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.swing" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.web" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
     <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />

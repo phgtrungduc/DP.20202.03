@@ -60,7 +60,8 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath,null);
 		try {
-			this.setUp(null);
+			setupData(invoice);
+			setupFunctionality();
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.showErrorPopup("Error when loading resources.");

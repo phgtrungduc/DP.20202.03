@@ -49,7 +49,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 	private Order order;
 
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
-		super(stage, screenPath,null);
+		super(stage, screenPath,order);
 	}
 
 	public void setupData(Object dto) throws Exception {

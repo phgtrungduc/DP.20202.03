@@ -111,15 +111,11 @@ public class CartScreenHandler extends BaseScreenHandler implements Observer {
 				PopupScreen.showErrorPopup("You don't have anything to place");
 				return;
 			}
-
 			placeOrderController.placeOrder();
-			
 			// display available media
 			displayCartWithMediaAvailability();
-
 			// create order
 			Order order = placeOrderController.createOrder();
-
 			// display shipping form
 			ShippingScreenHandler shippingScreenHandler = new ShippingScreenHandler(
 					this.stage, ViewsConfig.SHIPPING_SCREEN_PATH, order);

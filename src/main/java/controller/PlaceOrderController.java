@@ -3,17 +3,8 @@ package controller;
 import common.exception.InvalidDeliveryInfoException;
 import entity.invoice.Invoice;
 import entity.order.Order;
-<<<<<<< HEAD
 import entity.shipping.DeliveryInfo;
-import entity.shipping.DistanceCalculatorFactory;
 import org.example.DistanceCalculator;
-=======
-import entity.shipping.DeliverInfoVersionOne;
-import entity.shipping.DeliverInfoVersionOneFactory;
-import entity.shipping.DeliveryInfo;
-import entity.shipping.DeliveryInfoFactory;
-
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -41,6 +32,12 @@ import java.util.regex.Pattern;
  * SOLID: Vi pham SRP vi trong lop chua cac phuong thua validate
  * khi co them yeu cau validate, can thay doi truc tiep code cua class
  * */
+
+/**
+ * Duplication of code
+ * Hàm validateName và validateAddress giống nhau về chức năng và code nhưng lại tách thành 2 hàm
+ * Solution : Kết hợp lại thành 1 hàm duy nhất: validateNameAndAddress
+ */
 public class PlaceOrderController extends BaseController {
 
     /**
@@ -96,13 +93,10 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-<<<<<<< HEAD
                 String.valueOf(info.get("instructions")),
                 new DistanceCalculatorFactory());
-=======
                 String.valueOf(info.get("instructions"))
         );
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
@@ -120,8 +114,8 @@ public class PlaceOrderController extends BaseController {
      * */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
-        || validateName(info.get("name"))
-        || validateAddress(info.get("address"))) return;
+        || validateNameAndAddress(info.get("name"))
+        || validateNameAndAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
     
@@ -136,19 +130,19 @@ public class PlaceOrderController extends BaseController {
         return true;
     }
     
-    public boolean validateName(String name) {
-        if (Objects.isNull(name)) return false;
+    public boolean validateNameAndAddress(String srcString) {
+        if (Objects.isNull(srcString)) return false;
         String patternString = "^[a-zA-Z\\s]*$";
         Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(srcString);
         return matcher.matches();
     }
     
-    public boolean validateAddress(String address) {
-        if (Objects.isNull(address)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(address);
-        return matcher.matches();
-    }
+//    public boolean validateAddress(String address) {
+//        if (Objects.isNull(address)) return false;
+//        String patternString = "^[a-zA-Z\\s]*$";
+//        Pattern pattern = Pattern.compile(patternString);
+//        Matcher matcher = pattern.matcher(address);
+//        return matcher.matches();
+//    }
 }

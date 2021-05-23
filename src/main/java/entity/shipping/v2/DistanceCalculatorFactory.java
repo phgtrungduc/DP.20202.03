@@ -1,4 +1,4 @@
-package entity.shipping;
+package entity.shipping.v2;
 
 import org.example.DistanceCalculator;
 

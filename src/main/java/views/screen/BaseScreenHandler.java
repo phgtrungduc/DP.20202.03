@@ -26,19 +26,26 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	private BaseController baseController;
 
 	/**
+	 * Duplication of code : giải quyết bằng template method
 	 * Template Method
 	 * Hau het cac sub class deu su dung hai ham setupData va setupFunctionality
 	 * nhung voi cac subclass khac nhau lai su dung chung 1 cach khac nhau
 	 * */
-	public final void setUp(Object dto) throws Exception{
-		this.setupData(dto);
-		this.setupFunctionality();
-	}
 	public abstract void setupData  (Object dto) throws Exception;
 	public  abstract  void setupFunctionality () throws Exception;
-	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
+	protected BaseScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {
 		super(screenPath);
 		this.stage = stage;
+		try {
+			setupData(dto);
+			setupFunctionality();
+		} catch (IOException ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.showErrorPopup("Error when loading resources.");
+		} catch (Exception ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.showErrorPopup(ex.getMessage());
+		}
 	}
 
 	public void setPreviousScreen(BaseScreenHandler prev) {

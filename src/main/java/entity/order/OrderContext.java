@@ -9,4 +9,8 @@ public class OrderContext {
     public void accepted() {
 
     }
+
+    public void setState(State state) {
+        this.state = state;
+    }
 }

@@ -1,4 +1,14 @@
 package entity.order;
 
-public interface State {
+public abstract class State {
+    private OrderContext orderContext;
+
+    public void cancel() {
+
+    }
+
+    public void accepted() {
+
+    }
+
 }

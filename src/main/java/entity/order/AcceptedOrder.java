@@ -1,4 +1,4 @@
 package entity.order;
 
-public class AcceptedOrder {
+public class AcceptedOrder extends State{
 }

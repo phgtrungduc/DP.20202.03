@@ -24,17 +24,8 @@ public class LoginScreenHandler extends BaseScreenHandler{
     @FXML
     private PasswordField password;
 
-    public LoginScreenHandler(Stage stage, String screenPath) throws IOException{
-        super(stage, screenPath);
-        try {
-            this.setUp(null);
-        } catch (IOException ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.showErrorPopup("Error when loading resources.");
-        } catch (Exception ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.showErrorPopup(ex.getMessage());
-        }
+    public LoginScreenHandler(Stage stage, String screenPath,Object dto) throws IOException{
+        super(stage, screenPath,dto);
     }
 
     public AuthenticationController getBaseontroller() {

@@ -6,6 +6,7 @@ import utils.Utils;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedHashMap;
 import java.util.logging.Logger;
 
 /**
@@ -109,5 +110,17 @@ public class Media {
     public Media setType(String type) {
         this.type = type;
         return this;
+    }
+    public LinkedHashMap<String,String> getAllProp(){
+        LinkedHashMap<String,String> res = new LinkedHashMap<String, String>();
+        res.put("value",String.valueOf(value));
+        res.put("id",String.valueOf(id));
+        res.put("title",title);
+        res.put("category",category);
+        res.put("price",String.valueOf(price));
+        res.put("quantity",String.valueOf(quantity));
+        res.put("type",type);
+        res.put("imageURL",imageURL);
+        return res;
     }
 }

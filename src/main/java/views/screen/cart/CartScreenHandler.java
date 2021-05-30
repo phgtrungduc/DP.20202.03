@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
+import common.interfaces.Observable;
+import common.interfaces.Observer;
 import controller.PlaceOrderController;
 import controller.ViewCartController;
 import entity.cart.CartItem;
@@ -25,8 +27,10 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
-
-public class CartScreenHandler extends BaseScreenHandler {
+/**
+ * Duplication of code
+ * */
+public class CartScreenHandler extends BaseScreenHandler implements Observer {
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
 	@FXML
@@ -53,17 +57,8 @@ public class CartScreenHandler extends BaseScreenHandler {
 	@FXML
 	private Button btnPlaceOrder;
 
-	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
-		super(stage, screenPath);
-		try {
-			setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
+	public CartScreenHandler(Stage stage, String screenPath,Object dto) throws IOException {
+		super(stage, screenPath,dto);
 	}
 
 	@Override
@@ -116,15 +111,11 @@ public class CartScreenHandler extends BaseScreenHandler {
 				PopupScreen.showErrorPopup("You don't have anything to place");
 				return;
 			}
-
 			placeOrderController.placeOrder();
-			
 			// display available media
 			displayCartWithMediaAvailability();
-
 			// create order
 			Order order = placeOrderController.createOrder();
-
 			// display shipping form
 			ShippingScreenHandler shippingScreenHandler = new ShippingScreenHandler(
 					this.stage, ViewsConfig.SHIPPING_SCREEN_PATH, order);
@@ -172,7 +163,6 @@ public class CartScreenHandler extends BaseScreenHandler {
 				CartItem cartItem = (CartItem) cm;
 				CartMediaHandler mediaCartScreen = new CartMediaHandler(ViewsConfig.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartItem(cartItem);
-
 				// add spinner
 				vboxCart.getChildren().add(mediaCartScreen.getContent());
 			}
@@ -181,5 +171,19 @@ public class CartScreenHandler extends BaseScreenHandler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void update(Observable observable) {
+		CartItem cartItem;
+		if (observable instanceof CartMediaHandler) {
+			cartItem = ((CartMediaHandler)observable).getCartItem();
+			try {
+				PopupScreen.showSuccessPopup("Đã xóa khỏi giỏ hàng mặt hàng: " + cartItem.getMedia().getTitle());
+			} catch (IOException e) {
+				System.out.println("Đã có lỗi xảy ra: "+e.getMessage());
+			}
+		}
+
 	}
 }

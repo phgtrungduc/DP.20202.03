@@ -1,9 +1,8 @@
 <component name="libraryTable">
-  <library name="Maven: junit:junit:4.13">
+  <library name="Maven: org.hamcrest:hamcrest-core:1.3">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
-<<<<<<< HEAD
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/win/distance-api-1.0-SNAPSHOT.jar!/" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx-swt.jar!/" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.base.jar!/" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.controls.jar!/" />
@@ -12,19 +11,10 @@
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.media.jar!/" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/distance-api-1.0-SNAPSHOT.jar!/" />
-=======
->>>>>>> ptduc
+      <root url="jar://$PROJECT_DIR$/lib/win/alt-distance-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-<<<<<<< HEAD
-=======
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
-      <root url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" />
-      <root url="file://$USER_HOME$/Desktop/New folder (2)/DP.20202.03/src/main/java" />
-      <root url="file://$USER_HOME$/Desktop/New folder (2)/DP.20202.03/test/java" />
->>>>>>> ptduc
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.base" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.controls" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.fxml" />
@@ -32,16 +22,6 @@
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.media" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.swing" />
       <root url="jar://F:/JavaFx/javafx-sdk-11.0.2/lib/src.zip!/javafx.web" />
-<<<<<<< HEAD
     </SOURCES>
-    <excluded>
-      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
-    </excluded>
-=======
-      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-sources.jar!/" />
-    </SOURCES>
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
-    <jarDirectory url="file://F:/JavaFx/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
->>>>>>> ptduc
   </library>
 </component>

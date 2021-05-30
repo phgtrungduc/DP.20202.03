@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import entity.db.AIMSDB;
@@ -124,5 +125,18 @@ public class Book extends Media {
             ", language='" + language + "'" +
             ", bookCategory='" + bookCategory + "'" +
             "}";
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAllProp() {
+        LinkedHashMap<String, String>  res = super.getAllProp();
+        res.put("author",author);
+        res.put("coverType",coverType);
+        res.put("publisher",publisher);
+        res.put("publishDate",String.valueOf(publishDate));
+        res.put("numOfPages",String.valueOf(numOfPages));
+        res.put("language",language);
+        res.put("bookCategory",bookCategory);
+        return res;
     }
 }

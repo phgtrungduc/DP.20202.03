@@ -45,16 +45,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private TextField securityCode;
 
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
-		try {
-			this.setUp(null);
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
+		super(stage, screenPath,invoice);
 	}
 
 	public void setupData(Object dto) throws Exception {
@@ -74,8 +65,8 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
-		PaymentController ctrl = (PaymentController) getBaseController();
-		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents, cardNumber.getText(), holderName.getText(),
+		PaymentController ctrl = (PaymentController) getBController();
+		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents,cardNumber.getText(), holderName.getText(),
 				expirationDate.getText(), securityCode.getText());
 
 		BaseScreenHandler resultScreen = new ResultScreenHandler(this.stage, ViewsConfig.RESULT_SCREEN_PATH, response);

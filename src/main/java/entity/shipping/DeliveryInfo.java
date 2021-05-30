@@ -1,8 +1,6 @@
 package entity.shipping;
 
-
 import entity.order.Order;
-<<<<<<< HEAD
 import org.example.DistanceCalculator;
 
 public class DeliveryInfo {
@@ -12,42 +10,21 @@ public class DeliveryInfo {
     protected String province;
     protected String address;
     protected String shippingInstructions;
+    protected DistanceCalculator distanceCalculator;
 
+    DeliveryInfo(){}
 
-
-
-    /**
-     * SOLID: Vi phạm open/close vi khi thay doi phuong thuc thanh toan
-     * can thay doi truc tiep class nay
-     * Vi pham DIP: module muc cao phu thuoc module muc thap
-     * */
-    protected DistanceCalculatorFactory distanceCalculatorFactory;
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculatorFactory distanceCalculatorFactory) {
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
         this.name = name;
         this.phone = phone;
         this.province = province;
         this.address = address;
         this.shippingInstructions = shippingInstructions;
-        this.distanceCalculatorFactory = distanceCalculatorFactory;
+        this.distanceCalculator = distanceCalculator;
     }
 
-    /**
-     * Stamp coupling
-     * Truyền vào order nhưng không sử dụng
-     * (có thể lỗi lập trình chưa sửa )
-     * ptduc
-     * */
-
-    /**
-     * SOLID: Vi phạm OCP
-     * Sử dùng trực tiếp cách tính phí của module distanceCalculator
-     * Thay doi cach tinh phi se phai thay doi code cua class
-     * SOLID : Vi pham SRP
-     * Nghiep vu cua lop chi chua cac thong tin giao hang
-     * Phan tinh phi giao hang nen tach ra thanh class rieng
-     * */
     public int calculateShippingFee(Order order) {
-        int distance = distanceCalculatorFactory.createDistanceCalculator().calculateDistance(address, province);
+        int distance = distanceCalculator.calculateDistance(address, province);
         return (int) (distance * 1.2);
     }
 
@@ -70,19 +47,4 @@ public class DeliveryInfo {
     public String getShippingInstructions() {
         return shippingInstructions;
     }
-=======
-
-public abstract class DeliveryInfo {
-    public abstract String getName();
-
-    public abstract String getPhone();
-
-    public abstract String getProvince();
-
-    public abstract String getAddress();
-
-    public abstract String getShippingInstructions();
-
-    public abstract  int calculateShippingFee(Order order);
->>>>>>> 862f2f3681bd5185d1bd05b3a7d9f3fa3cbf7ebc
 }

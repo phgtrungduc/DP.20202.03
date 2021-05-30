@@ -58,9 +58,10 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	private Invoice invoice;
 
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
+		super(stage, screenPath,null);
 		try {
-			this.setUp(null);
+			setupData(invoice);
+			setupFunctionality();
 		} catch (IOException ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.showErrorPopup("Error when loading resources.");
@@ -103,12 +104,15 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	@FXML
 	void confirmInvoice(MouseEvent event) throws IOException {
-		BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, ViewsConfig.PAYMENT_SCREEN_PATH, invoice);
-		paymentScreen.setBaseController(new PaymentController());
-		paymentScreen.setPreviousScreen(this);
-		paymentScreen.setHomeScreenHandler(homeScreenHandler);
-		paymentScreen.setScreenTitle("Payment Screen");
-		paymentScreen.show();
-		LOGGER.info("Confirmed invoice");
+//		BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, ViewsConfig.PAYMENT_SCREEN_PATH, invoice);
+//		paymentScreen.setBController(new PaymentController());
+//		paymentScreen.setPreviousScreen(this);
+//		paymentScreen.setHomeScreenHandler(homeScreenHandler);
+//		paymentScreen.setScreenTitle("Payment Screen");
+//		paymentScreen.show();
+//		LOGGER.info("Confirmed invoice");
+		ListInvoiceHandler listInvoiceHandler = new ListInvoiceHandler(this.stage, ViewsConfig.LIST_INVOICE,invoice);
+		listInvoiceHandler.setBController(new PaymentController());
+		listInvoiceHandler.show();
 	}
 }

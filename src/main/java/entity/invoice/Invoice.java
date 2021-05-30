@@ -2,18 +2,20 @@ package entity.invoice;
 
 import entity.order.Order;
 
+
 public class Invoice {
 
     private Order order;
     private int amount;
-    
+    private InvoiceState state;
     public Invoice(){
 
     }
 
-    public Invoice(Order order){
+    public Invoice(Order order,InvoiceState initState){
         this.order = order;
         this.amount = order.getTotal();
+        this.state = initState;
     }
 
     public Order getOrder() {
@@ -30,5 +32,14 @@ public class Invoice {
 
     public void saveInvoice(){
         
+    }
+    public void cancelOrder(){
+        state.cancelOrder();
+    };
+    public void confirmOrder(){
+        state.confirmOrder();
+    };
+    public void changeState(InvoiceState state){
+        this.state = state;
     }
 }

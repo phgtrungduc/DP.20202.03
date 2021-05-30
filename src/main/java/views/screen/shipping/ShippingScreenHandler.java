@@ -18,7 +18,6 @@ import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.invoice.InvoiceScreenHandler;
-import views.screen.popup.PopupScreen;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -50,17 +49,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 	private Order order;
 
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
-		super(stage, screenPath);
-		try {
-			setupData(order);
-			setupFunctionality();
-		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup("Error when loading resources.");
-		} catch (Exception ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.showErrorPopup(ex.getMessage());
-		}
+		super(stage, screenPath,order);
 	}
 
 	public void setupData(Object dto) throws Exception {

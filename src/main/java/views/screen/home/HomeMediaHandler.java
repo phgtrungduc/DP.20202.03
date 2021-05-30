@@ -17,9 +17,11 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
+import views.screen.popup.PopupDetailMedia;
 //Doi ten tu MediaHandler thanh HomeMediaHandler de ro nghia class dung trong package home
 
 public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
@@ -42,6 +44,9 @@ public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
     @FXML
     protected Button addToCartBtn;
 
+    @FXML
+    protected Button viewDetailBtn;
+
     private static Logger LOGGER = Utils.getLogger(HomeMediaHandler.class.getName());
     private Media media;
     private List<Observer> observerList;
@@ -53,6 +58,15 @@ public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
         addToCartBtn.setOnMouseClicked(event -> {
             notifyObservers();
         });
+        viewDetailBtn.setOnMouseClicked((event -> {
+            try {
+                PopupDetailMedia popup = new PopupDetailMedia(new Stage(),ViewsConfig.POPUP_DETAIL_MEDIA,this.media);
+                popup.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }));
         setMediaInfo();
     }
 
@@ -70,7 +84,6 @@ public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
         mediaImage.setFitHeight(160);
         mediaImage.setFitWidth(152);
         mediaImage.setImage(image);
-
         mediaTitle.setText(media.getTitle());
         mediaPrice.setText(ViewsConfig.getCurrencyFormat(media.getPrice()));
         mediaAvail.setText(Integer.toString(media.getQuantity()));

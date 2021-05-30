@@ -1,6 +1,7 @@
 package entity.media;
 
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
 
 public class AudioBook extends Media{
     private String author;
@@ -29,4 +30,14 @@ public class AudioBook extends Media{
         super(id, title, quantity, category, imageUrl, price, type);
     }
 
+    @Override
+    public LinkedHashMap<String, String> getAllProp() {
+        LinkedHashMap<String, String> res = super.getAllProp();
+        res.put("author",author);
+        res.put("format",format);
+        res.put("language",language);
+        res.put("accent",accent);
+        res.put("lengthInMinutes",String.valueOf(lengthInMinutes));
+        return res;
+    }
 }

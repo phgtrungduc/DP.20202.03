@@ -3,6 +3,7 @@ package entity.media;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class CD extends Media {
@@ -75,5 +76,15 @@ public class CD extends Media {
         return "{" + basicInformation + " artist='" + artist + "'" + ", recordLabel='" + recordLabel + "'"
                 + "'" + ", musicType='" + musicType + "'" + ", releasedDate='"
                 + releasedDate + "'" + "}";
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAllProp() {
+        LinkedHashMap<String, String> res =  super.getAllProp();
+        res.put("artist",artist);
+        res.put("recordLabel",recordLabel);
+        res.put("musicType",musicType);
+        res.put("releasedDate",String.valueOf(releasedDate));
+        return res;
     }
 }

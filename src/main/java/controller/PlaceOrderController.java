@@ -1,6 +1,7 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
+import entity.invoice.CreateInvoiceState;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.shipping.DeliveryInfo;
@@ -68,7 +69,7 @@ public class PlaceOrderController extends BaseController {
      * @return Invoice
      */
     public Invoice createInvoice(Order order) {
-        return new Invoice(order);
+        return new Invoice(order, new CreateInvoiceState());
     }
 
     /**
@@ -92,7 +93,8 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("phone")),
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
-                String.valueOf(info.get("instructions")));
+                String.valueOf(info.get("instructions")),
+                new DistanceCalculator());
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }

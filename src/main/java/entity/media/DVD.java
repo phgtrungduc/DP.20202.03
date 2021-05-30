@@ -1,9 +1,8 @@
 package entity.media;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.List;
+import java.util.LinkedHashMap;
 
 public class DVD extends Media {
 
@@ -108,5 +107,17 @@ public class DVD extends Media {
         return "{" + basicInformation + " discType='" + discType + "'" + ", director='" + director + "'" + ", runtime='"
                 + runtime + "'" + ", studio='" + studio + "'" + ", subtitles='" + subtitles + "'" + ", releasedDate='"
                 + releasedDate + "'" + ", filmType='" + filmType + "'" + "}";
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAllProp() {
+        LinkedHashMap<String, String>res =  super.getAllProp();
+        res.put("discType",discType);
+        res.put("director",director);
+        res.put("studio",studio);
+        res.put("subtitles",subtitles);
+        res.put("releasedDate",String.valueOf(releasedDate));
+        res.put("filmType",filmType);
+        return res;
     }
 }

@@ -45,7 +45,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private TextField securityCode;
 
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath,null);
+		super(stage, screenPath,invoice);
 	}
 
 	public void setupData(Object dto) throws Exception {

@@ -28,7 +28,7 @@ public class InterbankSubsystem implements InterbankInterface {
 		this.ctrl = new InterbankSubsystemController();
 	}
 	public static InterbankSubsystem getInstance(){
-		if (interbankSubsystem==null) return interbankSubsystem;
+		if (interbankSubsystem==null)  interbankSubsystem = new InterbankSubsystem();
 		return interbankSubsystem;
 	}
 	/**

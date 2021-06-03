@@ -3,7 +3,6 @@ package subsystem;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
 import entity.payment.Card;
-import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
 /**

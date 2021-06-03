@@ -5,35 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5cdb911-4881-4355-9a1d-29aac69e3944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/invoice/CancelInvoiceState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/invoice/ConfirmInvoiceState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/invoice/CreateInvoiceState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/invoice/InvoiceState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DistanceCalculateAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v3WithStrategy/DeliveryInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/v3WithStrategy/DeliveryInfoWithDemension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/screen/invoice/ListInvoiceHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/screen/popup/PopupDetailMedia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/fxml/list_invoice.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/fxml/popup_detail_media.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/InvoiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/invoice/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/invoice/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/media/AudioBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/media/AudioBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/media/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/media/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/media/CD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/media/CD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/media/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/media/DVD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/media/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfoWithDemension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/shipping/DeliveryInfoWithDemension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/InterbankSubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/ViewsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/ViewsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeMediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/home/HomeMediaHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/payment/DomesticCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/payment/DomesticCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subsystem/InterbankInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subsystem/InterbankInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/BaseScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/BaseScreenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/invoice/InvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/invoice/InvoiceScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/PaymentScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/payment/ResultScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/fxml/media_home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/fxml/media_home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/screen/invoice/ListInvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/screen/invoice/ListInvoiceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/fxml/list_invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/fxml/list_invoice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/fxml/list_invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/fxml/list_invoice.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +121,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/views/screen/invoice/InvoiceScreenHandler.java</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

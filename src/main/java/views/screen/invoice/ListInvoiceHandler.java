@@ -1,6 +1,6 @@
 package views.screen.invoice;
 
-import common.exception.PlaceOrderException;
+import controller.InvoiceController;
 import controller.ViewCartController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,8 +16,6 @@ import views.screen.cart.CartScreenHandler;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.logging.Logger;
 
 public class ListInvoiceHandler extends BaseScreenHandler {
@@ -71,7 +69,8 @@ public class ListInvoiceHandler extends BaseScreenHandler {
             LOGGER.info("Place Order button clicked");
         });
     }
-    public ViewCartController getBController(){
-        return (ViewCartController) super.getBController();
+    public InvoiceController getBController(){
+        return (InvoiceController) super.getBController();
     }
+
 }

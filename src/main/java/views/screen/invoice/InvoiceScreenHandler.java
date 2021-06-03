@@ -1,6 +1,7 @@
 package views.screen.invoice;
 
 import common.exception.ProcessInvoiceException;
+import controller.InvoiceController;
 import controller.PaymentController;
 import entity.invoice.Invoice;
 import entity.order.Order;
@@ -112,7 +113,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 //		paymentScreen.show();
 //		LOGGER.info("Confirmed invoice");
 		ListInvoiceHandler listInvoiceHandler = new ListInvoiceHandler(this.stage, ViewsConfig.LIST_INVOICE,invoice);
-		listInvoiceHandler.setBController(new PaymentController());
+		listInvoiceHandler.setBController(new InvoiceController());
 		listInvoiceHandler.show();
 	}
 }

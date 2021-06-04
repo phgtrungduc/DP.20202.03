@@ -7,6 +7,7 @@ import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderItem;
 import entity.shipping.*;
+import org.example.AlternativeDistanceCalculator;
 import org.example.DistanceCalculator;
 
 import java.io.IOException;
@@ -70,11 +71,12 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("address")),
                 String.valueOf(info.get("instructions")),
 //                new DistanceCalculator());//SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
-                (DistanceBehavior) new DistanceAPIFactory().createDistanceCalculator());
+                new DistanceAdapter(new AlternativeDistanceCalculator()));
+//                new DistanceCalculatorClass(new DistanceCalculator()));
                 System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
-    
+
     /**
    * The method validates the info
    * @param info
@@ -87,7 +89,7 @@ public class PlaceOrderController extends BaseController {
         || validateAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
-    
+
     public boolean validatePhoneNumber(String phoneNumber) {
         if (phoneNumber.length() != 10) return false;
         if (!phoneNumber.startsWith("0")) return false;
@@ -98,7 +100,7 @@ public class PlaceOrderController extends BaseController {
         }
         return true;
     }
-    
+
     public boolean validateName(String name) {
         if (Objects.isNull(name)) return false;
         String patternString = "^[a-zA-Z\\s]*$";
@@ -106,7 +108,7 @@ public class PlaceOrderController extends BaseController {
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
-    
+
     public boolean validateAddress(String address) {
         if (Objects.isNull(address)) return false;
         String patternString = "^[a-zA-Z\\s]*$";

@@ -21,6 +21,15 @@ public class DeliveryInfo {
         this.shippingInstructions = shippingInstructions;
         this.distanceBehavior = distanceBehavior;
     }
+//    protected DistanceCalculator distanceCalculator;
+//    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+//        this.name = name;
+//        this.phone = phone;
+//        this.province = province;
+//        this.address = address;
+//        this.shippingInstructions = shippingInstructions;
+//        this.distanceCalculator = distanceCalculator;
+//    }
     //SOLID: Vi phạm nguyên tắc OCP vì khi muốn đổi sang cách tính phí giao hàng khác thì phải sửa các lớp khác
     public int calculateShippingFee(Order order) {
        return distanceBehavior.calculateShippingFee(address, province);

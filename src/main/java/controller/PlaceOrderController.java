@@ -1,6 +1,7 @@
 package controller;
 
 import common.exception.InvalidDeliveryInfoException;
+import common.function.CommonFunction;
 import entity.invoice.CreateInvoiceState;
 import entity.invoice.Invoice;
 import entity.order.Order;
@@ -112,8 +113,8 @@ public class PlaceOrderController extends BaseController {
      * */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         if (validatePhoneNumber(info.get("phone"))
-        || validateNameAndAddress(info.get("name"))
-        || validateNameAndAddress(info.get("address"))) return;
+        || CommonFunction.validateNameAndAddress(info.get("name"))
+        || CommonFunction.validateNameAndAddress(info.get("address"))) return;
         else throw new InvalidDeliveryInfoException();
     }
     
@@ -128,13 +129,7 @@ public class PlaceOrderController extends BaseController {
         return true;
     }
     
-    public boolean validateNameAndAddress(String srcString) {
-        if (Objects.isNull(srcString)) return false;
-        String patternString = "^[a-zA-Z\\s]*$";
-        Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(srcString);
-        return matcher.matches();
-    }
+
     
 //    public boolean validateAddress(String address) {
 //        if (Objects.isNull(address)) return false;

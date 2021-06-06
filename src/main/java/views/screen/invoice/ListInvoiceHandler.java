@@ -1,7 +1,6 @@
 package views.screen.invoice;
 
 import controller.InvoiceController;
-import controller.ViewCartController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -69,8 +68,8 @@ public class ListInvoiceHandler extends BaseScreenHandler {
             LOGGER.info("Place Order button clicked");
         });
     }
-    public InvoiceController getBController(){
-        return (InvoiceController) super.getBController();
+    public InvoiceController getBaseController(){
+        return (InvoiceController) super.getBaseController();
     }
 
 }

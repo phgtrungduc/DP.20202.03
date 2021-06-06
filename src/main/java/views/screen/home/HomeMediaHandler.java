@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import common.function.CommonFunction;
 import common.interfaces.Observable;
 import common.interfaces.Observer;
 import entity.media.Media;
@@ -85,7 +86,7 @@ public class HomeMediaHandler extends FXMLScreenHandler implements Observable {
         mediaImage.setFitWidth(152);
         mediaImage.setImage(image);
         mediaTitle.setText(media.getTitle());
-        mediaPrice.setText(ViewsConfig.getCurrencyFormat(media.getPrice()));
+        mediaPrice.setText(CommonFunction.getCurrencyFormat(media.getPrice()));
         mediaAvail.setText(Integer.toString(media.getQuantity()));
         spinnerChangeNumber.setValueFactory(
             new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1)

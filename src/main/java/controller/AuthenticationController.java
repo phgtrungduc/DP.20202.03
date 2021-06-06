@@ -24,7 +24,12 @@ import java.util.Objects;
  * Hai phuong thuc o BaseController deu khong lien quan den nghiep vu Authen
  * */
 public class AuthenticationController extends BaseController {
-
+    private static AuthenticationController authenticationController;
+    private AuthenticationController(){};
+    public static AuthenticationController getAuthInstance(){
+        if (authenticationController==null) authenticationController = new AuthenticationController();
+        return authenticationController;
+    }
     public boolean isAnonymousSession() {
         try {
             getMainUser();
@@ -67,8 +72,8 @@ public class AuthenticationController extends BaseController {
     private String md5(String message) {
         String digest = null;
         try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] hash = md.digest(message.getBytes(StandardCharsets.UTF_8));
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            byte[] hash = md5.digest(message.getBytes(StandardCharsets.UTF_8));
             // converting byte array to Hexadecimal String
             StringBuilder sb = new StringBuilder(2 * hash.length);
             for (byte b : hash) {

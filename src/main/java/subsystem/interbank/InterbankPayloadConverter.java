@@ -1,6 +1,7 @@
 package subsystem.interbank;
 
 import common.exception.*;
+import common.function.CommonFunction;
 import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
@@ -35,7 +36,7 @@ public class InterbankPayloadConverter {
         transaction.put("command", InterbankConfigs.PAY_COMMAND);
         transaction.put("transactionContent", contents);
         transaction.put("amount", amount);
-        transaction.put("createdAt", getToday());
+        transaction.put("createdAt", CommonFunction.getToday());
 
         Map<String, Object> requestMap = new MyMap();
         requestMap.put("version", InterbankConfigs.VERSION);
@@ -107,23 +108,5 @@ public class InterbankPayloadConverter {
             throw new UnrecognizedException();
         }
         return response;
-    }
-
-    /**
-     * Return a {@link String String} that represents the current time in the format of yyyy-MM-dd HH:mm:ss.
-     *
-     * @author hieudm
-     * @return the current time as {@link String String}.
-     */
-
-
-    /**
-     * Coincidental Cohesion
-     * Hàm này đang thức hiện chức năng không liên quan đến tất cả các hàm còn lại
-     * */
-    private String getToday() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
     }
 }

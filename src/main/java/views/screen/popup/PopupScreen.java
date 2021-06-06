@@ -20,7 +20,7 @@ public class PopupScreen extends BaseScreenHandler {
 
     @FXML
     Label message;
-
+    public static final double TIME = 0.8;
     public PopupScreen(Stage stage) throws IOException{
         super(stage, ViewsConfig.POPUP_PATH,null);
     }
@@ -53,7 +53,7 @@ public class PopupScreen extends BaseScreenHandler {
 
     public void show(Boolean autoClose) {
         super.show();
-        if (autoClose) close(0.8);
+        if (autoClose) close(TIME);
     }
 
     public void show(double time) {

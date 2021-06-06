@@ -3,6 +3,7 @@ package views.screen.invoice;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import common.function.CommonFunction;
 import entity.order.OrderItem;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -51,7 +52,7 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
 
     public void setMediaInfo() throws SQLException{
         title.setText(orderItem.getMedia().getTitle());
-        price.setText(ViewsConfig.getCurrencyFormat(orderItem.getPrice()));
+        price.setText(CommonFunction.getCurrencyFormat(orderItem.getPrice()));
         numOfProd.setText(String.valueOf(orderItem.getQuantity()));
         setImage(image, orderItem.getMedia().getImageURL());
 		image.setPreserveRatio(false);

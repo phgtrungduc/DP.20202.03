@@ -1,8 +1,8 @@
 package views.screen.invoice;
 
 import common.exception.ProcessInvoiceException;
+import common.function.CommonFunction;
 import controller.InvoiceController;
-import controller.PaymentController;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.shipping.DeliveryInfo;
@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
-import views.screen.payment.PaymentScreenHandler;
 import views.screen.popup.PopupScreen;
 
 import java.io.IOException;
@@ -83,9 +82,9 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 		instructions.setText(deliveryInfo.getShippingInstructions());
 		address.setText(deliveryInfo.getAddress());
 
-		subtotal.setText(ViewsConfig.getCurrencyFormat(order.getSubtotal()));
-		shippingFees.setText(ViewsConfig.getCurrencyFormat(order.getShippingFees()));
-		total.setText(ViewsConfig.getCurrencyFormat(order.getTotal()));
+		subtotal.setText(CommonFunction.getCurrencyFormat(order.getSubtotal()));
+		shippingFees.setText(CommonFunction.getCurrencyFormat(order.getShippingFees()));
+		total.setText(CommonFunction.getCurrencyFormat(order.getTotal()));
 
 		invoice.getOrder().getListOrderMedia().forEach(orderMedia -> {
 			try {
@@ -113,7 +112,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 //		paymentScreen.show();
 //		LOGGER.info("Confirmed invoice");
 		ListInvoiceHandler listInvoiceHandler = new ListInvoiceHandler(this.stage, ViewsConfig.LIST_INVOICE,invoice);
-		listInvoiceHandler.setBController(new InvoiceController());
+		listInvoiceHandler.setBaseController(new InvoiceController());
 		listInvoiceHandler.show();
 	}
 }

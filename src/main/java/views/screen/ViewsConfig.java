@@ -30,12 +30,8 @@ public class ViewsConfig {
     public static final String LIST_INVOICE = "/views/fxml/list_invoice.fxml";
 
     public static float PERCENT_VAT = 10;
+    public static final float FONT_SIZE = 24;
+    public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, FONT_SIZE);
 
-    public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, 24);
 
-    public static String getCurrencyFormat(int num) {
-        Locale vietnam = new Locale("vi", "VN");
-        NumberFormat defaultFormat = NumberFormat.getCurrencyInstance(vietnam);
-        return defaultFormat.format(num);
-    }
 }

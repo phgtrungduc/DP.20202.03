@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import common.exception.MediaUpdateException;
 import common.exception.ViewCartException;
+import common.function.CommonFunction;
 import common.interfaces.Observable;
 import common.interfaces.Observer;
 import controller.SessionInformation;
@@ -81,7 +82,7 @@ public class CartMediaHandler extends FXMLScreenHandler implements Observable {
 
 	private void setMediaInfo() {
 		title.setText(cartItem.getMedia().getTitle());
-		price.setText(ViewsConfig.getCurrencyFormat(cartItem.getPrice()));
+		price.setText(CommonFunction.getCurrencyFormat(cartItem.getPrice()));
 		File file = new File(cartItem.getMedia().getImageURL());
 		Image im = new Image(file.toURI().toString());
 		image.setImage(im);
@@ -126,7 +127,7 @@ public class CartMediaHandler extends FXMLScreenHandler implements Observable {
 				cartItem.setQuantity(numOfProd);
 
 				// update the total of mediaCart
-				price.setText(ViewsConfig.getCurrencyFormat(numOfProd* cartItem.getPrice()));
+				price.setText(CommonFunction.getCurrencyFormat(numOfProd* cartItem.getPrice()));
 
 				// update subtotal and amount of Cart
 				cartScreen.updateCartAmount();

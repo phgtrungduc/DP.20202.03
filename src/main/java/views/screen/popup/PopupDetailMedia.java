@@ -1,5 +1,6 @@
 package views.screen.popup;
 
+import common.function.CommonFunction;
 import entity.media.Media;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -44,7 +45,7 @@ public class PopupDetailMedia extends BaseScreenHandler {
         mediaImage.setFitWidth(250);
         mediaImage.setImage(image);
         mediaTitle.setText(media.getTitle());
-        mediaPrice.setText(ViewsConfig.getCurrencyFormat(media.getPrice()));
+        mediaPrice.setText(CommonFunction.getCurrencyFormat(media.getPrice()));
         mediaAvail.setText(Integer.toString(media.getQuantity()));
         mediaCategory.setText(media.getCategory());
         mediaType.setText(media.getType());

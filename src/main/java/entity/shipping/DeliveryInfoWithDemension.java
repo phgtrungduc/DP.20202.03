@@ -1,6 +1,5 @@
 package entity.shipping;
 
-import entity.order.Order;
 import org.example.DistanceCalculator;
 
 public class DeliveryInfoWithDemension extends DeliveryInfo {
@@ -23,15 +22,10 @@ public class DeliveryInfoWithDemension extends DeliveryInfo {
     }
 
     @Override
-    public int calculateShippingFee(Order order) {
+    public int calculateShippingFee() {
         int distance = distanceCalculator.calculateDistance(this.address,this.province);
-        if (this.distanceCalculator instanceof DistanceCalculateAdapter)  {
-            double bulky = calculateBulky();//độ cồng kềnh
-            double fee = bulky*10+this.weight + distance;
-            return (int)fee;
-        }else{
-            return  super.calculateShippingFee(order);
-        }
-
+        double bulky = calculateBulky();//độ cồng kềnh
+        double fee = bulky*10+this.weight + distance;
+        return (int)fee;
     }
 }

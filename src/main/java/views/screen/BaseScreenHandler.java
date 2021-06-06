@@ -2,13 +2,9 @@ package views.screen;
 
 import java.io.IOException;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.logging.Logger;
 
-import controller.AuthenticationController;
 import controller.BaseController;
-import entity.invoice.Invoice;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import utils.Utils;
@@ -23,7 +19,7 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 	protected final Stage stage;
 	protected HomeScreenHandler homeScreenHandler;
 	protected Hashtable<String, String> messages;
-	private BaseController bController;
+	private BaseController baseController;
 
 	/**
 	 * Duplication of code : giải quyết bằng template method
@@ -68,12 +64,12 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.stage.setTitle(string);
 	}
 
-	public void setBController(BaseController bController){
-		this.bController = bController;
+	public void setBaseController(BaseController baseController){
+		this.baseController = baseController;
 	}
 
-	public BaseController getBController(){
-		return this.bController;
+	public BaseController getBaseController(){
+		return this.baseController;
 	}
 
 	public void forward(Hashtable messages) {

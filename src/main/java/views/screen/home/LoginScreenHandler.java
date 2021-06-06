@@ -28,8 +28,8 @@ public class LoginScreenHandler extends BaseScreenHandler{
         super(stage, screenPath,dto);
     }
 
-    public AuthenticationController getBController() {
-        return (AuthenticationController) super.getBController();
+    public AuthenticationController getBaseController() {
+        return (AuthenticationController) super.getBaseController();
     }
 
     public void setupData(Object dto) throws Exception {
@@ -41,7 +41,7 @@ public class LoginScreenHandler extends BaseScreenHandler{
     @FXML
     void login(MouseEvent event) throws IOException, InterruptedException, SQLException {
         try {
-            getBController().login(email.getText(), password.getText());
+            this.getBaseController().login(email.getText(), password.getText());
             PopupScreen.showSuccessPopup("Login Successfully!");
             backToHomeScreen(event);
         } catch (Exception ex) {

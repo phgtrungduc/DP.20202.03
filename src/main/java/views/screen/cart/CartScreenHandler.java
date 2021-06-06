@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
+import common.function.CommonFunction;
 import common.interfaces.Observable;
 import common.interfaces.Observer;
 import controller.PlaceOrderController;
@@ -91,14 +92,14 @@ public class CartScreenHandler extends BaseScreenHandler implements Observer {
 		});
 	}
 
-	public ViewCartController getBController(){
-		return (ViewCartController) super.getBController();
+	public ViewCartController getBaseController(){
+		return (ViewCartController) super.getBaseController();
 	}
 
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
-		getBController().checkAvailabilityOfProduct();
+		getBaseController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 		show();
 	}
@@ -122,7 +123,7 @@ public class CartScreenHandler extends BaseScreenHandler implements Observer {
 			shippingScreenHandler.setPreviousScreen(this);
 			shippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
 			shippingScreenHandler.setScreenTitle("Shipping Screen");
-			shippingScreenHandler.setBController(placeOrderController);
+			shippingScreenHandler.setBaseController(placeOrderController);
 			shippingScreenHandler.show();
 
 		} catch (MediaNotAvailableException e) {
@@ -132,32 +133,32 @@ public class CartScreenHandler extends BaseScreenHandler implements Observer {
 	}
 
 	public void updateCart() throws SQLException{
-		getBController().checkAvailabilityOfProduct();
+		getBaseController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
 
 	void updateCartAmount(){
 		// calculate subtotal and amount
-		int subtotal = getBController().getCartSubtotal();
+		int subtotal = getBaseController().getCartSubtotal();
 		int vat = (int)((ViewsConfig.PERCENT_VAT/100)*subtotal);
 		int amount = subtotal + vat;
 		LOGGER.info("amount" + amount);
 
 		// update subtotal and amount of Cart
-		labelSubtotal.setText(ViewsConfig.getCurrencyFormat(subtotal));
-		labelVAT.setText(ViewsConfig.getCurrencyFormat(vat));
-		labelAmount.setText(ViewsConfig.getCurrencyFormat(amount));
+		labelSubtotal.setText(CommonFunction.getCurrencyFormat(subtotal));
+		labelVAT.setText(CommonFunction.getCurrencyFormat(vat));
+		labelAmount.setText(CommonFunction.getCurrencyFormat(amount));
 	}
 	
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();
 
-		// get list media of cart after check availability
-		List lstMedia = getBController().getListCartMedia();
+		// đổi tên biến
+		List listCartMedia  = getBaseController().getListCartMedia();
 
 		try {
-			for (Object cm : lstMedia) {
+			for (Object cm : listCartMedia ) {
 
 				// display the attribute of vboxCart media
 				CartItem cartItem = (CartItem) cm;

@@ -21,3 +21,4 @@ I, Danh sách thành viên nhóm và phân chia công việc
 từ buổi t2 nhóm chỉ làm việc với 3 người nên tất cả các vấn đề cả 3 đều cũng tìm kiếm rồi review 3 người. Do vậy, phần "Tìm ra các vấn đề về cohesion, coupling và vi phạm SOLID trong codebase" được đúc rút ra từ phần làm việc ở mỗi tuần, cả 3 thành viên đều có đóng góp trong phần này</i>
 
 II, Link video presentation
+https://www.youtube.com/watch?v=4gs3Lk5NApE&ab_channel=DucPham

@@ -12,7 +12,7 @@ I, Danh sách thành viên nhóm và phân chia công việc
 - Giải quyết vấn đề: "Thêm phương thức thanh toán mới: Thẻ nội địa (Domestic Card)"
 - Giải quyết vấn đề: "Các hàm không liên quan đến nghiệp vụ của một số lớp"
 <br/>
-3, Hoa Xuân Dương - 2017
+3, Hoa Xuân Dương - 20173068
 - Tìm ra các vấn đề về cohesion, coupling và vi phạm SOLID trong codebase
 - Giải quyết vấn đề : "Thay đổi cách tính khoảng cách, sử dụng thư viện mới" - bằng Adapter Pattern
 - Giải quyết vấn đề : "Cập nhật lại chức năng hủy đơn hàng"
